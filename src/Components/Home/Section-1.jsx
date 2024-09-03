@@ -90,7 +90,7 @@ export default function Section_1() {
                                     <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Check-in</h1>
                                 </div>
                                 <div className="w-full h-[65%]">
-                                    <input type="date" className="w-full h-full px-2 lg:px-5 rounded-xl text-black bg-gray-200 text-lg" value={datein} onChange={Handelchangedatein} />
+                                    <input type="date" className="w-full h-full px-2 lg:px-5 pr-5 lg:pr-0 rounded-xl text-black bg-gray-200 text-lg" value={datein} onChange={Handelchangedatein} />
                                 </div>
                             </div>
                             <div className="w-1/2 lg:w-1/4 h-[45%] lg:h-full flex flex-col justify-between px-2 lg:px-5 mt-1 lg:mt-0">
@@ -99,7 +99,7 @@ export default function Section_1() {
                                     <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Check-out</h1>
                                 </div>
                                 <div className="w-full h-[65%]">
-                                    <input type="date" className="w-full h-full px-2 lg:px-5 rounded-xl text-black bg-gray-200 text-lg" value={dateout} onChange={Handelchangedateout} />
+                                    <input type="date" className="w-full h-full px-2 lg:px-5 pr-5 lg:pr-0 rounded-xl text-black bg-gray-200 text-lg" value={dateout} onChange={Handelchangedateout} />
                                 </div>
                             </div>
                         </div>
