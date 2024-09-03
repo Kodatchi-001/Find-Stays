@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    font-family: 'Clash Grotesk', sans-serif;
+}
+
+/*Header*/
+header li:first-child:after {
+    content: '';
+    background-color: white;
+    width: 100%;
+    height: 3px;
+}
+
+header li {
+    position: relative;
+    cursor: pointer;
+}
+
+header li:after {
+    content: '';
+    position: absolute;
+    background-color: white;
+    width: 0%;
+    height: 3px;
+    display: block;
+    transition: 0.6s;
+}
+
+header li:hover:after {
+    width: 100%;
+}
+
+header button {
+    transition: 0.6s;
+}
+
+/*HomePage*/
+.HomePage-Background {
+    background-image: url(../Assets/Background-HomePage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.bg-black-blur {
+    background-color: #00000074;
+}
+
