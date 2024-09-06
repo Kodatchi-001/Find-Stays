@@ -11,7 +11,7 @@ export default function Section_1() {
     return <>
         <section className="w-full h-screen HomePage-Background">
             <div className="w-full h-full flex flex-col justify-between bg-black-blur lg:px-6 xl:px-20">
-                <div className="w-full h-[9%] lg:h-[15%] flex items-center fixed lg:relative bg-white lg:bg-transparent">
+                <div className="w-full h-[8%] lg:h-[15%] flex items-center fixed lg:relative bg-white lg:bg-transparent z-50">
                     <Header />
                 </div>
                 <div className="w-full h-[12%] lg:hidden">
@@ -52,7 +52,7 @@ export default function Section_1() {
                     </div>
                 </div>
                 <div className="w-full h-[45%] lg:h-[20%] xl:h-[30%] flex justify-center items-center py-5 lg:py-0 px-4 lg:px-0">
-                    <div className="w-full sm:w-5/6 lg:w-full h-full sm:h-[75%] flex justify-between items-center flex-wrap px-1 lg:px-3 pt-2 lg:pt-0 lg:py-4 rounded-xl bg-white">
+                    <div className="w-full sm:w-5/6 lg:w-full h-full sm:h-[70%] flex justify-between items-center flex-wrap px-1 lg:px-3 pt-2 lg:py-4 rounded-xl bg-white">
                         <div className="w-full lg:w-5/6 h-[70%] lg:h-full flex justify-between flex-wrap">
                             <div className="w-1/2 lg:w-1/4 h-[45%] lg:h-full flex flex-col justify-between px-2 lg:px-5">
                                 <div className="w-full h-[30%] lg:h-1/4 flex items-center gap-1">
@@ -90,7 +90,7 @@ export default function Section_1() {
                                     <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Check-in</h1>
                                 </div>
                                 <div className="w-full h-[65%]">
-                                    <input type="date" className="w-full h-full px-2 lg:px-5 pr-5 lg:pr-0 rounded-xl text-black bg-gray-200 text-lg" value={datein} onChange={Handelchangedatein} />
+                                    <input type="date" className="w-full h-full px-2 lg:px-5 rounded-xl text-black bg-gray-200 text-lg" value={datein} onChange={Handelchangedatein} />
                                 </div>
                             </div>
                             <div className="w-1/2 lg:w-1/4 h-[45%] lg:h-full flex flex-col justify-between px-2 lg:px-5 mt-1 lg:mt-0">
@@ -99,7 +99,7 @@ export default function Section_1() {
                                     <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Check-out</h1>
                                 </div>
                                 <div className="w-full h-[65%]">
-                                    <input type="date" className="w-full h-full px-2 lg:px-5 pr-5 lg:pr-0 rounded-xl text-black bg-gray-200 text-lg" value={dateout} onChange={Handelchangedateout} />
+                                    <input type="date" className="w-full h-full px-2 lg:px-5 rounded-xl text-black bg-gray-200 text-lg" value={dateout} onChange={Handelchangedateout} />
                                 </div>
                             </div>
                         </div>

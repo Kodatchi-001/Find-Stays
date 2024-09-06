@@ -48,3 +48,33 @@ header button {
     background-color: #00000074;
 }
 
+.cards-homepage{
+    background-size: cover;
+    background-position: bottom;
+}
+
+#Card-1-HomePage{
+    background-image: url(../Assets/Card-1-HomePage.jpeg);
+}
+
+#Card-2-HomePage{
+    background-image: url(../Assets/Card-1-HomePage-2.jpeg);
+}
+
+#Card-3-HomePage{
+    background-image: url(../Assets/Card-1-HomePage-3.jpeg);
+}
+
+.background-card-image{
+    background: linear-gradient(188deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.822) 90%);
+}
+
+.bg-blur-white{
+    backdrop-filter: blur(20px);
+    border: 1px solid white;
+    transition: 0.5s ease;
+}
+
+.bg-blur-white:hover{
+    background-color: rgba(255, 255, 255, 0.493);
+}
