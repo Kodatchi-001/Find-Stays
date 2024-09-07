@@ -4,7 +4,7 @@ export default function Section_3() {
     const [search, setsearch] = useState('');
     const [NoteFound, setNoteFound] = useState(false);
     const [Save, setSave] = useState([]);
-    const handelchange = e => setsearch(e.target.value);
+    const handelchange = e => setsearch(e.target.value.toLowerCase());
     const hotelCards = [
         { name: "Emerald Valley Lodge", location: "New Zealand, Australia", visitors: "7612 Visitors" },
         { name: "Golden Horizon Hotel", location: "New York, USA", visitors: "212 Visitors" },
@@ -23,7 +23,7 @@ export default function Section_3() {
     const SaveCards = index => setSave(prevSave => prevSave.includes(index) ? prevSave.filter(i => i !== index) : [...prevSave, index]);
 
     return <>
-        <section className="w-full h-full mt-16 lg:px-5 xl:px-24 flex flex-wrap gap-5 lg:gap-0">
+        <section className="w-full h-full mt-5 lg:mt-16 lg:px-5 xl:px-24 flex flex-wrap gap-5 lg:gap-0">
             <div className="w-full lg:h-[30vh] flex justify-between items-center flex-wrap gap-5 lg:gap-0">
                 <h1 className="w-full lg:w-1/2 xl:w-[45%] lg:leading-[4.8rem] text-[2.50rem] lg:text-6xl text-center lg:text-start">Explore Our Best List 5-Stars Hotel!</h1>
                 <div className="w-full lg:w-1/2 lg:h-full flex justify-center lg:justify-end items-center">

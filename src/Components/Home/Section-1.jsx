@@ -11,13 +11,10 @@ export default function Section_1() {
     return <>
         <section className="w-full h-screen HomePage-Background">
             <div className="w-full h-full flex flex-col justify-between bg-black-blur lg:px-6 xl:px-20">
-                <div className="w-full h-[9%] lg:h-[15%] flex items-center fixed lg:relative bg-white lg:bg-transparent z-50">
+                <div className="w-full h-[9%] lg:h-[15%] flex items-center fixed lg:relative bg-white shadow-2xl lg:bg-transparent z-50">
                     <Header />
                 </div>
-                <div className="w-full h-[12%] lg:hidden">
-
-                </div>
-                <div className="w-full h-[40%] lg:h-[60%] flex justify-between items-center flex-wrap px-4 lg:px-0">
+                <div className="w-full h-[40%] lg:h-[60%] flex justify-between items-center flex-wrap px-4 mt-24 lg:mt-0 lg:px-0">
                     <div className="w-full lg:w-4/6 h-2/3 lg:h-full flex flex-col justify-center items-center lg:items-start gap-3 sm:gap-5 lg:gap-6 text-white">
                         <h1 className="w-[95%] sm:w-4/6 lg:w-full xl:w-[80%] text-5xl lg:text-8xl text-center lg:text-start">Stay Quietly, With No Worries</h1>
                         <p className="lg:5/6 xl:w-[75%] text-[1.1rem] hidden lg:flex">
