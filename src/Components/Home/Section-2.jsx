@@ -10,7 +10,8 @@ export default function Section_2() {
                     , we pick the hotels from our amazing visitors.
                 </p>
             </div>
-            <div className="w-full lg:h-screen flex justify-between flex-wrap sm:flex-wrap-reverse px-3 lg:px-24 p-5 gap-3 lg:gap-0">
+            <div className="w-full lg:h-screen flex justify-center lg:justify-between flex-wrap sm:flex-wrap-reverse px-3 lg:px-24 p-5 gap-3 lg:gap-0">
+                {/* <!-- Cards-1 --> */}
                 <div className="w-full sm:w-[49%] lg:w-[65%] h-[30vh] lg:h-full rounded-2xl cards-homepage" id="Card-1-HomePage">
                     <div className="w-full h-full flex items-end px-8 lg:px-12 pb-8 lg:pb-10 background-card-image rounded-2xl">
                         <div className="w-full flex flex-col justify-between text-white gap-6">
@@ -44,6 +45,7 @@ export default function Section_2() {
                     </div>
                 </div>
                 <div className="w-full lg:w-[33%] h-full flex lg:flex-col justify-between flex-wrap gap-3 lg:gap-0">
+                    {/* <!-- Cards-2 --> */}
                     <div className="w-full sm:w-[49%] lg:w-full h-[30vh] lg:h-[48%] rounded-2xl cards-homepage" id="Card-2-HomePage">
                         <div className="w-full h-full flex items-end px-8 pb-8 lg:pb-6 background-card-image rounded-2xl">
                             <div className="w-full flex flex-col justify-between text-white gap-3">
@@ -67,6 +69,7 @@ export default function Section_2() {
                             </div>
                         </div>
                     </div>
+                    {/* <!-- Cards-3 --> */}
                     <div className="w-full sm:w-[49%] lg:w-full h-[30vh] lg:h-[48%] rounded-2xl cards-homepage" id="Card-3-HomePage">
                         <div className="w-full h-full flex items-end px-8 pb-8 lg:pb-6 background-card-image rounded-2xl">
                             <div className="w-full flex flex-col justify-between text-white gap-3">

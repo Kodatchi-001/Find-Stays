@@ -11,7 +11,7 @@ export default function Section_1() {
     return <>
         <section className="w-full h-screen HomePage-Background">
             <div className="w-full h-full flex flex-col justify-between bg-black-blur lg:px-6 xl:px-20">
-                <div className="w-full h-[8%] lg:h-[15%] flex items-center fixed lg:relative bg-white lg:bg-transparent z-50">
+                <div className="w-full h-[9%] lg:h-[15%] flex items-center fixed lg:relative bg-white lg:bg-transparent z-50">
                     <Header />
                 </div>
                 <div className="w-full h-[12%] lg:hidden">

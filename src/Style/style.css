@@ -48,33 +48,110 @@ header button {
     background-color: #00000074;
 }
 
-.cards-homepage{
+.cards-homepage {
     background-size: cover;
     background-position: bottom;
 }
 
-#Card-1-HomePage{
+#Card-1-HomePage {
     background-image: url(../Assets/Card-1-HomePage.jpeg);
 }
 
-#Card-2-HomePage{
+#Card-2-HomePage {
     background-image: url(../Assets/Card-1-HomePage-2.jpeg);
 }
 
-#Card-3-HomePage{
+#Card-3-HomePage {
     background-image: url(../Assets/Card-1-HomePage-3.jpeg);
 }
 
-.background-card-image{
+.background-card-image {
     background: linear-gradient(188deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.822) 90%);
 }
 
-.bg-blur-white{
+.bg-blur-white {
     backdrop-filter: blur(20px);
     border: 1px solid white;
     transition: 0.5s ease;
 }
 
-.bg-blur-white:hover{
+.bg-blur-white:hover {
     background-color: rgba(255, 255, 255, 0.493);
+}
+
+/*Section-2/HomePage*/
+
+.cards-homepage-section-2 {
+    background-size: cover;
+    background-position: center;
+}
+
+#Card-0-Section-2-HomePage {
+    background-image: url(../Assets/Card-0-Section-2-HomePage.jpeg);
+}
+
+#Card-1-Section-2-HomePage {
+    background-image: url(../Assets/Card-1-Section-2-HomePage.jpeg);
+}
+
+#Card-2-Section-2-HomePage {
+    background-image: url(../Assets/Card-2-Section-2-HomePage.jpeg);
+}
+
+#Card-3-Section-2-HomePage {
+    background-image: url(../Assets/Card-3-Section-2-HomePage.jpeg);
+}
+
+#Card-4-Section-2-HomePage {
+    background-image: url(../Assets/Card-4-Section-2-HomePage.jpeg);
+}
+
+#Card-5-Section-2-HomePage {
+    background-image: url(../Assets/Card-5-Section-2-HomePage.jpeg);
+}
+
+#Card-6-Section-2-HomePage {
+    background-image: url(../Assets/Card-6-Section-2-HomePage.jpeg);
+}
+
+#Card-7-Section-2-HomePage {
+    background-image: url(../Assets/Card-7-Section-2-HomePage.jpeg);
+    background-position: center;
+}
+
+#Card-8-Section-2-HomePage {
+    background-image: url(../Assets/Card-8-Section-2-HomePage.jpeg);
+    background-position: center;
+}
+
+
+.Cards-section-2,
+.cards-homepage-section-2,
+.cards-homepage-info,
+.cards-homepage-info div:first-child {
+    transition: 0.8s ease;
+}
+
+.Cards-section-2 button {
+    transition: 0.5s ease;
+}
+
+.Cards-section-2:hover {
+    .cards-homepage-section-2 {
+        height: 45%;
+    }
+
+    .cards-homepage-info {
+        height: 55%;
+        padding-top: 1vh;
+        gap: 0;
+    }
+
+    .cards-homepage-info div:first-child {
+        height: 60%;
+    }
+
+    .cards-homepage-buttons {
+        visibility: visible;
+    }
 }
