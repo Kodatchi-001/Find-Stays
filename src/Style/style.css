@@ -80,7 +80,6 @@ header button {
 }
 
 /*Section-2/HomePage*/
-
 .cards-homepage-section-2 {
     background-size: cover;
     background-position: center;
@@ -154,4 +153,12 @@ header button {
     .cards-homepage-buttons {
         visibility: visible;
     }
+}
+/*Section-4/HomePage*/
+.bg-gray-transparent{
+    background-color: rgba(168, 168, 168, 0.258);
+}
+
+.bg-black-transparent{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.763), transparent 50%, rgba(0, 0, 0, 0.763));
 }
