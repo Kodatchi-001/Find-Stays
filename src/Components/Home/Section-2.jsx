@@ -2,7 +2,7 @@ export default function Section_2() {
     return <>
         <section className="w-full h-full mt-5 lg:mt-16">
             <div className="w-full h-[30vh] lg:h-[40vh] flex flex-col justify-center items-center gap-5">
-                <h1 className="w-full lg:w-[45%] lg:leading-[4.8rem] text-center text-[2.50rem] lg:text-6xl">
+                <h1 className="w-full lg:w-4/6 xl:w-[45%] lg:leading-[4.8rem] text-center text-[2.50rem] lg:text-6xl">
                     Our Most Amazing Visited Hotel on 2023!
                 </h1>
                 <p className="w-[90%] lg:w-[45%] text-xl text-center">
@@ -10,14 +10,14 @@ export default function Section_2() {
                     , we pick the hotels from our amazing visitors.
                 </p>
             </div>
-            <div className="w-full lg:h-screen flex justify-center lg:justify-between flex-wrap sm:flex-wrap-reverse px-3 lg:px-24 p-5 gap-3 lg:gap-0">
+            <div className="w-full lg:h-screen flex justify-center lg:justify-between flex-wrap sm:flex-wrap-reverse px-3 lg:px-5 xl:px-24 p-5 gap-3 lg:gap-0">
                 {/* <!-- Cards-1 --> */}
                 <div className="w-full sm:w-[49%] lg:w-[65%] h-[30vh] lg:h-full rounded-2xl cards-homepage" id="Card-1-HomePage">
-                    <div className="w-full h-full flex items-end px-8 lg:px-12 pb-8 lg:pb-10 background-card-image rounded-2xl">
+                    <div className="w-full h-full flex items-end px-8 xl:px-12 pb-8 lg:pb-10 background-card-image rounded-2xl">
                         <div className="w-full flex flex-col justify-between text-white gap-6">
-                            <h1 className="lg:w-4/6 text-3xl lg:text-[3.50rem] lg:leading-[3.5rem]">Oasis Sands Resort Homestay</h1>
+                            <h1 className="xl:w-4/6 text-3xl lg:text-[3.50rem] lg:leading-[3.5rem]">Oasis Sands Resort Homestay</h1>
                             <div className="w-full h-[55%] flex justify-between items-center">
-                                <div className="w-4/6 lg:h-full flex lg:gap-2 lg:items-center flex-col lg:flex-row lg:text-[1.15rem] text-gray-200">
+                                <div className="w-4/6 lg:w-full xl:w-4/6 lg:h-full flex lg:gap-2 lg:items-center flex-col lg:flex-row lg:text-[1.15rem] text-gray-200">
                                     <h1>Palm Jumeirah, Dubai</h1>
                                     <i class='bx bx-minus text-sm hidden lg:flex'></i>
                                     <div className="h-full lg:flex items-center gap-1 hidden">
@@ -47,7 +47,7 @@ export default function Section_2() {
                 <div className="w-full lg:w-[33%] h-full flex lg:flex-col justify-between flex-wrap gap-3 lg:gap-0">
                     {/* <!-- Cards-2 --> */}
                     <div className="w-full sm:w-[49%] lg:w-full h-[30vh] lg:h-[48%] rounded-2xl cards-homepage" id="Card-2-HomePage">
-                        <div className="w-full h-full flex items-end px-8 pb-8 lg:pb-6 background-card-image rounded-2xl">
+                        <div className="w-full h-full flex items-end px-8 lg:px-4 xl:px-8 pb-8 lg:pb-6 background-card-image rounded-2xl">
                             <div className="w-full flex flex-col justify-between text-white gap-3">
                                 <h1 className="w-5/6 text-3xl">Blue Saroza Drogba Comfort Hotel</h1>
                                 <div className="w-full h-1/2 flex justify-between items-center">
@@ -71,7 +71,7 @@ export default function Section_2() {
                     </div>
                     {/* <!-- Cards-3 --> */}
                     <div className="w-full sm:w-[49%] lg:w-full h-[30vh] lg:h-[48%] rounded-2xl cards-homepage" id="Card-3-HomePage">
-                        <div className="w-full h-full flex items-end px-8 pb-8 lg:pb-6 background-card-image rounded-2xl">
+                    <div className="w-full h-full flex items-end px-8 lg:px-4 xl:px-8 pb-8 lg:pb-6 background-card-image rounded-2xl">
                             <div className="w-full flex flex-col justify-between text-white gap-3">
                                 <h1 className="lg:w-5/6 text-3xl">Luxury Comfort Stays Hotel Indonesia</h1>
                                 <div className="w-full h-1/2 flex justify-between items-center">

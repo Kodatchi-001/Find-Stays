@@ -16,7 +16,7 @@ export default function Section_1() {
                 </div>
                 <div className="w-full h-[40%] lg:h-[60%] flex justify-between items-center flex-wrap px-4 mt-24 lg:mt-0 lg:px-0">
                     <div className="w-full lg:w-4/6 h-2/3 lg:h-full flex flex-col justify-center items-center lg:items-start gap-3 sm:gap-5 lg:gap-6 text-white">
-                        <h1 className="w-[95%] sm:w-4/6 lg:w-full xl:w-[80%] text-5xl lg:text-8xl text-center lg:text-start">Stay Quietly, With No Worries</h1>
+                        <h1 className="w-[95%] sm:w-4/6 lg:w-full xl:w-[80%] text-5xl sm:text-7xl xl:text-8xl text-center lg:text-start">Stay Quietly, With No Worries</h1>
                         <p className="lg:5/6 xl:w-[75%] text-[1.1rem] hidden lg:flex">
                             Welcome to our hotel booking platform, where your travel experience
                             becomes easier and more enjoyable. With our platform, you can discover
@@ -48,8 +48,8 @@ export default function Section_1() {
                         </div>
                     </div>
                 </div>
-                <div className="w-full h-[45%] lg:h-[20%] xl:h-[30%] flex justify-center items-center py-5 lg:py-0 px-4 lg:px-0">
-                    <div className="w-full sm:w-5/6 lg:w-full h-full sm:h-[70%] flex justify-between items-center flex-wrap px-1 lg:px-3 pt-2 lg:py-4 rounded-xl bg-white">
+                <div className="w-full h-[45%] lg:h-[30%] xl:h-[30%] flex justify-center items-center py-5 sm:py-2 lg:py-0 px-4 lg:px-0">
+                    <div className="w-full sm:w-full md:w-5/6 lg:w-full h-full lg:h-[70%] flex justify-between items-center flex-wrap px-1 lg:px-3 pt-2 lg:py-4 rounded-xl bg-white">
                         <div className="w-full lg:w-5/6 h-[70%] lg:h-full flex justify-between flex-wrap">
                             <div className="w-1/2 lg:w-1/4 h-[45%] lg:h-full flex flex-col justify-between px-2 lg:px-5">
                                 <div className="w-full h-[30%] lg:h-1/4 flex items-center gap-1">

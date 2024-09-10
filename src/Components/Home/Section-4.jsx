@@ -125,10 +125,10 @@ export default function Section_4() {
                 </div>
                 <div className="w-full lg:w-[80%] h-full flex" style={{ transform: `translateX(${-currentIndex * 100}%)`, transition: 'transform 0.5s ease' }}>
                     {/* <!-- Cards/1 --> */}
-                    <div className="min-w-full h-full flex justify-between sm:justify-center lg:justify-between flex-wrap py-4 px-5 gap-6 lg:gap-0">
+                    <div className="min-w-full h-full flex justify-between sm:justify-center lg:justify-between flex-wrap py-4 px-5 lg:px-2 xl:px-5 gap-6 lg:gap-0">
                         {hotelCards_1.map((items, index) => (
-                            <div className="w-full sm:w-[48%] lg:w-[31%] h-[50vh] sm:h-[40vh] lg:h-full p-5 flex flex-col justify-between rounded-2xl bg-gray-transparent">
-                                <div className="w-full h-[40%] flex flex-col justify-between">
+                            <div className="w-full sm:w-[48%] lg:w-[31%] h-[50vh] sm:h-full p-5 sm:gap-3 lg:gap-0 flex flex-col justify-between rounded-2xl bg-gray-transparent">
+                                <div className="w-full h-[40%] flex flex-col justify-between sm:gap-3 lg:gap-0">
                                     <p>{items.paragraph}</p>
                                     <div className="w-full h-[45%] flex items-center gap-3">
                                         <h1 className="p-6 rounded-full bg-black"></h1>
@@ -169,8 +169,8 @@ export default function Section_4() {
                     {/* <!-- Cards/2 --> */}
                     <div className="min-w-full h-full flex justify-between sm:justify-center lg:justify-between flex-wrap py-4 px-5 gap-6 lg:gap-0">
                         {hotelCards_2.map((items, index) => (
-                            <div className="w-full sm:w-[48%] lg:w-[31%] h-[50vh] sm:h-[40vh] lg:h-full p-5 flex flex-col justify-between rounded-2xl bg-gray-transparent">
-                                <div className="w-full h-[40%] flex flex-col justify-between">
+                            <div className="w-full sm:w-[48%] lg:w-[31%] h-[50vh] sm:h-full p-5 sm:gap-3 lg:gap-0 flex flex-col justify-between rounded-2xl bg-gray-transparent">
+                                <div className="w-full h-[40%] flex flex-col justify-between sm:gap-3 lg:gap-0">
                                     <p>{items.paragraph}</p>
                                     <div className="w-full h-[45%] flex items-center gap-3">
                                         <h1 className="p-6 rounded-full bg-black"></h1>
@@ -211,8 +211,8 @@ export default function Section_4() {
                     {/* <!-- Cards/3 --> */}
                     <div className="min-w-full h-full flex justify-between sm:justify-center lg:justify-between flex-wrap py-4 px-5 gap-6 lg:gap-0">
                         {hotelCards_3.map((items, index) => (
-                            <div className="w-full sm:w-[48%] lg:w-[31%] h-[50vh] sm:h-[40vh] lg:h-full p-5 flex flex-col justify-between rounded-2xl bg-gray-transparent">
-                                <div className="w-full h-[40%] flex flex-col justify-between">
+                            <div className="w-full sm:w-[48%] lg:w-[31%] h-[50vh] sm:h-full p-5 sm:gap-3 lg:gap-0 flex flex-col justify-between rounded-2xl bg-gray-transparent">
+                                <div className="w-full h-[40%] flex flex-col justify-between sm:gap-3 lg:gap-0">
                                     <p>{items.paragraph}</p>
                                     <div className="w-full h-[45%] flex items-center gap-3">
                                         <h1 className="p-6 rounded-full bg-black"></h1>
@@ -253,8 +253,8 @@ export default function Section_4() {
                     {/* <!-- Cards/4 --> */}
                     <div className="min-w-full h-full flex justify-between sm:justify-center lg:justify-between flex-wrap py-4 px-5 gap-6 lg:gap-0">
                         {hotelCards_4.map((items, index) => (
-                            <div className="w-full sm:w-[48%] lg:w-[31%] h-[50vh] sm:h-[40vh] lg:h-full p-5 flex flex-col justify-between rounded-2xl bg-gray-transparent">
-                                <div className="w-full h-[40%] flex flex-col justify-between">
+                            <div className="w-full sm:w-[48%] lg:w-[31%] h-[50vh] sm:h-full p-5 sm:gap-3 lg:gap-0 flex flex-col justify-between rounded-2xl bg-gray-transparent">
+                                <div className="w-full h-[40%] flex flex-col justify-between sm:gap-3 lg:gap-0">
                                     <p>{items.paragraph}</p>
                                     <div className="w-full h-[45%] flex items-center gap-3">
                                         <h1 className="p-6 rounded-full bg-black"></h1>
