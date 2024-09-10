@@ -108,10 +108,16 @@ export default function Section_4() {
 
     return <>
         <section className="w-full lg:h-screen flex justify-center flex-wrap mt-16 pt-10 text-white overflow-hidden bg-black">
-            <div className="w-full h-1/4 flex justify-center items-center px-2 lg:px-24">
-                <h1 className="lg:w-[55%] text-center lg:leading-[4rem] text-[2.50rem] lg:text-5xl">
+            <div className="w-full h-1/4 flex justify-center lg:justify-between xl:justify-center items-center px-2 lg:px-10 xl:px-24">
+                <h1 className="xl:w-[55%] text-center lg:text-start xl:text-center lg:leading-[4rem] text-[2.50rem] lg:text-5xl">
                     Let’s Hear How Their Experiences Use Our Platform
                 </h1>
+                <div className="w-1/2 h-full lg:flex justify-end items-center gap-5 hidden xl:hidden">
+                    <i class='bx bx-left-arrow-alt p-3 text-5xl scale-90 cursor-pointer bg-white text-black rounded-full'
+                        onClick={() => slideCards(-1)}></i>
+                    <i class='bx bx-right-arrow-alt p-3 text-5xl scale-90 cursor-pointer bg-white text-black rounded-full'
+                        onClick={() => slideCards(1)}></i>
+                </div>
             </div>
             <div className="w-5/6 h-[10%] flex justify-center items-center gap-4 lg:hidden mt-5 lg:mt-0 mb-5 lg:mb-0">
                 {Array.from({ length: 4 }).map((_, index) => (
@@ -119,15 +125,15 @@ export default function Section_4() {
                 ))}
             </div>
             <div className="w-full h-[65%] flex">
-                <div className="w-[10%] h-full lg:flex justify-center items-center hidden z-40">
+                <div className="w-[10%] h-full xl:flex justify-center items-center hidden z-40">
                     <i class='bx bx-left-arrow-alt p-3 text-5xl scale-90 cursor-pointer bg-white text-black rounded-full'
                         onClick={() => slideCards(-1)}></i>
                 </div>
-                <div className="w-full lg:w-[80%] h-full flex" style={{ transform: `translateX(${-currentIndex * 100}%)`, transition: 'transform 0.5s ease' }}>
+                <div className="w-full xl:w-[80%] h-full flex" style={{ transform: `translateX(${-currentIndex * 100}%)`, transition: 'transform 0.5s ease' }}>
                     {/* <!-- Cards/1 --> */}
                     <div className="min-w-full h-full flex justify-between sm:justify-center lg:justify-between flex-wrap py-4 px-5 lg:px-2 xl:px-5 gap-6 lg:gap-0">
                         {hotelCards_1.map((items, index) => (
-                            <div className="w-full sm:w-[48%] lg:w-[31%] h-[50vh] sm:h-full p-5 sm:gap-3 lg:gap-0 flex flex-col justify-between rounded-2xl bg-gray-transparent">
+                            <div className="w-full sm:w-[48%] lg:w-[31%] h-[50vh] sm:h-full p-5 lg:p-3 xl:p-5 sm:gap-3 lg:gap-0 flex flex-col justify-between rounded-2xl bg-gray-transparent">
                                 <div className="w-full h-[40%] flex flex-col justify-between sm:gap-3 lg:gap-0">
                                     <p>{items.paragraph}</p>
                                     <div className="w-full h-[45%] flex items-center gap-3">
@@ -293,7 +299,7 @@ export default function Section_4() {
                         ))}
                     </div>
                 </div>
-                <div className="w-[10%] h-full lg:flex justify-center items-center hidden">
+                <div className="w-[10%] h-full xl:flex justify-center items-center hidden">
                     <i class='bx bx-right-arrow-alt p-3 text-5xl scale-90 cursor-pointer bg-white text-black rounded-full'
                         onClick={() => slideCards(1)}>
                     </i>
