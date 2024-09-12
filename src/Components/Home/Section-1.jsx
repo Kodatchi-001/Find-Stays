@@ -12,7 +12,7 @@ export default function Section_1() {
         <section className="w-full h-screen HomePage-Background" id="HomePage">
             <div className="w-full h-full flex flex-col justify-between bg-black-blur lg:px-6 xl:px-20">
                 <div className="w-full h-[9%] lg:h-[15%] flex items-center fixed lg:relative bg-white shadow-2xl lg:shadow-transparent lg:bg-transparent z-50">
-                    <Header />
+                    <Header color={'white'}/>
                 </div>
                 <div className="w-full h-[40%] lg:h-[60%] flex justify-between items-center flex-wrap px-4 mt-24 lg:mt-0 lg:px-0">
                     <div className="w-full lg:w-4/6 h-2/3 lg:h-full flex flex-col justify-center items-center lg:items-start gap-3 sm:gap-5 lg:gap-6 text-white">
@@ -57,7 +57,7 @@ export default function Section_1() {
                                     <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Location</h1>
                                 </div>
                                 <div className="w-full h-[60%] lg:h-[65%]">
-                                    <input type="text" className="w-full h-full px-5 rounded-xl text-lg lg:text-xl text-black placeholder:text-black bg-gray-200 focus:outline-none" placeholder="Type Location" />
+                                    <input type="text" className="w-full h-full px-5 rounded-xl text-lg lg:text-xl text-black placeholder:text-black bg-gray focus:outline-none" placeholder="Type Location" />
                                 </div>
                             </div>
                             <div className="w-1/2 lg:w-1/4 h-[45%] lg:h-full flex flex-col justify-between px-2 lg:px-5">
@@ -66,7 +66,7 @@ export default function Section_1() {
                                     <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Person</h1>
                                 </div>
                                 <div className="w-full h-[60%] lg:h-[65%] flex justify-end relative">
-                                    <div className="w-full h-full bg-gray-200 pr-5 rounded-xl">
+                                    <div className="w-full h-full bg-gray pr-5 rounded-xl">
                                         <select className="w-full h-full px-5 bg-transparent text-lg lg:text-xl focus:outline-none text-black">
                                             <option value="">Person</option>
                                             <option value="">2</option>
@@ -87,7 +87,7 @@ export default function Section_1() {
                                     <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Check-in</h1>
                                 </div>
                                 <div className="w-full h-[65%]">
-                                    <input type="date" className="w-full h-full px-2 lg:px-5 rounded-xl text-black bg-gray-200 text-lg" value={datein} onChange={Handelchangedatein} />
+                                    <input type="date" className="w-full h-full px-2 lg:px-5 rounded-xl text-black bg-gray text-lg" value={datein} onChange={Handelchangedatein} />
                                 </div>
                             </div>
                             <div className="w-1/2 lg:w-1/4 h-[45%] lg:h-full flex flex-col justify-between px-2 lg:px-5 mt-1 lg:mt-0">
@@ -96,7 +96,7 @@ export default function Section_1() {
                                     <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Check-out</h1>
                                 </div>
                                 <div className="w-full h-[65%]">
-                                    <input type="date" className="w-full h-full px-2 lg:px-5 rounded-xl text-black bg-gray-200 text-lg" value={dateout} onChange={Handelchangedateout} />
+                                    <input type="date" className="w-full h-full px-2 lg:px-5 rounded-xl text-black bg-gray text-lg" value={dateout} onChange={Handelchangedateout} />
                                 </div>
                             </div>
                         </div>
