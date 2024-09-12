@@ -1,18 +1,40 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Header from "../Header/Header";
+import { Listeinfo } from "../utils/Liste-info";
+import { Link } from 'react-router-dom';
 
 export default function Section_1() {
+    const [location, setlocation] = useState('')
+    const [person, setperson] = useState(0)
     const [datein, setdatein] = useState("2024-03-09");
     const [dateout, setdateout] = useState("2024-05-12");
+    const { liste, setliste } = useContext(Listeinfo)
 
+    const Handelchangelocation = e => setlocation(e.target.value);
+    const Handelchangepreson = e => setperson(e.target.value);
     const Handelchangedatein = e => setdatein(e.target.value);
     const Handelchangedateout = e => setdateout(e.target.value);
+
+    const SendInfo = () => {
+        if (location.trim('') == "" || person <= 0) {
+            return
+        }
+        const Hotel = {
+            Location: location,
+            Person: person,
+            DateIn: datein,
+            DateOut: dateout
+        }
+        setliste([...liste, Hotel]);
+        setlocation('');
+        setperson(0)
+    }
 
     return <>
         <section className="w-full h-screen HomePage-Background" id="HomePage">
             <div className="w-full h-full flex flex-col justify-between bg-black-blur lg:px-6 xl:px-20">
                 <div className="w-full h-[9%] lg:h-[15%] flex items-center fixed lg:relative bg-white shadow-2xl lg:shadow-transparent lg:bg-transparent z-50">
-                    <Header color={'white'}/>
+                    <Header color={'white'} />
                 </div>
                 <div className="w-full h-[40%] lg:h-[60%] flex justify-between items-center flex-wrap px-4 mt-24 lg:mt-0 lg:px-0">
                     <div className="w-full lg:w-4/6 h-2/3 lg:h-full flex flex-col justify-center items-center lg:items-start gap-3 sm:gap-5 lg:gap-6 text-white">
@@ -57,7 +79,8 @@ export default function Section_1() {
                                     <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Location</h1>
                                 </div>
                                 <div className="w-full h-[60%] lg:h-[65%]">
-                                    <input type="text" className="w-full h-full px-5 rounded-xl text-lg lg:text-xl text-black placeholder:text-black bg-gray focus:outline-none" placeholder="Type Location" />
+                                    <input type="text" className="w-full h-full px-5 rounded-xl text-lg lg:text-xl text-black placeholder:text-black bg-gray focus:outline-none" placeholder="Type Location"
+                                        value={location} onChange={Handelchangelocation} />
                                 </div>
                             </div>
                             <div className="w-1/2 lg:w-1/4 h-[45%] lg:h-full flex flex-col justify-between px-2 lg:px-5">
@@ -67,13 +90,14 @@ export default function Section_1() {
                                 </div>
                                 <div className="w-full h-[60%] lg:h-[65%] flex justify-end relative">
                                     <div className="w-full h-full bg-gray pr-5 rounded-xl">
-                                        <select className="w-full h-full px-5 bg-transparent text-lg lg:text-xl focus:outline-none text-black">
-                                            <option value="">Person</option>
-                                            <option value="">2</option>
-                                            <option value="">4</option>
-                                            <option value="">6</option>
-                                            <option value="">8</option>
-                                            <option value="">10</option>
+                                        <select className="w-full h-full px-5 bg-transparent text-lg lg:text-xl focus:outline-none text-black"
+                                            value={person} onChange={Handelchangepreson}>
+                                            <option>Person</option>
+                                            <option value="2">2</option>
+                                            <option value="4">4</option>
+                                            <option value="6">6</option>
+                                            <option value="8">8</option>
+                                            <option value="10">10</option>
                                         </select>
                                     </div>
                                     <div className="w-1/5 h-full mr-0 lg:flex justify-center items-center absolute hidden">
@@ -102,7 +126,8 @@ export default function Section_1() {
                         </div>
                         <div className="w-full lg:w-1/6 h-[30%] lg:h-full flex flex-col justify-center lg:justify-end px-2 lg:px-0">
                             <div className="w-full h-5/6 lg:h-[70%] pt-[0.38rem] flex justify-center">
-                                <button className="w-full lg:w-[90%] h-full text-xl bg-black text-white rounded-xl border">Search</button>
+                                <Link to="/Search" className="w-full lg:w-[90%] h-full flex justify-center items-center text-xl bg-black text-white rounded-xl border"
+                                    onClick={SendInfo} >Search</Link>
                             </div>
                         </div>
                     </div>

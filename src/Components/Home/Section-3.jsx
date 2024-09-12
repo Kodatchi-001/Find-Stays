@@ -19,9 +19,7 @@ export default function Section_3() {
     useEffect(() => {
         setNoteFound(filteredHotels.length > 0);
     }, [filteredHotels]);
-
     const SaveCards = index => setSave(prevSave => prevSave.includes(index) ? prevSave.filter(i => i !== index) : [...prevSave, index]);
-    console.log(SaveCards.length);
     return <>
         <section className="w-full h-full mt-5 lg:mt-16 lg:px-5 xl:px-24 flex flex-wrap gap-5 lg:gap-0">
             <div className="w-full lg:h-[30vh] flex justify-between items-center flex-wrap gap-5 lg:gap-0">
