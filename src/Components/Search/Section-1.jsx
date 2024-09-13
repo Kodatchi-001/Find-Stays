@@ -3,13 +3,12 @@ import Header from "../Header/Header";
 import { Listeinfo } from "../utils/Liste-info";
 
 export default function Section_1() {
-    const [search, setsearch] = useState('');
+    const [search, setSearch] = useState('');
     const [Likes, setLikes] = useState([]);
     const [Save, setSave] = useState([]);
-    const [NoteFound, setNoteFound] = useState(false)
-    const { liste } = useContext(Listeinfo)
-    const [valide, setvalide] = useState(false)
-    console.log(liste)
+    const [NoteFound, setNoteFound] = useState(false);
+    const { liste } = useContext(Listeinfo);
+
     const hotelCards = [
         { name: "Emerald Valley Lodge", img: 'Card-0-Section-2-HomePage.jpeg', location: "New Zealand, Australia", visitors: "7612 Visitors" },
         { name: "Golden Horizon Hotel", img: 'Card-1-Section-2-HomePage.jpeg', location: "New York, USA", visitors: "212 Visitors" },
@@ -36,134 +35,102 @@ export default function Section_1() {
         { name: "Tropical Escape Resort", img: 'Card-22-Section-2-HomePage.jpeg', location: "Cancun, Mexico", visitors: "850 Visitors" },
         { name: "Royal Palace Hotel", img: 'Card-23-Section-2-HomePage.jpeg', location: "London, UK", visitors: "1280 Visitors" },
     ];
-    const handelchange = e => setsearch(e.target.value.toLowerCase());
-    const SaveLike = index => setLikes(itemsLikes => itemsLikes.includes(index) ? Likes.filter(i => i !== index) : [...itemsLikes, index]);
-    const SaveCards = index => setSave(itemsSave => itemsSave.includes(index) ? Save.filter(i => i !== index) : [...itemsSave, index]);
-    // console.log(`Cards ${Likes.length} + ${Save.length}`);
-    const hotelfilter = hotelCards.filter(item => item.location.toLowerCase().includes(search));
-    useEffect(() => {
-        setNoteFound(hotelfilter.length > 0);
-    }, [hotelfilter])
+
+    const handleChange = e => setSearch(e.target.value.toLowerCase());
+    const saveLike = index => setLikes(itemsLikes => itemsLikes.includes(index) ? Likes.filter(i => i !== index) : [...itemsLikes, index]);
+    const saveCards = index => setSave(itemsSave => itemsSave.includes(index) ? Save.filter(i => i !== index) : [...itemsSave, index]);
+
+    const filterCards = () => {
+        const lastLocation = liste[liste.length - 1]?.Location.toLowerCase() || '';
+        const filteredBySearch = hotelCards.filter(item => item.location.toLowerCase().includes(search));
+        const filteredByLocation = lastLocation ? filteredBySearch.filter(item => item.location.toLowerCase().includes(lastLocation)) : filteredBySearch;
+        return filteredByLocation;
+    };
 
     useEffect(() => {
-        setvalide(liste.length > 0)
-    }, [valide])
-    return <>
+        const filtered = filterCards();
+        setNoteFound(filtered.length > 0);
+    }, [search, liste]);
+
+    const renderCards = () => {
+        const filteredCards = filterCards();
+        return NoteFound ? (
+            filteredCards.map((item, index) => (
+                <div key={index} className="w-full sm:w-[50%] lg:w-[32%] xl:w-[24%] h-[45vh] sm:h-[41vh] lg:mt-1 lg:mb-1 flex flex-col justify-between cursor-pointer Cards-section-2 p-3 lg:p-0">
+                    <div className="w-full h-[68%] rounded-2xl cards-homepage-section-2 haja" style={{ backgroundImage: `url(${require(`../../Assets/${item.img}`)})` }}>
+                        <div className="w-full h-full p-4">
+                            <i className={`bx bx-heart p-2 scale-110 bg-white rounded-full ${Likes.includes(index) ? 'bxs-heart text-red-500' : 'bx-heart text-black'}`} onClick={() => saveLike(index)}></i>
+                        </div>
+                    </div>
+                    <div className="w-full h-[28%] flex flex-wrap cards-homepage-info overflow-hidden gap-5">
+                        <div className="w-full h-full flex flex-col justify-between">
+                            <div className="w-full h-2/3 flex flex-col">
+                                <h1 className="text-2xl lg:text-xl xl:text-2xl">{item.name}</h1>
+                                <h1>{item.location}</h1>
+                            </div>
+                            <div className="w-full h-1/3 flex items-center gap-2">
+                                <div className="flex gap-1 text-yellow-500">
+                                    <i className='bx bxs-star'></i>
+                                    <i className='bx bxs-star'></i>
+                                    <i className='bx bxs-star'></i>
+                                    <i className='bx bxs-star'></i>
+                                    <i className='bx bxs-star'></i>
+                                </div>
+                                <h1 className="text-sm mt-[0.5vh]">({item.visitors})</h1>
+                            </div>
+                        </div>
+                        <div className="w-full h-[40%] flex justify-between items-center cards-homepage-buttons pr-2 lg:gap-5 xl:gap-0">
+                            <button className="w-[85%] py-2 rounded-full text-lg bg-black text-white hover:bg-green-800">Book Now</button>
+                            <i className={`bx bx-bookmark ${Save.includes(index) ? 'bxs-bookmark' : 'bx-bookmark'} p-2 scale-125 rounded-full border border-black`} onClick={() => saveCards(index)}></i>
+                        </div>
+                    </div>
+                </div>
+            ))
+        ) : (
+            <div className="w-full h-[50vh] lg:h-[40vh] flex justify-center items-center gap-5 flex-col overflow-hidden">
+                <i className='bx bx-map-alt text-8xl'></i>
+                <h1 className="w-5/6 lg:w-[22%] text-center text-2xl">{`Sorry, This Location "${search}" Not Found`}</h1>
+            </div>
+        );
+    };
+
+    return (
         <section className="w-full lg:h-screen">
             <div className="w-full h-[9vh] lg:h-[15%] flex fixed lg:relative justify-center items-center bg-white z-50 shadow-2xl lg:shadow-transparent lg:px-6 xl:px-20">
                 <Header color={'Black'} />
             </div>
-            <div className="w-full h-[10vh] lg:hidden">
-
-            </div>
+            <div className="w-full h-[10vh] lg:hidden"></div>
             <div className="w-full h-full lg:px-6 xl:px-24">
                 <div className="w-full h-auto flex flex-wrap gap-3 lg:gap-0 py-7 px-5 lg:px-0 lg:border-t border-b">
                     <div className="w-full lg:w-4/6 h-full flex justify-between lg:justify-start items-center flex-wrap gap-2 lg:gap-5">
-                        <div className={`w-[45%] lg:w-auto flex flex-col gap-2 ${valide ? 'flex' : 'hidden'}`}>
-                            <h1 className="w-full text-lg">Location</h1>
-                            <div className="flex items-center gap-1 pl-4 pr-14 py-2 rounded-lg bg-gray">
-                                <i class='bx bx-map text-lg'></i>
-                                {liste.map((info, index) => (
-                                    index == liste.length - 1 && <h1 key={index}>{info.Location}</h1>
-                                ))}
-                            </div>
-                        </div>
-                        <div className={`w-[45%] lg:w-auto flex flex-col gap-2 ${valide ? 'flex' : 'hidden'}`}>
-                            <h1 className="w-full text-lg">Person</h1>
-                            <div className="flex items-center gap-1 pl-4 pr-14 py-2 rounded-lg bg-gray">
-                                <i class='bx bx-user text-lg'></i>
-                                {liste.map((info, index) => (
-                                    index === liste.length - 1 && <h1 key={index}>{info.Person}</h1>
-                                ))}
-
-                            </div>
-                        </div>
-                        <div className={`w-[45%] lg:w-auto flex flex-col gap-2 ${valide ? 'flex' : 'hidden'}`}>
-                            <h1 className="w-full text-lg">Check-in</h1>
-                            <div className="flex items-center gap-1 pl-4 pr-14 py-2 rounded-lg bg-gray">
-                                <i class='bx bx-calendar text-lg'></i>
-                                {liste.map((info, index) => (
-                                    index === liste.length - 1 && <h1 key={index}>{info.DateIn}</h1>
-                                ))}
-
-                            </div>
-                        </div>
-                        <div className={`w-[45%] lg:w-auto flex flex-col gap-2 ${valide ? 'flex' : 'hidden'}`}>
-                            <h1 className="w-full text-lg">Check-out</h1>
-                            <div className="flex items-center gap-2 pl-4 pr-14 py-2 rounded-lg bg-gray">
-                                <i class='bx bx-calendar text-lg'></i>
-                                {liste.map((info, index) => (
-                                    index === liste.length - 1 && <h1 key={index}>{info.DateOut}</h1>
-                                ))}
-
-                            </div>
-                        </div>
+                       
                     </div>
                     <div className="w-full lg:w-2/6 h-full flex justify-between items-end lg:gap-3 xl:gap-0">
                         <div className="w-[65%] sm:w-[75%] lg:w-[65%] h-full flex flex-col justify-between gap-2">
-                            <h1 className="w-full text-lg">Find spesific hotel</h1>
+                            <h1 className="w-full text-lg">Find specific hotel</h1>
                             <div className="w-full relative flex">
-                                <input type="text" placeholder="Find Hotel" value={search} onChange={handelchange} className="w-full px-6 py-2 z-30 rounded-full border bg-gray placeholder:text-gray-500 bg-transparent" />
+                                <input type="text" placeholder="Find Hotel" value={search} onChange={handleChange} className="w-full px-6 py-2 z-30 rounded-full border bg-gray placeholder:text-gray-500 bg-transparent" />
                                 <div className={`w-full h-full absolute flex justify-end items-center px-5 bg-transparent z-20 ${search ? 'hidden' : 'flex'}`}>
-                                    <i class='bx bx-search text-2xl text-gray-500'></i>
+                                    <i className='bx bx-search text-2xl text-gray-500'></i>
                                 </div>
                             </div>
                         </div>
                         <div className="flex justify-center items-center gap-2 px-7 py-2 rounded-full cursor-pointer text-lg bg-gray filter hover:bg-black hover:text-white">
-                            <i class='bx bx-book-bookmark'></i>
+                            <i className='bx bx-book-bookmark'></i>
                             <h1>Filter</h1>
                         </div>
                     </div>
                 </div>
                 <div className="w-full h-auto">
                     <div className="w-full py-5 px-5 lg:px-0 flex flex-col justify-center">
-                        <h1 className="text-2xl">Hotels In Jakarta,Indonisia</h1>
-                        <h1 className="text-gray-400">We Found <span className="text-black">250</span> Premuim Hotels</h1>
+                        <h1 className="text-2xl">Hotels In Jakarta, Indonesia</h1>
+                        <h1 className="text-gray-400">We Found <span className="text-black">250</span> Premium Hotels</h1>
                     </div>
-                    <div className={`w-full h-full flex flex-wrap gap-4 sm:gap-0 lg:gap-4 ${search ? 'justify-start' : 'justify-between'}`}>
-                        {NoteFound ?
-                            hotelfilter.map((item, index) => (
-                                <div key={index} className="w-full sm:w-[50%] lg:w-[32%] xl:w-[24%] h-[45vh] sm:h-[41vh] lg:mt-1 lg:mb-1 flex flex-col justify-between cursor-pointer Cards-section-2 p-3 lg:p-0">
-                                    <div className="w-full h-[68%] rounded-2xl cards-homepage-section-2 haja" style={{ backgroundImage: `url(${require(`../../Assets/${item.img}`)})` }}>
-                                        <div className="w-full h-full p-4">
-                                            <i class={`bx bx-heart p-2 scale-110 bg-white rounded-full ${Likes.includes(index) ? 'bxs-heart text-red-500' : 'bx-heart text-black'}`}
-                                                onClick={() => SaveLike(index)}></i>
-                                        </div>
-                                    </div>
-                                    <div className="w-full h-[28%] flex flex-wrap cards-homepage-info overflow-hidden gap-5">
-                                        <div className="w-full h-full flex flex-col justify-between">
-                                            <div className="w-full h-2/3 flex flex-col">
-                                                <h1 className="text-2xl lg:text-xl xl:text-2xl">{item.name}</h1>
-                                                <h1>{item.location}</h1>
-                                            </div>
-                                            <div className="w-full h-1/3 flex items-center gap-2">
-                                                <div className="flex gap-1  text-yellow-500">
-                                                    <i className='bx bxs-star'></i>
-                                                    <i className='bx bxs-star'></i>
-                                                    <i className='bx bxs-star'></i>
-                                                    <i className='bx bxs-star'></i>
-                                                    <i className='bx bxs-star'></i>
-                                                </div>
-                                                <h1 className="text-sm mt-[0.5vh]">({item.visitors})</h1>
-                                            </div>
-                                        </div>
-                                        <div className="w-full h-[40%] flex justify-between items-center cards-homepage-buttons pr-2 lg:gap-5 xl:gap-0">
-                                            <button className="w-[85%] py-2 rounded-full text-lg bg-black text-white hover:bg-green-800">Book Now</button>
-                                            <i class={`bx bx-bookmark ${Save.includes(index) ? 'bxs-bookmark' : 'bx-bookmark'} p-2 scale-125 rounded-full border border-black`}
-                                                onClick={() => SaveCards(index)}>
-                                            </i>
-                                        </div>
-                                    </div>
-                                </div>
-                            )) : (
-                                <div className="w-full h-[50vh] lg:h-[40vh] flex justify-center items-center gap-5 flex-col overflow-hidden">
-                                    <i class='bx bx-map-alt text-8xl'></i>
-                                    <h1 className="w-5/6 lg:w-[22%] text-center text-2xl">{`Sorry, This Location "${search}" Not Found`}</h1>
-                                </div>
-                            )}
+                    <div className={`w-full h-full flex flex-wrap gap-4 sm:gap-0 lg:gap-4 ${search || liste.length ? 'justify-start' : 'justify-between'}`}>
+                        {renderCards()}
                     </div>
                 </div>
             </div>
-        </section >
-    </>
+        </section>
+    );
 }

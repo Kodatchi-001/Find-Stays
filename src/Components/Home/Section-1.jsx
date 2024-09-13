@@ -10,7 +10,7 @@ export default function Section_1() {
     const [dateout, setdateout] = useState("2024-05-12");
     const { liste, setliste } = useContext(Listeinfo)
 
-    const Handelchangelocation = e => setlocation(e.target.value);
+    const Handelchangelocation = e => setlocation(e.target.value.toLowerCase());
     const Handelchangepreson = e => setperson(e.target.value);
     const Handelchangedatein = e => setdatein(e.target.value);
     const Handelchangedateout = e => setdateout(e.target.value);
