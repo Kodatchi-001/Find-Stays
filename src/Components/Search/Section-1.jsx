@@ -3,7 +3,8 @@ import Header from "../Header/Header";
 import { Listeinfo } from "../utils/Liste-info";
 
 export default function Section_1() {
-    const [search, setSearch] = useState('');
+    const [inputvalue, setinputvalue] = useState('')
+    const [Search, setSearch] = useState('');
     const [Likes, setLikes] = useState([]);
     const [Save, setSave] = useState([]);
     const [NoteFound, setNoteFound] = useState(false);
@@ -36,13 +37,14 @@ export default function Section_1() {
         { name: "Royal Palace Hotel", img: 'Card-23-Section-2-HomePage.jpeg', location: "London, UK", visitors: "1280 Visitors" },
     ];
 
-    const handleChange = e => setSearch(e.target.value.toLowerCase());
+    const handleChange = e => setinputvalue(e.target.value.toLowerCase());
+    const Savevalue = () => setSearch(inputvalue)
     const saveLike = index => setLikes(itemsLikes => itemsLikes.includes(index) ? Likes.filter(i => i !== index) : [...itemsLikes, index]);
     const saveCards = index => setSave(itemsSave => itemsSave.includes(index) ? Save.filter(i => i !== index) : [...itemsSave, index]);
 
     const filterCards = () => {
         const lastLocation = liste[liste.length - 1]?.Location.toLowerCase() || '';
-        const filteredBySearch = hotelCards.filter(item => item.location.toLowerCase().includes(search));
+        const filteredBySearch = hotelCards.filter(item => item.location.toLowerCase().includes(Search));
         const filteredByLocation = lastLocation ? filteredBySearch.filter(item => item.location.toLowerCase().includes(lastLocation)) : filteredBySearch;
         return filteredByLocation;
     };
@@ -50,7 +52,7 @@ export default function Section_1() {
     useEffect(() => {
         const filtered = filterCards();
         setNoteFound(filtered.length > 0);
-    }, [search, liste]);
+    }, [Search, liste]);
 
     const renderCards = () => {
         const filteredCards = filterCards();
@@ -89,7 +91,7 @@ export default function Section_1() {
         ) : (
             <div className="w-full h-[50vh] lg:h-[40vh] flex justify-center items-center gap-5 flex-col overflow-hidden">
                 <i className='bx bx-map-alt text-8xl'></i>
-                <h1 className="w-5/6 lg:w-[22%] text-center text-2xl">{`Sorry, This Location "${search}" Not Found`}</h1>
+                <h1 className="w-5/6 lg:w-[22%] text-center text-2xl">{`Sorry, This Location "${Search}" Not Found`}</h1>
             </div>
         );
     };
@@ -103,19 +105,20 @@ export default function Section_1() {
             <div className="w-full h-full lg:px-6 xl:px-24">
                 <div className="w-full h-auto flex flex-wrap gap-3 lg:gap-0 py-7 px-5 lg:px-0 lg:border-t border-b">
                     <div className="w-full lg:w-4/6 h-full flex justify-between lg:justify-start items-center flex-wrap gap-2 lg:gap-5">
-                       
+
                     </div>
-                    <div className="w-full lg:w-2/6 h-full flex justify-between items-end lg:gap-3 xl:gap-0">
-                        <div className="w-[65%] sm:w-[75%] lg:w-[65%] h-full flex flex-col justify-between gap-2">
+                    <div className="w-full lg:w-2/6 h-full flex justify-between items-end lg:gap-3 xl:gap-1">
+                        <div className="w-[65%] sm:w-[75%] lg:w-[70%] h-full flex flex-col justify-between gap-2">
                             <h1 className="w-full text-lg">Find specific hotel</h1>
                             <div className="w-full relative flex">
-                                <input type="text" placeholder="Find Hotel" value={search} onChange={handleChange} className="w-full px-6 py-2 z-30 rounded-full border bg-gray placeholder:text-gray-500 bg-transparent" />
-                                <div className={`w-full h-full absolute flex justify-end items-center px-5 bg-transparent z-20 ${search ? 'hidden' : 'flex'}`}>
+                                <input type="text" placeholder="Find Hotel" onChange={handleChange} className="w-full px-6 py-2 z-30 rounded-full border bg-gray placeholder:text-gray-500 bg-transparent" />
+                                <div className={`w-full h-full absolute flex justify-end items-center px-5 bg-transparent z-20 ${Search ? 'hidden' : 'flex'}`}>
                                     <i className='bx bx-search text-2xl text-gray-500'></i>
                                 </div>
                             </div>
                         </div>
-                        <div className="flex justify-center items-center gap-2 px-7 py-2 rounded-full cursor-pointer text-lg bg-gray filter hover:bg-black hover:text-white">
+                        <div className="flex justify-center items-center gap-2 px-7 py-2 rounded-full cursor-pointer text-lg bg-gray filter hover:bg-black hover:text-white"
+                            onClick={Savevalue}>
                             <i className='bx bx-book-bookmark'></i>
                             <h1>Filter</h1>
                         </div>
@@ -126,7 +129,7 @@ export default function Section_1() {
                         <h1 className="text-2xl">Hotels In Jakarta, Indonesia</h1>
                         <h1 className="text-gray-400">We Found <span className="text-black">250</span> Premium Hotels</h1>
                     </div>
-                    <div className={`w-full h-full flex flex-wrap gap-4 sm:gap-0 lg:gap-4 ${search || liste.length ? 'justify-start' : 'justify-between'}`}>
+                    <div className={`w-full h-full flex flex-wrap gap-4 sm:gap-0 lg:gap-4 ${Search || liste.length ? 'justify-start' : 'justify-between'}`}>
                         {renderCards()}
                     </div>
                 </div>
