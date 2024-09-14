@@ -37,7 +37,9 @@ header li:first-child:after {
     width: 100%;
 }
 
-header button,.filter {
+button,
+.filter,
+i {
     transition: 0.6s;
 }
 
@@ -128,7 +130,6 @@ header button,.filter {
     background-position: center;
 }
 
-
 .Cards-section-2,
 .cards-homepage-section-2,
 .cards-homepage-info,
@@ -136,7 +137,7 @@ header button,.filter {
     transition: 0.8s ease;
 }
 
-.Cards-section-2 button {
+.button-link {
     transition: 0.5s ease;
 }
 
@@ -173,6 +174,31 @@ header button,.filter {
     background: linear-gradient(to right, rgba(0, 0, 0, 0.763), transparent 50%, rgba(0, 0, 0, 0.763));
 }
 
-.haja{
+.Background-cards {
     background-size: cover;
+}
+
+/*Booking*/
+#Card-1-chambre-1 {
+    background-image: url(../Assets/Card-1-chambre-1.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+#Card-1-chambre-2 {
+    background-image: url(../Assets/Card-1-chambre-2.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+#Card-1-chambre-3 {
+    background-image: url(../Assets/Card-1-chambre-3.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+#Card-1-chambre-4 {
+    background-image: url(../Assets/Card-1-chambre-4.jpeg);
+    background-size: cover;
+    background-position: center;
 }

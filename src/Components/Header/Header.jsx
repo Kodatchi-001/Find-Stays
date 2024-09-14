@@ -12,6 +12,9 @@ export default function Header(Props) {
             case '/Search':
                 setlinks('Search')
                 break;
+            case '/Booking':
+                setlinks('Search')
+                break;
             default:
                 setlinks('')
                 break;

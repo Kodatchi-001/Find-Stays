@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import Header from "../Header/Header";
-import { Listeinfo } from "../utils/Liste-info";
+import { Listeinfo } from "../../utils/Liste-info";
 import { Link } from 'react-router-dom';
 
 export default function Section_1() {
