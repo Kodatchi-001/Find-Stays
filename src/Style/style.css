@@ -7,6 +7,10 @@
 }
 
 /*Header*/
+header, header div {
+    transition: 0.8s ease;
+}
+
 header li:first-child:after {
     content: '';
     background-color: white;
@@ -201,4 +205,8 @@ i {
     background-image: url(../Assets/Card-1-chambre-4.jpeg);
     background-size: cover;
     background-position: center;
+}
+
+.overflow-x-scroll::-webkit-scrollbar {
+    display: none;
 }

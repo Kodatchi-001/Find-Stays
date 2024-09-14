@@ -14,6 +14,6 @@ export default function HomePage() {
         <Section_2 />
         <Section_3 />
         <Section_4 />
-        <Footer background={'black'} background_2={'white'} />
+        <Footer background={'black'} background_2={'white'}/>
     </>
 }

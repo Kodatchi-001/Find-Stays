@@ -88,7 +88,7 @@ export default function Section_1() {
                             </div>
                         </div>
                         <div className="w-full h-[40%] flex justify-between items-center cards-homepage-buttons pr-2 lg:gap-5 xl:gap-0">
-                            <Link to= "/Booking" className="w-[85%] flex justify-center py-2 rounded-full text-lg bg-black text-white hover:bg-green-800 button-link">Book Now</Link>
+                            <Link to="/Booking" className="w-[85%] flex justify-center py-2 rounded-full text-lg bg-black text-white hover:bg-green-800 button-link">Book Now</Link>
                             <i className={`bx bx-bookmark ${Save.includes(index) ? 'bxs-bookmark' : 'bx-bookmark'} p-2 scale-125 rounded-full border border-black`} onClick={() => saveCards(index)}></i>
                         </div>
                     </div>
@@ -103,12 +103,10 @@ export default function Section_1() {
     };
 
     return (
-        <section className="w-full lg:h-screen">
-            <div className="w-full h-[9vh] lg:h-[15%] flex fixed lg:relative justify-center items-center bg-white z-50 shadow-2xl lg:shadow-transparent lg:px-6 xl:px-20">
-                <Header color={'Black'} />
-            </div>
+        <section className="w-full lg:h-screen lg:px-6 xl:px-24">
+            <Header color={'Black'} />
             <div className="w-full h-[10vh] lg:hidden"></div>
-            <div className="w-full h-full lg:px-6 xl:px-24">
+            <div className="w-full h-full">
                 <div className="w-full h-auto flex flex-wrap gap-3 lg:gap-0 py-7 px-5 lg:px-0 lg:border-t border-b">
                     <div className="w-full lg:w-4/6 h-full flex justify-between lg:justify-start items-center flex-wrap gap-2 lg:gap-5">
                         <div className={`w-[45%] lg:w-auto flex flex-col gap-2 ${valide ? 'flex' : 'hidden'}`}>

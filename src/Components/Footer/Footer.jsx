@@ -20,7 +20,7 @@ export default function Footer(Props) {
         }
     }, [Links]);
     return <>
-        <footer className={`w-full lg:h-[50vh] px-3 lg:p-5 lg:pt-8 bg-${Props.background}`}>
+        <footer className={`w-full lg:h-[50vh] px-3 lg:pt-8 bg-${Props.background}`}>
             <div className={`w-full h-full flex flex-wrap lg:p-5 lg:py-6 bg-${Props.background_2} rounded-3xl`}>
                 <div className="w-1/2 h-full lg:flex justify-around hidden">
                     <ul className="w-1/6 h-full flex flex-col gap-2 text-lg">

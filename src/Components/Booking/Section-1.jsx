@@ -4,12 +4,10 @@ import { Link } from "react-router-dom";
 
 export default function Section_1() {
     return <>
-        <section className="w-full lg:h-screen">
-            <div className="w-full h-[9vh] lg:h-[15%] flex fixed lg:relative justify-center items-center bg-white z-50 shadow-2xl lg:shadow-transparent lg:px-6 xl:px-20">
-                <Header color={'Black'} />
-            </div>
+        <section className="w-full lg:h-screen lg:px-24">
+            <Header color={'Black'} />
             <div className="w-full h-[10vh] lg:hidden"></div>
-            <div className="w-full lg:px-6 xl:px-24">
+            <div className="w-full">
                 <div className="w-full h-full flex flex-wrap gap-3 lg:gap-0 pt-7 px-5 lg:px-0 lg:border-t">
                     <div className="w-full py-8">
                         <div className="lg:w-1/6 h-full flex lg:justify-center items-center gap-5">
@@ -93,8 +91,8 @@ export default function Section_1() {
                     </div>
                 </div>
             </div>
-            <div className="w-full lg:px-20 mt-6 lg:mt-0">
-                <Footer background={'white'} background_2={'black'} />
+            <div className="w-full mt-6 lg:mt-0 mb-5 lg:mb-0">
+                <Footer background={'white'} background_2={'black'}/>
             </div>
         </section>
     </>
