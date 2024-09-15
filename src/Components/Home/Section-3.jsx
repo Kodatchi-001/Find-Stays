@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
 
 export default function Section_3() {
     const [search, setsearch] = useState('');
@@ -65,7 +66,7 @@ export default function Section_3() {
                                         </div>
                                     </div>
                                     <div className="w-full h-[40%] flex justify-between items-center cards-homepage-buttons pr-2 lg:gap-5 xl:gap-0">
-                                        <button className="w-[85%] py-2 rounded-full text-lg bg-black text-white hover:bg-green-800">Book Now</button>
+                                        <Link to="/Search" className="w-[85%] text-center py-2 rounded-full text-lg bg-black text-white hover:bg-green-800">Book Now</Link>
                                         <i class={`bx bx-bookmark ${Save.includes(index) ? 'bxs-bookmark' : 'bx-bookmark'} p-2 scale-125 rounded-full border border-black`}
                                             onClick={() => SaveCards(index)}>
                                         </i>

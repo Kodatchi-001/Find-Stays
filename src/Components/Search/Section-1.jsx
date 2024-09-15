@@ -10,33 +10,22 @@ export default function Section_1() {
     const [Save, setSave] = useState([]);
     const [NoteFound, setNoteFound] = useState(false);
     const { liste } = useContext(Listeinfo);
+    const { listeindex, setlisteindex } = useContext(Listeinfo);
     const [valide, setvalide] = useState(false)
 
     const hotelCards = [
-        { name: "Emerald Valley Lodge", img: 'Card-0-Section-2-HomePage.jpeg', location: "New Zealand, Australia", visitors: "7612 Visitors" },
-        { name: "Golden Horizon Hotel", img: 'Card-1-Section-2-HomePage.jpeg', location: "New York, USA", visitors: "212 Visitors" },
-        { name: "Whispering Pines Retreat", img: 'Card-2-Section-2-HomePage.jpeg', location: "Malang, Indonesia", visitors: "8127 Visitors" },
-        { name: "Paradise Cove Retreat", img: 'Card-3-Section-2-HomePage.jpeg', location: "Tokyo, Japan", visitors: "237 Visitors" },
-        { name: "Sunset Vista Resort", img: 'Card-4-Section-2-HomePage.jpeg', location: "Jakarta, Indonesia", visitors: "493 Visitors" },
-        { name: "Enchanted Meadows", img: 'Card-5-Section-2-HomePage.jpeg', location: "Kuala Lumpur, Malaysia", visitors: "101 Visitors" },
-        { name: "Mystic Falls Lodge", img: 'Card-6-Section-2-HomePage.jpeg', location: "Sydney, Australia", visitors: "1234 Visitors" },
-        { name: "Serenity Bay Hotel", img: 'Card-7-Section-2-HomePage.jpeg', location: "San Francisco, USA", visitors: "789 Visitors" },
-        { name: "Lakeside Inn", img: 'Card-8-Section-2-HomePage.jpeg', location: "Lake Tahoe, USA", visitors: "320 Visitors" },
-        { name: "Mountain View Lodge", img: 'Card-9-Section-2-HomePage.jpeg', location: "Aspen, USA", visitors: "450 Visitors" },
-        { name: "Ocean Breeze Resort", img: 'Card-10-Section-2-HomePage.jpeg', location: "Miami, USA", visitors: "1025 Visitors" },
-        { name: "Urban Chic Hotel", img: 'Card-11-Section-2-HomePage.jpeg', location: "Paris, France", visitors: "1500 Visitors" },
-        { name: "Historic Grand Hotel", img: 'Card-12-Section-2-HomePage.jpeg', location: "Rome, Italy", visitors: "2048 Visitors" },
-        { name: "Sunrise Haven", img: 'Card-13-Section-2-HomePage.jpeg', location: "Bali, Indonesia", visitors: "678 Visitors" },
-        { name: "Desert Oasis Inn", img: 'Card-14-Section-2-HomePage.jpeg', location: "Dubai, UAE", visitors: "943 Visitors" },
-        { name: "Highland Retreat", img: 'Card-15-Section-2-HomePage.jpeg', location: "Edinburgh, Scotland", visitors: "850 Visitors" },
-        { name: "Coastal Paradise Hotel", img: 'Card-16-Section-2-HomePage.jpeg', location: "Cape Town, South Africa", visitors: "1324 Visitors" },
-        { name: "Cityscape Suites", img: 'Card-17-Section-2-HomePage.jpeg', location: "Hong Kong, China", visitors: "2200 Visitors" },
-        { name: "Lagoon View Resort", img: 'Card-18-Section-2-HomePage.jpeg', location: "Maldives", visitors: "1890 Visitors" },
-        { name: "Alpine Lodge", img: 'Card-19-Section-2-HomePage.jpeg', location: "Zurich, Switzerland", visitors: "775 Visitors" },
-        { name: "Serenity Springs Inn", img: 'Card-20-Section-2-HomePage.jpeg', location: "Vancouver, Canada", visitors: "410 Visitors" },
-        { name: "Island Breeze Hotel", img: 'Card-21-Section-2-HomePage.jpeg', location: "Fiji", visitors: "998 Visitors" },
-        { name: "Tropical Escape Resort", img: 'Card-22-Section-2-HomePage.jpeg', location: "Cancun, Mexico", visitors: "850 Visitors" },
-        { name: "Royal Palace Hotel", img: 'Card-23-Section-2-HomePage.jpeg', location: "London, UK", visitors: "1280 Visitors" },
+        { id: 0, name: "Emerald Valley Lodge", img: 'Card-0-Section-2-HomePage.jpeg', location: "New Zealand, Australia", visitors: "7612 Visitors" },
+        { id: 1, name: "Golden Horizon Hotel", img: 'Card-1-Section-2-HomePage.jpeg', location: "New York, USA", visitors: "212 Visitors" },
+        { id: 2, name: "Whispering Pines Retreat", img: 'Card-2-Section-2-HomePage.jpeg', location: "Malang, Indonesia", visitors: "8127 Visitors" },
+        { id: 3, name: "Paradise Cove Retreat", img: 'Card-3-Section-2-HomePage.jpeg', location: "Tokyo, Japan", visitors: "237 Visitors" },
+        { id: 4, name: "Sunset Vista Resort", img: 'Card-4-Section-2-HomePage.jpeg', location: "Jakarta, Indonesia", visitors: "493 Visitors" },
+        { id: 5, name: "Enchanted Meadows", img: 'Card-5-Section-2-HomePage.jpeg', location: "Kuala Lumpur, Malaysia", visitors: "101 Visitors" },
+        { id: 6, name: "Mystic Falls Lodge", img: 'Card-6-Section-2-HomePage.jpeg', location: "Sydney, Australia", visitors: "1234 Visitors" },
+        { id: 7, name: "Serenity Bay Hotel", img: 'Card-7-Section-2-HomePage.jpeg', location: "San Francisco, USA", visitors: "789 Visitors" },
+        { id: 8, name: "Lakeside Inn", img: 'Card-8-Section-2-HomePage.jpeg', location: "Lake Tahoe, USA", visitors: "320 Visitors" },
+        { id: 9, name: "Mountain View Lodge", img: 'Card-9-Section-2-HomePage.jpeg', location: "Aspen, USA", visitors: "450 Visitors" },
+        { id: 10, name: "Ocean Breeze Resort", img: 'Card-10-Section-2-HomePage.jpeg', location: "Miami, USA", visitors: "1025 Visitors" },
+        { id: 11, name: "Urban Chic Hotel", img: 'Card-11-Section-2-HomePage.jpeg', location: "Paris, France", visitors: "1500 Visitors" }
     ];
 
     const handleChange = e => setinputvalue(e.target.value.toLowerCase());
@@ -59,6 +48,8 @@ export default function Section_1() {
     useEffect(() => {
         liste.length > 0 ? setvalide(true) : setvalide(false)
     }, [liste])
+
+    const SendIndex = index => setlisteindex([...listeindex, index])
 
     const renderCards = () => {
         const filteredCards = filterCards();
@@ -88,7 +79,7 @@ export default function Section_1() {
                             </div>
                         </div>
                         <div className="w-full h-[40%] flex justify-between items-center cards-homepage-buttons pr-2 lg:gap-5 xl:gap-0">
-                            <Link to="/Booking" className="w-[85%] flex justify-center py-2 rounded-full text-lg bg-black text-white hover:bg-green-800 button-link">Book Now</Link>
+                            <Link to="/Booking" onClick={() => SendIndex(item.id)} className="w-[85%] flex justify-center py-2 rounded-full text-lg bg-black text-white hover:bg-green-800 button-link">Book Now</Link>
                             <i className={`bx bx-bookmark ${Save.includes(index) ? 'bxs-bookmark' : 'bx-bookmark'} p-2 scale-125 rounded-full border border-black`} onClick={() => saveCards(index)}></i>
                         </div>
                     </div>
@@ -168,8 +159,8 @@ export default function Section_1() {
                 </div>
                 <div className="w-full h-auto">
                     <div className="w-full py-5 px-5 lg:px-0 flex flex-col justify-center">
-                        <h1 className="text-2xl">Hotels In Jakarta, Indonesia</h1>
-                        <h1 className="text-gray-400">We Found <span className="text-black">250</span> Premium Hotels</h1>
+                        <h1 className="text-2xl">Explore the Best Luxury Hotels</h1>
+                        <h1 className="text-gray-400">We Found <span className="text-black">{hotelCards.length}</span> Premium Hotels</h1>
                     </div>
                     <div className={`w-full h-full flex flex-wrap gap-4 sm:gap-0 lg:gap-4 ${Search || liste.length ? 'justify-start' : 'justify-between'}`}>
                         {renderCards()}
