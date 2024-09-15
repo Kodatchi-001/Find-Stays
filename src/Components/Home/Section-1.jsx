@@ -6,30 +6,24 @@ import { Link } from 'react-router-dom';
 export default function Section_1() {
     const [location, setlocation] = useState('')
     const [person, setperson] = useState(0)
-    const [datein, setdatein] = useState("2024-03-09");
-    const [dateout, setdateout] = useState("2024-05-12");
+    const [Date_in, setdate_in] = useState("2024-03-09");
+    const [Date_out, setdate_out] = useState("2024-05-12");
     const { liste, setliste } = useContext(Listeinfo)
-
+    /*-------------------------------------------------*/
     const Handelchangelocation = e => setlocation(e.target.value.toLowerCase());
     const Handelchangepreson = e => setperson(e.target.value);
-    const Handelchangedatein = e => setdatein(e.target.value);
-    const Handelchangedateout = e => setdateout(e.target.value);
-
+    const Handelchangedatein = e => setdate_in(e.target.value);
+    const Handelchangedateout = e => setdate_out(e.target.value);
+    /*-------------------------------------------------*/
     const SendInfo = () => {
         if (location.trim('') == "" || person <= 0) {
             return
         }
-        const Hotel = {
-            Location: location,
-            Person: person,
-            DateIn: datein,
-            DateOut: dateout
-        }
+        const Hotel = { Location: location, Person: person, DateIn: Date_in, DateOut: Date_out }
         setliste([...liste, Hotel]);
         setlocation('');
         setperson(0)
     }
-
     return <>
         <section className="w-full h-screen HomePage-Background" id="HomePage">
             <div className="w-full h-full flex flex-col justify-between bg-black-blur lg:px-6 xl:px-20">
@@ -91,10 +85,15 @@ export default function Section_1() {
                                         <select className="w-full h-full px-5 bg-transparent text-lg lg:text-xl focus:outline-none text-black"
                                             value={person} onChange={Handelchangepreson}>
                                             <option>Person</option>
+                                            <option value="1">1</option>
                                             <option value="2">2</option>
+                                            <option value="3">3</option>
                                             <option value="4">4</option>
+                                            <option value="5">5</option>
                                             <option value="6">6</option>
+                                            <option value="7">7</option>
                                             <option value="8">8</option>
+                                            <option value="9">9</option>
                                             <option value="10">10</option>
                                         </select>
                                     </div>
@@ -109,7 +108,7 @@ export default function Section_1() {
                                     <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Check-in</h1>
                                 </div>
                                 <div className="w-full h-[65%]">
-                                    <input type="date" className="w-full h-full px-2 lg:px-5 rounded-xl text-black bg-gray text-lg" value={datein} onChange={Handelchangedatein} />
+                                    <input type="date" className="w-full h-full px-2 lg:px-5 rounded-xl text-black bg-gray text-lg" value={Date_in} onChange={Handelchangedatein} />
                                 </div>
                             </div>
                             <div className="w-1/2 lg:w-1/4 h-[45%] lg:h-full flex flex-col justify-between px-2 lg:px-5 mt-1 lg:mt-0">
@@ -118,14 +117,14 @@ export default function Section_1() {
                                     <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Check-out</h1>
                                 </div>
                                 <div className="w-full h-[65%]">
-                                    <input type="date" className="w-full h-full px-2 lg:px-5 rounded-xl text-black bg-gray text-lg" value={dateout} onChange={Handelchangedateout} />
+                                    <input type="date" className="w-full h-full px-2 lg:px-5 rounded-xl text-black bg-gray text-lg" value={Date_out} onChange={Handelchangedateout} />
                                 </div>
                             </div>
                         </div>
                         <div className="w-full lg:w-1/6 h-[30%] lg:h-full flex flex-col justify-center lg:justify-end px-2 lg:px-0">
                             <div className="w-full h-5/6 lg:h-[70%] pt-[0.38rem] flex justify-center">
                                 <Link to="/Search" className="w-full lg:w-[90%] h-full flex justify-center items-center text-xl bg-black text-white rounded-xl border"
-                                    onClick={SendInfo} >Search</Link>
+                                    onClick={SendInfo}>Search</Link>
                             </div>
                         </div>
                     </div>

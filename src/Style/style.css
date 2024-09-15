@@ -215,3 +215,9 @@ i {
     background-size: cover;
     background-position: center;
 }
+
+.Card-Booking{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
