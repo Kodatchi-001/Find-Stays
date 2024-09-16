@@ -18,7 +18,6 @@ export default function Section_1() {
                                 with a focus on quality service and your satisfaction. Discover our story and what makes us unique
                                 in the world of hospitality.
                             </p>
-
                         </div>
                     </div>
                 </div>

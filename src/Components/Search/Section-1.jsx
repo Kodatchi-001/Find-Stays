@@ -85,7 +85,7 @@ export default function Section_1() {
         );
     };
     return (
-        <section className="w-full lg:h-screen lg:px-6 xl:px-24">
+        <section className="w-full lg:h-screen lg:px-6 xl:px-20">
             <Header color={'Black'} />
             <div className="w-full h-[10vh] lg:hidden"></div>
             <div className="w-full h-full">

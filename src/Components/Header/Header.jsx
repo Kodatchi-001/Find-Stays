@@ -35,11 +35,10 @@ export default function Header(Props) {
                     <h1 className="text-2xl">FindStays</h1>
                 </div>
                 <div className="w-1/2 h-full lg:flex justify-end items-center hidden">
-                    <ul className={`lg:w-[95%] xl:w-[80%] h-full flex justify-between items-center text-[1.1rem] text-${Props.color}`}>
+                    <ul className={`lg:w-[95%] xl:w-[65%] h-full flex justify-between items-center text-[1.1rem] text-${Props.color}`}>
                         <Link to="/" className={`links ${Links == 'HomePage' ? 'link-line' : ''}`}>Home</Link>
-                        <Link to="/Search" className={`links ${Links == 'Search' ? 'link-line' : ''}`}>Search</Link>
                         <Link to="/About" className={`links ${Links == 'About' ? 'link-line' : ''}`}>About</Link>
-                        <Link to="/" className="links">Blog</Link>
+                        <Link to="/Search" className={`links ${Links == 'Search' ? 'link-line' : ''}`}>Search</Link>
                         <button className={`px-7 py-2 text-${Props.color} border ${Links == 'Search' ? 'border-black' : 'border-white'} rounded-full hover:bg-white hover:text-black`}>
                             Register
                         </button>
@@ -53,9 +52,8 @@ export default function Header(Props) {
             <div className={`w-full ${Size ? 'h-1/2' : 'h-full'} px-4 lg:hidden`}>
                 <ul className={`w-full h-full flex justify-between items-center text-[1.1rem] text-black lg:text-${Props.color}`}>
                     <Link to="/" className={`links ${Links == 'HomePage' ? 'link-line' : ''}`}>Home</Link>
-                    <Link to="/Search" className={`links ${Links == 'Search' ? 'link-line' : ''}`}>Search</Link>
                     <Link to="/About" className={`links ${Links == 'About' ? 'link-line' : ''}`}>About</Link>
-                    <Link to="/" className="links">Blog</Link>
+                    <Link to="/Search" className={`links ${Links == 'Search' ? 'link-line' : ''}`}>Search</Link>
                     <button className={`text-black lg:text-${Props.color} ${Links == 'Search' ? 'border-black' : 'border-white'}`}>
                         Register
                     </button>
