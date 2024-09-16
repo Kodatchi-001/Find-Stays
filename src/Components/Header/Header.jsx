@@ -16,6 +16,9 @@ export default function Header(Props) {
             case '/Booking':
                 setlinks('Search')
                 break;
+            case '/About':
+                setlinks('About')
+                break;
             default:
                 setlinks('')
                 break;
@@ -35,8 +38,8 @@ export default function Header(Props) {
                     <ul className={`lg:w-[95%] xl:w-[80%] h-full flex justify-between items-center text-[1.1rem] text-${Props.color}`}>
                         <Link to="/" className={`links ${Links == 'HomePage' ? 'link-line' : ''}`}>Home</Link>
                         <Link to="/Search" className={`links ${Links == 'Search' ? 'link-line' : ''}`}>Search</Link>
+                        <Link to="/About" className={`links ${Links == 'About' ? 'link-line' : ''}`}>About</Link>
                         <Link to="/" className="links">Blog</Link>
-                        <Link to="/" className="links">About</Link>
                         <button className={`px-7 py-2 text-${Props.color} border ${Links == 'Search' ? 'border-black' : 'border-white'} rounded-full hover:bg-white hover:text-black`}>
                             Register
                         </button>
@@ -51,8 +54,8 @@ export default function Header(Props) {
                 <ul className={`w-full h-full flex justify-between items-center text-[1.1rem] text-black lg:text-${Props.color}`}>
                     <Link to="/" className={`links ${Links == 'HomePage' ? 'link-line' : ''}`}>Home</Link>
                     <Link to="/Search" className={`links ${Links == 'Search' ? 'link-line' : ''}`}>Search</Link>
+                    <Link to="/About" className={`links ${Links == 'About' ? 'link-line' : ''}`}>About</Link>
                     <Link to="/" className="links">Blog</Link>
-                    <Link to="/" className="links">About</Link>
                     <button className={`text-black lg:text-${Props.color} ${Links == 'Search' ? 'border-black' : 'border-white'}`}>
                         Register
                     </button>

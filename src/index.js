@@ -7,8 +7,10 @@ import "./Style/style.css";
 //Import Pages
 import HomePage from './Pages/Home';
 import Search from './Pages/Search';
-import { ListeProvider } from './utils/Liste-info';
 import Booking from './Pages/Booking';
+import About from './Pages/About';
+/*-----------*/
+import { ListeProvider } from './utils/Liste-info';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +21,7 @@ root.render(
           <Route path='/' element={<HomePage />} />
           <Route path='/Search' element={<Search />} />
           <Route path='/Booking' element={<Booking/>}/>
+          <Route path='/About' element={<About/>}/>
         </Routes>
       </BrowserRouter>
     </ListeProvider>

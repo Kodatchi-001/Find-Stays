@@ -56,7 +56,7 @@ i {
 }
 
 .bg-black-blur {
-    background-color: #00000074;
+    background-color: #0000008b;
 }
 
 .cards-homepage {
@@ -220,4 +220,12 @@ i {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+/*AboutPage*/
+.AboutPage-Background {
+    background-image: url(../Assets/Background-AboutPage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
 }
