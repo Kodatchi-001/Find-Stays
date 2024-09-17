@@ -39,7 +39,7 @@ export default function Header(Props) {
                         <Link to="/" className={`links ${Links == 'HomePage' ? 'link-line' : ''}`}>Home</Link>
                         <Link to="/About" className={`links ${Links == 'About' ? 'link-line' : ''}`}>About</Link>
                         <Link to="/Search" className={`links ${Links == 'Search' ? 'link-line' : ''}`}>Search</Link>
-                        <button className={`px-7 py-2 text-${Props.color} border ${Links == 'Search' ? 'border-black' : 'border-white'} rounded-full hover:bg-white hover:text-black`}>
+                        <button className={`px-7 py-2 text-${Props.color} border ${Links == 'HomePage' ? 'border-white hover:bg-white hover:text-black' : 'border-black hover:bg-black hover:text-white'} rounded-full`}>
                             Register
                         </button>
                     </ul>

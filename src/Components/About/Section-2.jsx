@@ -1,26 +1,62 @@
+import icone_1 from "../../Assets/icone-1.png";
+import icone_2 from "../../Assets/icone-2.png";
+import icone_3 from "../../Assets/icone-3.png";
+import icone_4 from "../../Assets/icone-4.png";
+import icone_5 from "../../Assets/icone-5.png";
+import icone_6 from "../../Assets/icone-6.png";
+
 export default function Section_2() {
     return <>
-        <section className="w-full lg:h-screen px-1 lg:px-8 xl:px-24 flex items-center flex-wrap gap-8 lg:gap-0">
-            <div className="w-full lg:w-1/2 h-4/6 flex flex-col pt-20 lg:pt-10 gap-2 lg:gap-8 items-center lg:items-start text-center lg:text-start">
-                <h1 className="text-lg text-[#f0b797]">WELCOME TO FIND STAYS</h1>
-                <h1 className="w-full lg:w-[75%] text-[2.50rem] lg:text-5xl">We Are The Best Host For Your Comfort</h1>
-                <div className="w-[95%] lg:w-[78%] flex flex-wrap gap-5">
-                    <p>
-                        At Sind Stays, we have redefined luxury in accommodation with an
-                        innovative approach. Our platform offers a seamless way to discover top-notch
-                        hotels that elevate your travel experience.
-                    </p>
-                    <p>
-                        Experience exceptional comfort and elegance in our curated selection
-                        of hotels. Each option is chosen to ensure your stay is both luxurious
-                        and memorable.
-                    </p>
+        <section className="w-full lg:h-[90vh] p-5 px-2 lg:p-9 mt-16 lg:mt-0 text-white bg-black">
+            <div className="w-full h-full flex justify-center lg:justify-start flex-wrap gap-8 lg:gap-0">
+                <div className="w-full lg:w-1/2 h-1/2 flex flex-col justify-center items-center lg:items-start xl:pl-16 gap-1 lg:gap-5">
+                    <h1 className="text-lg text-[#f0b797]">AMENITIES</h1>
+                    <h1 className="w-full text-center lg:text-start text-[2.50rem] lg:text-5xl">Make your vacation unforgettable</h1>
                 </div>
-                <button className="px-8 py-2 bg-[#f0b797] text-white rounded-full">Book Now</button>
-            </div>
-            <div className="w-full lg:w-1/2 h-5/6 flex justify-between items-center flex-wrap lg:flex-nowrap px-2 lg:px-0 gap-5 lg:gap-8">
-                <div className="w-full sm:w-[48%] lg:w-[48%] h-[50vh] lg:h-4/6 lg:mt-36 cards-About-1 rounded-xl lg:hover:scale-90"></div>
-                <div className="w-full sm:w-[48%] lg:w-[48%] h-[50vh] lg:h-4/6 lg:mt-[-10vh] cards-About-2 rounded-xl lg:hover:scale-90"></div>
+                <div className="w-full lg:w-1/2 h-1/2 flex justify-between lg:justify-center items-center gap-24">
+                    <div className="w-1/2 lg:w-1/3 h-1/2 flex flex-col justify-center items-center lg:items-start gap-5">
+                        <div className="w-1/4">
+                            <img src={icone_1} className="w-full h-full" />
+                        </div>
+                        <h1 className="w-full text-center lg:text-start lg:w-4/6 text-2xl">Top-Rated Hotels</h1>
+                    </div>
+                    <div className="w-1/2 lg:w-1/3 h-1/2 flex flex-col justify-center items-center lg:items-start gap-5">
+                        <div className="w-1/4">
+                            <img src={icone_2} className="w-full h-full" />
+                        </div>
+                        <h1 className="w-full text-center lg:text-start lg:w-4/6 text-2xl">Detailed Hotel Reviews</h1>
+                    </div>
+                </div>
+                <div className="w-full h-1/2 flex flex-wrap gap-5 lg:gap-0">
+                    <div className="w-full lg:w-1/2 h-full flex jjustify-between lg:justify-center items-center gap-24">
+                        <div className="w-1/2 lg:w-1/3 h-1/2 flex flex-col justify-center items-center lg:items-start gap-5">
+                            <div className="w-1/4 scale-90">
+                                <img src={icone_3} className="w-full h-full" />
+                            </div>
+                            <h1 className="w-full text-center lg:text-start lg:w-4/6 text-2xl">Fast and Easy Booking</h1>
+                        </div>
+                        <div className="w-1/2 lg:w-1/3 h-1/2 flex flex-col justify-center items-center lg:items-start gap-5">
+                            <div className="w-1/4">
+                                <img src={icone_4} className="w-full h-full" />
+                            </div>
+                            <h1 className="w-full text-center lg:text-start lg:w-5/6 text-2xl">Exclusive Offers and Packages</h1>
+                        </div>
+                    </div>
+                    <div className="w-full lg:w-1/2 h-full flex jjustify-between lg:justify-center items-center gap-24">
+                        <div className="w-1/2 lg:w-1/3 h-1/2 flex flex-col justify-center items-center lg:items-start gap-5">
+                            <div className="w-1/4">
+                                <img src={icone_5} className="w-full h-full" />
+                            </div>
+                            <h1 className="w-full text-center lg:text-start lg:w-[95%] text-2xl">Local Activity Guide</h1>
+                        </div>
+                        <div className="w-1/2 lg:w-1/3 h-1/2 flex flex-col justify-center items-center lg:items-start gap-5">
+                            <div className="w-1/4">
+                                <img src={icone_6} className="w-full h-full" />
+                            </div>
+                            <h1 className="w-full text-center lg:text-start lg:w-5/6 text-2xl">24/7 Customer Support</h1>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </>

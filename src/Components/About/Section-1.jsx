@@ -2,26 +2,34 @@ import Header from "../Header/Header";
 
 export default function Section_1() {
     return <>
-        <section className="w-full h-screen">
-            <div className="w-full h-screen AboutPage-Background">
-                <div className="w-full h-full bg-black-blur">
-                    <div className="lg:px-20">
-                        <Header color={'white'} />
+        <section className="w-full lg:h-screen">
+            <div className="lg:px-20">
+                <Header color={'black'} />
+            </div>
+            <div className="w-full lg:h-[85vh] px-1 lg:px-8 xl:px-24 flex items-center flex-wrap gap-8 lg:gap-0 pt-28 lg:pt-5">
+                <div className="w-full lg:w-1/2 h-5/6 flex flex-col gap-2 lg:gap-8 items-center lg:items-start text-center lg:text-start">
+                    <h1 className="text-lg text-[#f0b797]">WELCOME TO FIND STAYS</h1>
+                    <h1 className="w-full lg:w-[75%] text-[2.50rem] lg:text-5xl">We Are The Best Host For Your Comfort</h1>
+                    <div className="w-[95%] lg:w-[78%] flex flex-wrap gap-5">
+                        <p>
+                            At Sind Stays, we have redefined luxury in accommodation with an
+                            innovative approach. Our platform offers a seamless way to discover top-notch
+                            hotels that elevate your travel experience.
+                        </p>
+                        <p>
+                            Experience exceptional comfort and elegance in our curated selection
+                            of hotels. Each option is chosen to ensure your stay is both luxurious
+                            and memorable.
+                        </p>
                     </div>
-                    <div className="w-full h-full lg:h-[85%] flex justify-center items-center px-2 lg:px-0 text-white">
-                        <div className="w-full lg:w-4/6 flex flex-col items-center mt-[-8vh]">
-                            <h1 className="text-xl">About Us</h1>
-                            <h1 className="text-5xl lg:text-6xl xl:text-8xl text-center">Our Commitment to Exceptional Stays</h1>
-                            <p className="w-full sm:w-5/6 text-center mt-3">
-                                Welcome to Sind Stays! We are passionate about creating unforgettable
-                                lodging experiences. Our mission is to provide you with comfortable and memorable stays,
-                                with a focus on quality service and your satisfaction. Discover our story and what makes us unique
-                                in the world of hospitality.
-                            </p>
-                        </div>
-                    </div>
+                    <button className="px-8 py-2 bg-black text-white rounded-full">Book Now</button>
+                </div>
+                <div className="w-full lg:w-1/2 h-5/6 flex justify-between flex-wrap lg:flex-nowrap px-2 lg:px-0 gap-5 lg:gap-8">
+                    <div className="w-full sm:w-[48%] lg:w-[48%] h-[50vh] lg:h-[70%] lg:mt-24 cards-About-1 rounded-xl lg:hover:scale-90"></div>
+                    <div className="w-full sm:w-[48%] lg:w-[48%] h-[50vh] lg:h-[70%] cards-About-2 rounded-xl lg:hover:scale-90"></div>
                 </div>
             </div>
+
         </section>
     </>
 }

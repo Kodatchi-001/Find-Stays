@@ -28,8 +28,8 @@ export default function Section_1() {
         <section className="w-full h-screen HomePage-Background" id="HomePage">
             <div className="w-full h-full flex flex-col justify-between bg-black-blur lg:px-6 xl:px-20">
                 <Header color={'white'} />
-                <div className="w-full h-[80%]">
-                    <div className="w-full h-[40%] lg:h-[70%] flex justify-between items-center flex-wrap px-4 mt-28 lg:mt-0 lg:px-0">
+                <div className="w-full h-[85%] lg:h-[80%] flex flex-col justify-between mt-auto">
+                    <div className="w-full h-[45%] lg:h-[70%] flex justify-between items-center flex-wrap px-4 lg:px-0">
                         <div className="w-full lg:w-4/6 h-2/3 lg:h-full flex flex-col justify-center items-center lg:items-start gap-3 sm:gap-5 lg:gap-6 text-white">
                             <h1 className="w-[95%] sm:w-4/6 lg:w-full xl:w-[80%] text-5xl sm:text-7xl xl:text-8xl text-center lg:text-start">Stay Quietly, With No Worries</h1>
                             <p className="lg:5/6 xl:w-[75%] text-[1.1rem] hidden lg:flex">
@@ -63,7 +63,7 @@ export default function Section_1() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full h-[45%] lg:h-[30%] flex justify-center items-center py-5 sm:py-4 px-4 lg:px-0">
+                    <div className="w-full h-1/2 lg:h-[30%] flex justify-center items-center py-5 sm:py-4 px-4 lg:px-0">
                         <div className="w-full sm:w-full md:w-5/6 lg:w-full h-full flex justify-between items-center flex-wrap px-1 lg:px-3 pt-2 lg:py-4 rounded-xl bg-white">
                             <div className="w-full lg:w-5/6 h-[70%] lg:h-full flex justify-between flex-wrap">
                                 <div className="w-1/2 lg:w-1/4 h-[45%] lg:h-full flex flex-col justify-between px-2 lg:px-5">
