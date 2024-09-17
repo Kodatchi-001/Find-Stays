@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function Section_2() {
     return <>
         <section className="w-full h-full mt-5 lg:mt-16">
@@ -39,7 +40,9 @@ export default function Section_2() {
                                         <h1>(218 Visitors)</h1>
                                     </div>
                                 </div>
-                                <i class='bx bx-chevron-right text-2xl px-2 py-1 scale-125 cursor-pointer bg-blur-white rounded-full'></i>
+                                <Link to="/Search">
+                                    <i class='bx bx-chevron-right text-2xl px-2 py-1 scale-110 cursor-pointer bg-blur-white rounded-full'></i>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -64,14 +67,16 @@ export default function Section_2() {
                                             <h1>(104 Visitors)</h1>
                                         </div>
                                     </div>
-                                    <i class='bx bx-chevron-right text-2xl px-2 py-1 scale-110 cursor-pointer bg-blur-white rounded-full'></i>
+                                    <Link to="/Search">
+                                        <i class='bx bx-chevron-right text-2xl px-2 py-1 scale-110 cursor-pointer bg-blur-white rounded-full'></i>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                     {/* <!-- Cards-3 --> */}
                     <div className="w-full sm:w-[49%] lg:w-full h-[30vh] lg:h-[48%] rounded-2xl cards-homepage" id="Card-3-HomePage">
-                    <div className="w-full h-full flex items-end px-8 lg:px-4 xl:px-8 pb-8 lg:pb-6 background-card-image rounded-2xl">
+                        <div className="w-full h-full flex items-end px-8 lg:px-4 xl:px-8 pb-8 lg:pb-6 background-card-image rounded-2xl">
                             <div className="w-full flex flex-col justify-between text-white gap-3">
                                 <h1 className="lg:w-5/6 text-3xl">Luxury Comfort Stays Hotel Indonesia</h1>
                                 <div className="w-full h-1/2 flex justify-between items-center">
@@ -88,7 +93,9 @@ export default function Section_2() {
                                             <h1>(102 Visitors)</h1>
                                         </div>
                                     </div>
-                                    <i class='bx bx-chevron-right text-2xl px-2 py-1 scale-110 cursor-pointer bg-blur-white rounded-full'></i>
+                                    <Link to="/Search">
+                                        <i class='bx bx-chevron-right text-2xl px-2 py-1 scale-110 cursor-pointer bg-blur-white rounded-full'></i>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
