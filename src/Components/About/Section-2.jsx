@@ -10,7 +10,7 @@ export default function Section_2() {
         <section className="w-full lg:h-[90vh] p-5 px-2 lg:p-9 mt-16 lg:mt-0 text-white bg-black">
             <div className="w-full h-full flex justify-center lg:justify-start flex-wrap gap-8 lg:gap-0">
                 <div className="w-full lg:w-1/2 h-1/2 flex flex-col justify-center items-center lg:items-start xl:pl-16 gap-1 lg:gap-5">
-                    <h1 className="text-lg text-[#f0b797]">AMENITIES</h1>
+                    <h1 className="text-lg text-gray">AMENITIES</h1>
                     <h1 className="w-full text-center lg:text-start text-[2.50rem] lg:text-5xl">Make your vacation unforgettable</h1>
                 </div>
                 <div className="w-full lg:w-1/2 h-1/2 flex justify-between lg:justify-center items-center gap-24">
@@ -47,7 +47,7 @@ export default function Section_2() {
                             <div className="w-1/4">
                                 <img src={icone_5} className="w-full h-full" />
                             </div>
-                            <h1 className="w-full text-center lg:text-start lg:w-[95%] text-2xl">Local Activity Guide</h1>
+                            <h1 className="w-full text-center lg:text-start lg:w-5/6 text-2xl">Local Activity Guide</h1>
                         </div>
                         <div className="w-1/2 lg:w-1/3 h-1/2 flex flex-col justify-center items-center lg:items-start gap-5">
                             <div className="w-1/4">

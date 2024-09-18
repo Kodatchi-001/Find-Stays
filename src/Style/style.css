@@ -223,13 +223,6 @@ i {
 }
 
 /*AboutPage*/
-.AboutPage-Background {
-    background-image: url(../Assets/Background-AboutPage.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-}
-
 .cards-About-1{
     background-image: url(../Assets/cards-About-1.jpg);
     background-size: cover;
@@ -240,4 +233,14 @@ i {
     background-image: url(../Assets/cards-About-2.jpg);
     background-size: cover;
     transition: 0.5s ease;
+}
+
+.text-gray{
+    color: #808080;
+}
+
+.background-image-section-3{
+    background-image: url(../Assets/section-3-about.jpg);
+    background-size: cover;
+    background-position: bottom;
 }
