@@ -28,7 +28,7 @@ export default function Section_4() {
                     <div className={`w-full ${ChangeSize == 2 ? 'pb-7' : ''} py-5 lg:py-4 overflow-hidden pl-5 lg:pl-0 rounded-xl lg:rounded-none border lg:border-0 border-black lg:border-t cursor-pointer flex flex-wrap`}
                         onClick={() => Change(2)}>
                         <div className={`w-full ${ChangeSize == 2 ? 'h-[40%]' : 'h-full'} flex items-center gap-2`}>
-                            <i class={`bx ${ChangeSize == 1 ? 'bx-plus' : 'bx-minus'} text-lg`}></i>
+                            <i class={`bx ${ChangeSize == 2 ? 'bx-plus' : 'bx-minus'} text-lg`}></i>
                             <h1 className="text-xl">What is the booking process like?</h1>
                         </div>
                         <div className={`w-full ${ChangeSize == 2 ? 'h-[60%]' : 'hidden'} flex items-center pl-5`}>
@@ -42,7 +42,7 @@ export default function Section_4() {
                     <div className={`w-full ${ChangeSize == 3 ? 'pb-7' : ''} py-5 lg:py-4 overflow-hidden pl-5 lg:pl-0 rounded-xl lg:rounded-none border lg:border-0 border-black lg:border-t lg:border-b cursor-pointer flex flex-wrap`}
                         onClick={() => Change(3)}>
                         <div className={`w-full ${ChangeSize == 3 ? 'h-[40%]' : 'h-full'} flex items-center gap-2`}>
-                            <i class={`bx ${ChangeSize == 1 ? 'bx-plus' : 'bx-minus'} text-lg`}></i>
+                            <i class={`bx ${ChangeSize == 3 ? 'bx-plus' : 'bx-minus'} text-lg`}></i>
                             <h1 className="text-xl">What are the cancellation policies?</h1>
                         </div>
                         <div className={`w-full ${ChangeSize == 3 ? 'h-[60%]' : 'hidden'} flex items-center pl-5`}>
