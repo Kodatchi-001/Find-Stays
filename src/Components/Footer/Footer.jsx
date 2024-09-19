@@ -14,6 +14,9 @@ export default function Footer(Props) {
             case '/Booking':
                 setlinks('Search')
                 break;
+            case '/About':
+                setlinks('About')
+                break;
             default:
                 setlinks('')
                 break;
@@ -26,9 +29,9 @@ export default function Footer(Props) {
                     <ul className="w-1/6 h-full flex flex-col gap-2 text-lg">
                         <h1 className={`text-2xl mb-1 ${Links == 'HomePage' ? 'text-black' : 'text-white'}`}>Pages</h1>
                         <li><Link to="/" className={`${Links == 'HomePage' ? 'text-black' : ' text-gray-400'} cursor-pointer`}>Home</Link></li>
-                        <li><Link to="/Search" className={`${Links == 'Search' ? 'text-white' : ' text-gray-400'} cursor-pointer`}>Search</Link></li>
-                        <li><Link to="/Blog" className={`${Links == 'Blog' ? 'text-white' : ' text-gray-400'} cursor-pointer`}>Blog</Link></li>
                         <li><Link to="/About" className={`${Links == 'About' ? 'text-white' : ' text-gray-400'} cursor-pointer`}>About</Link></li>
+                        <li><Link to="/Search" className={`${Links == 'Search' ? 'text-white' : ' text-gray-400'} cursor-pointer`}>Search</Link></li>
+                        <li><Link to="/Login" className={`${Links == 'Login' ? 'text-white' : ' text-gray-400'} cursor-pointer`}>Blog</Link></li>
                     </ul>
                     <ul className="w-1/6 h-full flex flex-col gap-2 text-lg text-gray-400">
                         <h1 className={`text-2xl mb-1 ${Links == 'HomePage' ? 'text-black' : 'text-white'}`}>Features</h1>

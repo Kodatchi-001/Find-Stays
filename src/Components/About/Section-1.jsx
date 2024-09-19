@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 export default function Section_1() {
     return <>
         <section className="w-full lg:h-screen">
-            <div className="lg:px-20">
+            <div className="lg:px-6 xl:px-20">
                 <Header color={'black'} />
             </div>
             <div className="w-full lg:h-[85vh] lg:px-8 xl:px-24 flex items-center flex-wrap gap-8 lg:gap-0 pt-28 lg:pt-5">

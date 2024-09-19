@@ -56,7 +56,7 @@ export default function Section_4() {
                 </div>
             </div>
             <div className="w-full lg:w-[55%] h-full flex justify-end items-center">
-                <div className="w-full lg:w-4/6 h-[50vh] lg:h-full flex items-center lg:items-end Card-Section-4-about">
+                <div className="w-full lg:w-4/6 h-screen lg:h-full flex items-center lg:items-end Card-Section-4-about">
                     <div className="w-full lg:w-[38vw] h-[45%] lg:ml-[-14vw] lg:flex justify-around items-center flex-wrap hidden px-24 lg:px-0 gap-5 lg:gap-0">
                         <div className="w-full lg:w-[45%] h-4/6 px-6 lg:px-10 p-6 flex flex-col justify-between lg:text-lg text-white bg-black">
                             <h1>Hotels</h1>

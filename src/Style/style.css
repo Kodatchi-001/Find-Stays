@@ -9,7 +9,8 @@
 
 /*Header*/
 header,
-header div {
+header div,
+.link {
     transition: 0.8s ease;
 }
 
@@ -23,6 +24,7 @@ header li:first-child:after {
 .links {
     position: relative;
     cursor: pointer;
+    transition: 0.6s;
 }
 
 .links:after {
@@ -41,12 +43,6 @@ header li:first-child:after {
 
 .links:hover:after {
     width: 100%;
-}
-
-button,
-.filter,
-i {
-    transition: 0.6s;
 }
 
 /*HomePage*/
@@ -260,7 +256,7 @@ i {
 }
 
 @media (max-width : 1023px) {
-    .team{
+    .team {
         border-radius: 1.5rem 1.5rem 0rem 0rem;
     }
 }
