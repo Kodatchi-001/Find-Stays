@@ -248,5 +248,5 @@ i {
 .Card-Section-4-about{
     background-image: url(../Assets/Card-Section-4-about.png);
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
 }
