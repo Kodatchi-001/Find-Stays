@@ -1,13 +1,15 @@
 * {
     margin: 0;
     padding: 0;
+    -webkit-user-select: none;
     user-select: none;
     scroll-behavior: smooth;
     font-family: 'Clash Grotesk', sans-serif;
 }
 
 /*Header*/
-header, header div {
+header,
+header div {
     transition: 0.8s ease;
 }
 
@@ -81,6 +83,7 @@ i {
 }
 
 .bg-blur-white {
+    -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     border: 1px solid white;
     transition: 0.5s ease;
@@ -211,42 +214,65 @@ i {
     display: none;
 }
 
-.cards{
+.cards {
     background-size: cover;
     background-position: center;
 }
 
-.Card-Booking{
+.Card-Booking {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 /*AboutPage*/
-.cards-About-1{
+.cards-About-1 {
     background-image: url(../Assets/cards-About-1.jpg);
     background-size: cover;
     transition: 0.5s ease;
 }
 
-.cards-About-2{
+.cards-About-2 {
     background-image: url(../Assets/cards-About-2.jpg);
     background-size: cover;
     transition: 0.5s ease;
 }
 
-.text-gray{
+.text-gray {
     color: #808080;
 }
 
-.background-image-section-3{
+.background-image-section-3 {
     background-image: url(../Assets/section-3-about.jpg);
     background-size: cover;
     background-position: bottom;
 }
 
-.Card-Section-4-about{
+.Card-Section-4-about {
     background-image: url(../Assets/Card-Section-4-about.png);
     background-size: cover;
     background-position: bottom;
+}
+
+.team {
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width : 1023px) {
+    .team{
+        border-radius: 1.5rem 1.5rem 0rem 0rem;
+    }
+}
+
+#team-1 {
+    background-image: url(../Assets/team-1.png);
+}
+
+#team-2 {
+    background-image: url(../Assets/team-2.png);
+}
+
+#team-3 {
+    background-image: url(../Assets/team-3.png);
 }
