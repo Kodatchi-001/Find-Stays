@@ -57,8 +57,8 @@ export default function Section_4() {
                     {/* <!-- Cards/1 --> */}
                     <div className="min-w-full h-full flex justify-between sm:justify-center lg:justify-between flex-wrap py-4 px-5 lg:px-2 xl:px-5 gap-6 lg:gap-0">
                         {HotelCards_1.map((items, index) => (
-                            <div className="w-full sm:w-[48%] lg:w-[31%] h-[50vh] sm:h-full p-5 lg:p-3 xl:p-5 sm:gap-3 lg:gap-0 flex flex-col justify-between rounded-2xl bg-gray-transparent">
-                                <div className="w-full h-[40%] flex flex-col justify-between sm:gap-3 lg:gap-0">
+                            <div className="w-full sm:w-[48%] lg:w-[31%] sm:h-full p-4 lg:p-3 xl:p-5 gap-5 sm:gap-3 lg:gap-0 flex flex-col justify-between rounded-2xl bg-gray-transparent">
+                                <div className="w-full h-[40%] flex flex-col justify-between gap-2 sm:gap-3 lg:gap-0">
                                     <p>{items.paragraph}</p>
                                     <div className="w-full h-[45%] flex items-center gap-3">
                                         <i class='bx bx-user p-3 scale-100 bg-black rounded-full'></i>
@@ -69,12 +69,12 @@ export default function Section_4() {
                                     </div>
                                 </div>
                                 <div className="w-full h-[58%] rounded-2xl cards-homepage-section-2" id={`Card-${index}-Section-2-HomePage`}>
-                                    <div className="w-full h-full flex items-end background-card-image p-4 px-5 rounded-2xl">
-                                        <div className="w-full h-[60%]">
+                                    <div className="w-full h-full flex items-end background-card-image px-8 pb-2 pt-12 lg:p-4 lg:px-5 rounded-2xl">
+                                        <div className="w-full lg:h-[60%]">
                                             <div className="w-full h-full flex flex-col justify-between text-white">
-                                                <h1 className="w-5/6 text-2xl">{items.title}</h1>
+                                                <h1 className="w-full lg:w-5/6 text-2xl">{items.title}</h1>
                                                 <div className="w-full h-1/2 flex justify-between items-center">
-                                                    <div className="w-4/6 flex flex-wrap items-center gap-1 text-gray-200">
+                                                    <div className="w-full lg:w-4/6 flex flex-wrap items-center gap-1 text-gray-200">
                                                         <h1 className="text-sm">Surabaya, Indonesia</h1>
                                                         <div className="w-full flex items-center text-sm gap-2">
                                                             <div className="flex gap-1">
@@ -98,8 +98,8 @@ export default function Section_4() {
                     {/* <!-- Cards/2 --> */}
                     <div className="min-w-full h-full flex justify-between sm:justify-center lg:justify-between flex-wrap py-4 px-5 gap-6 lg:gap-0">
                         {HotelCards_2.map((items, index) => (
-                            <div className="w-full sm:w-[48%] lg:w-[31%] h-[50vh] sm:h-full p-5 sm:gap-3 lg:gap-0 flex flex-col justify-between rounded-2xl bg-gray-transparent">
-                                <div className="w-full h-[40%] flex flex-col justify-between sm:gap-3 lg:gap-0">
+                            <div className="w-full sm:w-[48%] lg:w-[31%] sm:h-full p-4 lg:p-3 xl:p-5 gap-5 sm:gap-3 lg:gap-0 flex flex-col justify-between rounded-2xl bg-gray-transparent">
+                                <div className="w-full h-[40%] flex flex-col justify-between gap-2 sm:gap-3 lg:gap-0">
                                     <p>{items.paragraph}</p>
                                     <div className="w-full h-[45%] flex items-center gap-3">
                                         <i class='bx bx-user p-3 scale-100 bg-black rounded-full'></i>
@@ -110,12 +110,12 @@ export default function Section_4() {
                                     </div>
                                 </div>
                                 <div className="w-full h-[58%] rounded-2xl cards-homepage-section-2" id={`Card-${index}-Section-2-HomePage`}>
-                                    <div className="w-full h-full flex items-end background-card-image p-4 px-5 rounded-2xl">
-                                        <div className="w-full h-[60%]">
+                                    <div className="w-full h-full flex items-end background-card-image px-8 pb-2 pt-12 lg:p-4 lg:px-5 rounded-2xl">
+                                        <div className="w-full lg:h-[60%]">
                                             <div className="w-full h-full flex flex-col justify-between text-white">
-                                                <h1 className="w-5/6 text-2xl">{items.title}</h1>
+                                                <h1 className="w-full lg:w-5/6 text-2xl">{items.title}</h1>
                                                 <div className="w-full h-1/2 flex justify-between items-center">
-                                                    <div className="w-4/6 flex flex-wrap items-center gap-1 text-gray-200">
+                                                    <div className="w-full lg:w-4/6 flex flex-wrap items-center gap-1 text-gray-200">
                                                         <h1 className="text-sm">Surabaya, Indonesia</h1>
                                                         <div className="w-full flex items-center text-sm gap-2">
                                                             <div className="flex gap-1">
@@ -139,8 +139,8 @@ export default function Section_4() {
                     {/* <!-- Cards/3 --> */}
                     <div className="min-w-full h-full flex justify-between sm:justify-center lg:justify-between flex-wrap py-4 px-5 gap-6 lg:gap-0">
                         {HotelCards_3.map((items, index) => (
-                            <div className="w-full sm:w-[48%] lg:w-[31%] h-[50vh] sm:h-full p-5 sm:gap-3 lg:gap-0 flex flex-col justify-between rounded-2xl bg-gray-transparent">
-                                <div className="w-full h-[40%] flex flex-col justify-between sm:gap-3 lg:gap-0">
+                            <div className="w-full sm:w-[48%] lg:w-[31%] sm:h-full p-4 lg:p-3 xl:p-5 gap-5 sm:gap-3 lg:gap-0 flex flex-col justify-between rounded-2xl bg-gray-transparent">
+                                <div className="w-full h-[40%] flex flex-col justify-between gap-2 sm:gap-3 lg:gap-0">
                                     <p>{items.paragraph}</p>
                                     <div className="w-full h-[45%] flex items-center gap-3">
                                         <i class='bx bx-user p-3 scale-100 bg-black rounded-full'></i>
@@ -151,12 +151,12 @@ export default function Section_4() {
                                     </div>
                                 </div>
                                 <div className="w-full h-[58%] rounded-2xl cards-homepage-section-2" id={`Card-${index}-Section-2-HomePage`}>
-                                    <div className="w-full h-full flex items-end background-card-image p-4 px-5 rounded-2xl">
-                                        <div className="w-full h-[60%]">
+                                    <div className="w-full h-full flex items-end background-card-image px-8 pb-2 pt-12 lg:p-4 lg:px-5 rounded-2xl">
+                                        <div className="w-full lg:h-[60%]">
                                             <div className="w-full h-full flex flex-col justify-between text-white">
-                                                <h1 className="w-5/6 text-2xl">{items.title}</h1>
+                                                <h1 className="w-full lg:w-5/6 text-2xl">{items.title}</h1>
                                                 <div className="w-full h-1/2 flex justify-between items-center">
-                                                    <div className="w-4/6 flex flex-wrap items-center gap-1 text-gray-200">
+                                                    <div className="w-full lg:w-4/6 flex flex-wrap items-center gap-1 text-gray-200">
                                                         <h1 className="text-sm">Surabaya, Indonesia</h1>
                                                         <div className="w-full flex items-center text-sm gap-2">
                                                             <div className="flex gap-1">
@@ -180,8 +180,8 @@ export default function Section_4() {
                     {/* <!-- Cards/4 --> */}
                     <div className="min-w-full h-full flex justify-between sm:justify-center lg:justify-between flex-wrap py-4 px-5 gap-6 lg:gap-0">
                         {HotelCards_4.map((items, index) => (
-                            <div className="w-full sm:w-[48%] lg:w-[31%] h-[50vh] sm:h-full p-5 sm:gap-3 lg:gap-0 flex flex-col justify-between rounded-2xl bg-gray-transparent">
-                                <div className="w-full h-[40%] flex flex-col justify-between sm:gap-3 lg:gap-0">
+                            <div className="w-full sm:w-[48%] lg:w-[31%] sm:h-full p-4 lg:p-3 xl:p-5 gap-5 sm:gap-3 lg:gap-0 flex flex-col justify-between rounded-2xl bg-gray-transparent">
+                                <div className="w-full h-[40%] flex flex-col justify-between gap-2 sm:gap-3 lg:gap-0">
                                     <p>{items.paragraph}</p>
                                     <div className="w-full h-[45%] flex items-center gap-3">
                                         <i class='bx bx-user p-3 scale-100 bg-black rounded-full'></i>
@@ -192,12 +192,12 @@ export default function Section_4() {
                                     </div>
                                 </div>
                                 <div className="w-full h-[58%] rounded-2xl cards-homepage-section-2" id={`Card-${index}-Section-2-HomePage`}>
-                                    <div className="w-full h-full flex items-end background-card-image p-4 px-5 rounded-2xl">
-                                        <div className="w-full h-[60%]">
+                                    <div className="w-full h-full flex items-end background-card-image px-8 pb-2 pt-12 lg:p-4 lg:px-5 rounded-2xl">
+                                        <div className="w-full lg:h-[60%]">
                                             <div className="w-full h-full flex flex-col justify-between text-white">
-                                                <h1 className="w-5/6 text-2xl">{items.title}</h1>
+                                                <h1 className="w-full lg:w-5/6 text-2xl">{items.title}</h1>
                                                 <div className="w-full h-1/2 flex justify-between items-center">
-                                                    <div className="w-4/6 flex flex-wrap items-center gap-1 text-gray-200">
+                                                    <div className="w-full lg:w-4/6 flex flex-wrap items-center gap-1 text-gray-200">
                                                         <h1 className="text-sm">Surabaya, Indonesia</h1>
                                                         <div className="w-full flex items-center text-sm gap-2">
                                                             <div className="flex gap-1">

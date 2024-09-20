@@ -23,7 +23,7 @@ export default function Section_3() {
     return <>
         <section className="w-full h-full mt-5 lg:mt-16 lg:px-5 xl:px-24 flex flex-wrap gap-5 lg:gap-0">
             <div className="w-full lg:h-[30vh] flex justify-between items-center flex-wrap gap-5 lg:gap-0">
-                <h1 className="w-full lg:w-1/2 xl:w-[45%] lg:leading-[4.8rem] text-[2.50rem] lg:text-6xl text-center lg:text-start">Explore Our Best List 5-Stars Hotel!</h1>
+                <h1 className="w-full lg:w-1/2 xl:w-[45%] lg:leading-[4.8rem] text-4xl lg:text-6xl text-center lg:text-start">Explore Our Best List 5-Stars Hotel!</h1>
                 <div className="w-full lg:w-1/2 lg:h-full flex justify-center lg:justify-end items-center">
                     <div className="w-full lg:w-4/6 h-full flex flex-col justify-center gap-5 px-3 lg:px-0">
                         <p className="w-full text-xl text-center lg:text-start">

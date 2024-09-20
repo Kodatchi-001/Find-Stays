@@ -54,7 +54,7 @@ export default function Section_1() {
                         </div>
                     </div>
                     <div className="w-full h-[28%] flex flex-wrap cards-homepage-info overflow-hidden gap-5">
-                        <div className="w-full h-full flex flex-col justify-between">
+                        <div className="w-full h-full flex flex-col justify-between gap-1 lg:gap-0">
                             <div className="w-full h-2/3 flex flex-col">
                                 <h1 className="text-2xl lg:text-xl xl:text-2xl">{item.name}</h1>
                                 <h1>{item.location}</h1>
@@ -93,7 +93,7 @@ export default function Section_1() {
                     <div className="w-full lg:w-4/6 h-full flex justify-between lg:justify-start items-center flex-wrap gap-2 lg:gap-5">
                         <div className={`w-[45%] lg:w-auto flex flex-col gap-2 ${Valide ? 'flex' : 'hidden'}`}>
                             <h1 className="w-full text-lg">Location</h1>
-                            <div className="flex items-center gap-1 pl-4 pr-14 py-2 rounded-lg bg-gray">
+                            <div className="flex items-center gap-2 lg:gap-1 pl-3 lg:pl-4 pr-14 py-2 rounded-lg bg-gray">
                                 <i class='bx bx-map text-lg'></i>
                                 {liste.map((info, index) => (
                                     index == liste.length - 1 && <h1 key={index}>{info.Location}</h1>
@@ -102,7 +102,7 @@ export default function Section_1() {
                         </div>
                         <div className={`w-[45%] lg:w-auto flex flex-col gap-2 ${Valide ? 'flex' : 'hidden'}`}>
                             <h1 className="w-full text-lg">Person</h1>
-                            <div className="flex items-center gap-1 pl-4 pr-14 py-2 rounded-lg bg-gray">
+                            <div className="flex items-center gap-2 lg:gap-1 pl-3 lg:pl-4 pr-14 py-2 rounded-lg bg-gray">
                                 <i class='bx bx-user text-lg'></i>
                                 {liste.map((info, index) => (
                                     index === liste.length - 1 && <h1 key={index}>{info.Person}</h1>
@@ -112,7 +112,7 @@ export default function Section_1() {
                         </div>
                         <div className={`w-[45%] lg:w-auto flex flex-col gap-2 ${Valide ? 'flex' : 'hidden'}`}>
                             <h1 className="w-full text-lg">Check-in</h1>
-                            <div className="flex items-center gap-1 pl-4 pr-14 py-2 rounded-lg bg-gray">
+                            <div className="flex items-center gap-2 lg:gap-1 pl-3 lg:pl-4 lg:pr-14 py-2 rounded-lg bg-gray">
                                 <i class='bx bx-calendar text-lg'></i>
                                 {liste.map((info, index) => (
                                     index === liste.length - 1 && <h1 key={index}>{info.DateIn}</h1>
@@ -122,7 +122,7 @@ export default function Section_1() {
                         </div>
                         <div className={`w-[45%] lg:w-auto flex flex-col gap-2 ${Valide ? 'flex' : 'hidden'}`}>
                             <h1 className="w-full text-lg">Check-out</h1>
-                            <div className="flex items-center gap-2 pl-4 pr-14 py-2 rounded-lg bg-gray">
+                            <div className="flex items-center gap-2 lg:gap-1 pl-3 lg:pl-4 lg:pr-14 py-2 rounded-lg bg-gray">
                                 <i class='bx bx-calendar text-lg'></i>
                                 {liste.map((info, index) => (
                                     index === liste.length - 1 && <h1 key={index}>{info.DateOut}</h1>
@@ -131,7 +131,7 @@ export default function Section_1() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full lg:w-2/6 h-full flex justify-between items-end lg:gap-3 xl:gap-1">
+                    <div className="w-full lg:w-2/6 h-full flex justify-between items-end gap-3 xl:gap-1">
                         <div className="w-[65%] sm:w-[75%] lg:w-[70%] h-full flex flex-col justify-between gap-2">
                             <h1 className="w-full text-lg">Find specific hotel</h1>
                             <div className="w-full relative flex">

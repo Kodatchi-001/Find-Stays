@@ -15,7 +15,7 @@ export default function Section_2() {
     return <>
         <section className="w-full h-full mt-5 lg:mt-16">
             <div className="w-full h-[30vh] lg:h-[40vh] flex flex-col justify-center items-center gap-5">
-                <h1 className="w-full lg:w-4/6 xl:w-[45%] lg:leading-[4.8rem] text-center text-[2.50rem] lg:text-6xl">
+                <h1 className="w-full lg:w-4/6 xl:w-[45%] lg:leading-[4.8rem] text-center text-4xl lg:text-6xl">
                     Our Most Amazing Visited Hotel on 2023!
                 </h1>
                 <p className="w-[90%] lg:w-[45%] text-xl text-center">
@@ -27,7 +27,7 @@ export default function Section_2() {
                 {/* <!-- Cards-1 --> */}
                 {Cards_1.map((items, index) => (
                     <div key={index} className="w-full sm:w-[49%] lg:w-[65%] h-[30vh] lg:h-full rounded-2xl cards-homepage" id="Card-1-HomePage">
-                        <div className="w-full h-full flex items-end px-8 xl:px-12 pb-8 lg:pb-10 background-card-image rounded-2xl">
+                        <div className="w-full h-full flex items-end p-5 xl:px-12 lg:pb-10 background-card-image rounded-2xl">
                             <div className="w-full flex flex-col justify-between text-white gap-6">
                                 <h1 className="xl:w-4/6 text-3xl lg:text-[3.50rem] lg:leading-[3.5rem]">{items.name}</h1>
                                 <div className="w-full h-[55%] flex justify-between items-center">
@@ -64,7 +64,7 @@ export default function Section_2() {
                 <div className="w-full lg:w-[33%] h-full flex lg:flex-col justify-between flex-wrap gap-3 lg:gap-0">
                     {Cards_2.map((items, index) => (
                         <div key={index} className="w-full sm:w-[49%] lg:w-full h-[30vh] lg:h-[48%] rounded-2xl cards-homepage" id={`Card-${items.id}-HomePage`}>
-                            <div className="w-full h-full flex items-end px-8 lg:px-4 xl:px-8 pb-8 lg:pb-6 background-card-image rounded-2xl">
+                            <div className="w-full h-full flex items-end p-5 lg:px-4 xl:px-8 lg:pb-6 background-card-image rounded-2xl">
                                 <div className="w-full flex flex-col justify-between text-white gap-3">
                                     <h1 className="w-4/6 text-3xl">{items.name}</h1>
                                     <div className="w-full h-1/2 flex justify-between items-center">

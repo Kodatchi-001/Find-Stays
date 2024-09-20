@@ -52,7 +52,7 @@ export default function Section_1() {
                             <Link to="/Search">
                                 <i class='bx bx-chevron-left p-2 text-[1.3rem] font-bold cursor-pointer hover:bg-black hover:text-white border border-[#a5a5a5] rounded-full'></i>
                             </Link>
-                            <div className="h-full flex items-center gap-2">
+                            <div className="w-full h-full flex items-center gap-2">
                                 <h1 className="text-lg text-[#a5a5a5]">Search</h1>
                                 <div className="p-[0.4rem] scale-50 bg-black rounded-full"></div>
                                 <h1 className="text-lg">Details</h1>
@@ -84,7 +84,7 @@ export default function Section_1() {
                                     </div>
                                 </div>
                                 <div className="w-full lg:w-2/6 lg:h-[75%] rounded-xl p-3 gap-3 lg:gap-0 flex flex-col justify-between bg-gray">
-                                    <div className="w-full lg:h-[72%] flex flex-col justify-between p-4 rounded-xl bg-white">
+                                    <div className="w-full lg:h-[72%] flex flex-col justify-between p-4 rounded-xl gap-1 lg:gap-0 bg-white">
                                         <div className="w-full flex flex-wrap">
                                             <h1 className="w-full text-lg text-gray-500 font-serif">Location</h1>
                                             <input type="text" value={items.location} className="w-full px-6 py-2 rounded-full text-xl border border-gray-400" />
@@ -93,7 +93,7 @@ export default function Section_1() {
                                             <h1 className="w-full text-lg text-gray-500 font-serif">Person</h1>
                                             <div className="w-full flex justify-end items-center relative">
                                                 <input type="number" value={inputnumber} onChange={ChangeNumber} readOnly className="w-full px-6 py-2 rounded-full text-xl border border-gray-400" />
-                                                <div className="w-1/2 h-5/6 flex justify-end items-center gap-1 px-2 rounded-full absolute mr-2 bg-white">
+                                                <div className="w-1/2 h-5/6 flex justify-end items-center gap-1 px-1 rounded-full absolute mr-2 bg-white">
                                                     <i class='bx bx-minus p-2 scale-90 cursor-pointer bg-gray-200 rounded-full border border-black'
                                                         onClick={() => setinputnumber(inputnumber > 0 ? inputnumber - 1 : 0)}></i>
                                                     <i class='bx bx-plus p-2 scale-90 cursor-pointer bg-black text-white rounded-full border border-black'
@@ -129,7 +129,7 @@ export default function Section_1() {
                                 <h1 className="text-5xl">About</h1>
                                 <p className="lg:text-lg text-gray-500">{items.about}</p>
                             </div>
-                            <div className="w-full h-[20vh] mt-5 flex flex-col justify-center gap-5">
+                            <div className="w-full lg:h-[20vh] mt-5 flex flex-col justify-center gap-5">
                                 <h1 className="text-5xl">Facilities</h1>
                                 <div className="w-full flex justify-center lg:justify-start flex-wrap gap-2 lg:gap-6 text-white">
                                     {items.facilities.map((facilitie, index) => (
@@ -141,7 +141,7 @@ export default function Section_1() {
                     ))}
                 </div>
             </div>
-            <div className="w-full mt-6 lg:mt-0 mb-5 lg:mb-0">
+            <div className="w-full mt-8 lg:mt-0 mb-5 lg:mb-0">
                 <Footer background={'white'} background_2={'black'} />
             </div>
         </section>
