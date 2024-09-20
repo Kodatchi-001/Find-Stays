@@ -66,11 +66,11 @@ header li:first-child:after {
     background-image: url(../Assets/Card-1-HomePage.jpeg);
 }
 
-#Card-2-HomePage {
+#Card-3-HomePage {
     background-image: url(../Assets/Card-1-HomePage-2.jpeg);
 }
 
-#Card-3-HomePage {
+#Card-7-HomePage {
     background-image: url(../Assets/Card-1-HomePage-3.jpeg);
 }
 
@@ -225,13 +225,19 @@ header li:first-child:after {
 .cards-About-1 {
     background-image: url(../Assets/cards-About-1.jpg);
     background-size: cover;
-    transition: 0.5s ease;
+    background-position: center;
 }
 
 .cards-About-2 {
     background-image: url(../Assets/cards-About-2.jpg);
     background-size: cover;
-    transition: 0.5s ease;
+    background-position: center;
+}
+
+@media (max-width : 1023px) {
+    .cards-About-2 {
+        background-position: top;
+    }
 }
 
 .text-gray {

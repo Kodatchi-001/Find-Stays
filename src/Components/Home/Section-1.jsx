@@ -82,7 +82,7 @@ export default function Section_1() {
                                         <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Person</h1>
                                     </div>
                                     <div className="w-full h-[60%] lg:h-[65%] flex justify-end relative">
-                                        <div className="w-full h-full bg-gray pr-5 rounded-xl">
+                                        <div className="w-full h-full bg-gray pr-2 lg:pr-5 rounded-xl">
                                             <select className="w-full h-full px-5 bg-transparent text-lg lg:text-xl focus:outline-none text-black"
                                                 value={person} onChange={Handelchangepreson}>
                                                 <option>Person</option>
@@ -109,7 +109,7 @@ export default function Section_1() {
                                         <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Check-in</h1>
                                     </div>
                                     <div className="w-full h-[65%]">
-                                        <input type="date" className="w-full h-full px-2 lg:px-5 rounded-xl text-black bg-gray text-lg" value={Date_in} onChange={Handelchangedatein} />
+                                        <input type="date" className="w-full h-full px-2 lg:px-5 pr-2 rounded-xl text-black bg-gray text-lg" value={Date_in} onChange={Handelchangedatein} />
                                     </div>
                                 </div>
                                 <div className="w-1/2 lg:w-1/4 h-[45%] lg:h-full flex flex-col justify-between px-2 lg:px-5 mt-1 lg:mt-0">
@@ -118,7 +118,7 @@ export default function Section_1() {
                                         <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Check-out</h1>
                                     </div>
                                     <div className="w-full h-[65%]">
-                                        <input type="date" className="w-full h-full px-2 lg:px-5 rounded-xl text-black bg-gray text-lg" value={Date_out} onChange={Handelchangedateout} />
+                                        <input type="date" className="w-full h-full px-2 lg:px-5 pr-2 rounded-xl text-black bg-gray text-lg" value={Date_out} onChange={Handelchangedateout} />
                                     </div>
                                 </div>
                             </div>

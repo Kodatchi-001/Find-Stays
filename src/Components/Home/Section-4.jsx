@@ -61,7 +61,7 @@ export default function Section_4() {
                                 <div className="w-full h-[40%] flex flex-col justify-between sm:gap-3 lg:gap-0">
                                     <p>{items.paragraph}</p>
                                     <div className="w-full h-[45%] flex items-center gap-3">
-                                        <h1 className="p-6 rounded-full bg-black"></h1>
+                                        <i class='bx bx-user p-3 scale-100 bg-black rounded-full'></i>
                                         <div className="w-5/6 flex flex-col justify-between flex-wrap">
                                             <h1>{items.name}</h1>
                                             <h1 className="text-sm text-gray-300">{items.location}</h1>
@@ -87,7 +87,6 @@ export default function Section_4() {
                                                             <h1>({items.visitors})</h1>
                                                         </div>
                                                     </div>
-                                                    <i class='bx bx-chevron-right text-2xl px-2 py-1 scale-95 cursor-pointer bg-blur-white rounded-full'></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -103,7 +102,7 @@ export default function Section_4() {
                                 <div className="w-full h-[40%] flex flex-col justify-between sm:gap-3 lg:gap-0">
                                     <p>{items.paragraph}</p>
                                     <div className="w-full h-[45%] flex items-center gap-3">
-                                        <h1 className="p-6 rounded-full bg-black"></h1>
+                                        <i class='bx bx-user p-3 scale-100 bg-black rounded-full'></i>
                                         <div className="w-5/6 flex flex-col justify-between flex-wrap">
                                             <h1>{items.name}</h1>
                                             <h1 className="text-sm text-gray-300">{items.location}</h1>
@@ -129,7 +128,6 @@ export default function Section_4() {
                                                             <h1>({items.visitors})</h1>
                                                         </div>
                                                     </div>
-                                                    <i class='bx bx-chevron-right text-2xl px-2 py-1 scale-95 cursor-pointer bg-blur-white rounded-full'></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -145,7 +143,7 @@ export default function Section_4() {
                                 <div className="w-full h-[40%] flex flex-col justify-between sm:gap-3 lg:gap-0">
                                     <p>{items.paragraph}</p>
                                     <div className="w-full h-[45%] flex items-center gap-3">
-                                        <h1 className="p-6 rounded-full bg-black"></h1>
+                                        <i class='bx bx-user p-3 scale-100 bg-black rounded-full'></i>
                                         <div className="w-5/6 flex flex-col justify-between flex-wrap">
                                             <h1>{items.name}</h1>
                                             <h1 className="text-sm text-gray-300">{items.location}</h1>
@@ -171,7 +169,6 @@ export default function Section_4() {
                                                             <h1>({items.visitors})</h1>
                                                         </div>
                                                     </div>
-                                                    <i class='bx bx-chevron-right text-2xl px-2 py-1 scale-95 cursor-pointer bg-blur-white rounded-full'></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -187,7 +184,7 @@ export default function Section_4() {
                                 <div className="w-full h-[40%] flex flex-col justify-between sm:gap-3 lg:gap-0">
                                     <p>{items.paragraph}</p>
                                     <div className="w-full h-[45%] flex items-center gap-3">
-                                        <h1 className="p-6 rounded-full bg-black"></h1>
+                                        <i class='bx bx-user p-3 scale-100 bg-black rounded-full'></i>
                                         <div className="w-5/6 flex flex-col justify-between flex-wrap">
                                             <h1>{items.name}</h1>
                                             <h1 className="text-sm text-gray-300">{items.location}</h1>
@@ -213,7 +210,6 @@ export default function Section_4() {
                                                             <h1>({items.visitors})</h1>
                                                         </div>
                                                     </div>
-                                                    <i class='bx bx-chevron-right text-2xl px-2 py-1 scale-95 cursor-pointer bg-blur-white rounded-full'></i>
                                                 </div>
                                             </div>
                                         </div>
@@ -234,11 +230,11 @@ export default function Section_4() {
                     <div key={index} className={`w-[13vh] h-[0.4vh] rounded-full ${CurrentIndex == index ? 'bg-white' : 'bg-gray-500'}`}></div>
                 ))}
             </div>
-            <div className="w-full h-[10vh] flex justify-center gap-5 items-center">
-                <i class='bx bx-left-arrow-alt p-3 text-5xl scale-90 cursor-pointer bg-white text-black rounded-full'
+            <div className="w-full h-[10vh] flex justify-center gap-3 items-center mt-3 mb-3">
+                <i class='bx bx-left-arrow-alt p-3 text-5xl scale-75 lg:scale-90 cursor-pointer bg-white text-black rounded-full'
                     onClick={() => SlideCards(-1)}>
                 </i>
-                <i class='bx bx-right-arrow-alt p-3 text-5xl scale-90 cursor-pointer bg-white text-black rounded-full'
+                <i class='bx bx-right-arrow-alt p-3 text-5xl scale-75 lg:scale-90 cursor-pointer bg-white text-black rounded-full'
                     onClick={() => SlideCards(1)}>
                 </i>
             </div>

@@ -24,6 +24,7 @@ export default function Section_1() {
     const [Price, setPrice] = useState(0);
     const [Pictures, setPictures] = useState(null)
     const { liste, listeindex, setlisteindex } = useContext(Listeinfo);
+    const { Cardsindex, setCardsindex } = useContext(Listeinfo);
     /*-------------------------------------------------*/
     const ChangeNumber = e => setinputnumber(e.target.value)
     const ChangeCheckin = e => setinputCheckin(e.target.value);
@@ -34,8 +35,10 @@ export default function Section_1() {
         setinputCheckin(liste[liste.length - 1]?.DateIn || '2025-05-01')
         setinputCheckout(liste[liste.length - 1]?.DateOut || '2025-10-01');
         setlisteindex(listeindex.slice(-1))
+        setCardsindex(Cardsindex.slice(-1))
     }, []);
     useEffect(() => { setPrice(inputnumber * 40) }, [inputnumber]);
+    useEffect(() => { return (() => setlisteindex([])) }, [])
     /*-------------------------------------------------*/
     const ChangePicture = src => setPictures(src)
     return <>
@@ -56,7 +59,7 @@ export default function Section_1() {
                             </div>
                         </div>
                     </div>
-                    {hotel_Cards_info.filter(item => item.id == listeindex).map((items, index) => (
+                    {hotel_Cards_info.filter(item => listeindex.length > 0 ? item.id == listeindex : item.id == Cardsindex).map((items, index) => (
                         <div key={index} className="w-full h-full flex flex-wrap gap-5">
                             <div className="w-full h-1/6 flex flex-col justify-center gap-3">
                                 <h1 className="text-5xl">{items.name}</h1>
