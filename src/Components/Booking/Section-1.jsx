@@ -104,15 +104,15 @@ export default function Section_1() {
                                         <div className="w-full flex flex-wrap gap-2">
                                             <h1 className="w-full text-lg text-gray-500 font-serif">Check-in</h1>
                                             <div className="w-full relative flex justify-end items-center">
-                                                <input type="date" value={inputCheckin} onChange={ChangeCheckin} className="w-full px-6 py-2 rounded-full text-xl border border-gray-400" />
-                                                <div className="w-1/3 h-5/6 absolute rounded-full bg-white mr-2"></div>
+                                                <input type="date" value={inputCheckin} onChange={ChangeCheckin} className="w-full px-6 py-2 rounded-full text-xl bg-white border border-gray-400" />
+                                                <div className="w-1/3 h-5/6 absolute rounded-full bg-white mr-1 lg:mr-2"></div>
                                             </div>
                                         </div>
                                         <div className="w-full flex flex-wrap gap-2">
                                             <h1 className="w-full text-lg text-gray-500 font-serif">Check-out</h1>
                                             <div className="w-full relative flex justify-end items-center">
-                                                <input type="date" value={inputCheckout} onChange={ChangeCheckout} className="w-full px-6 py-2 rounded-full text-xl border border-gray-400" />
-                                                <div className="w-1/3 h-5/6 absolute rounded-full bg-white mr-2"></div>
+                                                <input type="date" value={inputCheckout} onChange={ChangeCheckout} className="w-full px-6 py-2 rounded-full text-xl bg-white border border-gray-400" />
+                                                <div className="w-1/3 h-5/6 absolute rounded-full bg-white mr-1 lg:mr-2"></div>
                                             </div>
                                         </div>
                                     </div>

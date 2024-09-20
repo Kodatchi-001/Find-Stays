@@ -26,7 +26,7 @@ export default function Header(Props) {
     }, [Links]);
     const Navbar = () => Size ? setSize(false) : setSize(true)
     return <>
-        <header className={`w-full ${Size ? 'h-[15vh]' : 'h-[8vh]'} lg:h-[15vh] flex justify-center flex-wrap lg:pr-6 fixed lg:relative shadow-lg lg:shadow-none z-50 bg-white lg:bg-transparent overflow-hidden`}>
+        <header className={`w-full ${Size ? 'h-[15vh]' : 'h-[8.5vh]'} lg:h-[15vh] flex justify-center flex-wrap lg:pr-6 fixed lg:relative shadow-lg lg:shadow-none z-50 bg-white lg:bg-transparent overflow-hidden`}>
             <div className={`w-full lg:h-full ${Size ? 'h-1/2' : 'h-full'} flex px-2 lg:px-0 pr-5 lg:pr-0`}>
                 <div className={`lg:w-2/6 xl:w-1/2 h-full flex items-center to-black lg:text-${Props.color}`}>
                     <div className="w-[20%] sm:w-[15%] xl:w-[10%]">
