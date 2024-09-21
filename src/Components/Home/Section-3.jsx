@@ -1,23 +1,26 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom";
+import { Listeinfo } from "../../utils/Liste-info";
+
 const hotelCards = [
-    { name: "Emerald Valley Lodge", location: "New Zealand, Australia", visitors: "7612 Visitors" },
-    { name: "Golden Horizon Hotel", location: "New York, USA", visitors: "212 Visitors" },
-    { name: "Whispering Pines Retreat", location: "Malang, Indonesia", visitors: "8127 Visitors" },
-    { name: "Paradise Cove Retreat", location: "Tokyo, Japan", visitors: "237 Visitors" },
-    { name: "Sunset Vista Resort", location: "Jakarta, Indonesia", visitors: "493 Visitors" },
-    { name: "Enchanted Meadows", location: "Kuala Lumpur, Malaysia", visitors: "101 Visitors" },
-    { name: "Mystic Falls Lodge", location: "Sydney, Australia", visitors: "1234 Visitors" },
-    { name: "Serenity Bay Hotel", location: "San Francisco, USA", visitors: "789 Visitors" },
+    { id: 0, name: "Emerald Valley Lodge", location: "New Zealand, Australia", visitors: "7612 Visitors" },
+    { id: 1, name: "Golden Horizon Hotel", location: "New York, USA", visitors: "212 Visitors" },
+    { id: 2, name: "Whispering Pines Retreat", location: "Malang, Indonesia", visitors: "8127 Visitors" },
+    { id: 3, name: "Paradise Cove Retreat", location: "Tokyo, Japan", visitors: "237 Visitors" },
+    { id: 4, name: "Sunset Vista Resort", location: "Jakarta, Indonesia", visitors: "493 Visitors" },
+    { id: 5, name: "Enchanted Meadows", location: "Kuala Lumpur, Malaysia", visitors: "101 Visitors" },
+    { id: 6, name: "Mystic Falls Lodge", location: "Sydney, Australia", visitors: "1234 Visitors" },
+    { id: 7, name: "Serenity Bay Hotel", location: "San Francisco, USA", visitors: "789 Visitors" },
 ];
 export default function Section_3() {
     const [Search, setSearch] = useState('');
     const [NoteFound, setNoteFound] = useState(false);
-    const [Save, setSave] = useState([]);
+    const { listeindex, setlisteindex, SaveHotel, setSaveHotel } = useContext(Listeinfo)
     /*-------------------------------------------------*/
     const Handelchange = e => setSearch(e.target.value.toLowerCase());
     const FilteredHotels = hotelCards.filter(item => item.location.toLowerCase().includes(Search));
-    const SaveCards = index => setSave(prevSave => prevSave.includes(index) ? prevSave.filter(i => i !== index) : [...prevSave, index]);
+    const SaveCards = index => setSaveHotel(prevSave => prevSave.includes(index) ? prevSave.filter(i => i !== index) : [...prevSave, index]);
+    const SendIndex = index => setlisteindex([...listeindex, index])
     /*-------------------------------------------------*/
     useEffect(() => { setNoteFound(FilteredHotels.length > 0) }, [FilteredHotels]);
     return <>
@@ -43,10 +46,8 @@ export default function Section_3() {
                 <div className={`w-full h-full lg:h-[90%] flex flex-wrap ${Search ? 'justify-start gap-4' : 'justify-between gap-0'}`}>
                     {NoteFound ? (
                         FilteredHotels.map((item, index) => (
-                            <div key={index} className="w-full sm:w-[50%] lg:w-[24%] h-[45vh] sm:h-[41vh] flex flex-col justify-between cursor-pointer Cards-section-2 p-3 lg:p-0">
-                                <div className="w-full h-[68%] rounded-2xl cards-homepage-section-2" id={`Card-${index}-Section-2-HomePage`}>
-
-                                </div>
+                            <div key={item.id} className="w-full sm:w-[50%] lg:w-[24%] h-[45vh] sm:h-[41vh] flex flex-col justify-between cursor-pointer Cards-section-2 p-3 lg:p-0">
+                                <div className="w-full h-[68%] rounded-2xl cards-homepage-section-2" id={`Card-${index}-Section-2-HomePage`}></div>
                                 <div className="w-full h-[28%] flex flex-wrap cards-homepage-info overflow-hidden gap-5">
                                     <div className="w-full h-full flex flex-col justify-between">
                                         <div className="w-full h-2/3 flex flex-col">
@@ -65,9 +66,10 @@ export default function Section_3() {
                                         </div>
                                     </div>
                                     <div className="w-full h-[40%] flex justify-between items-center cards-homepage-buttons pr-2 lg:gap-5 xl:gap-0">
-                                        <Link to="/Search" className="w-[85%] text-center py-2 rounded-full text-lg bg-black text-white hover:bg-green-800">Book Now</Link>
-                                        <i class={`bx bx-bookmark ${Save.includes(index) ? 'bxs-bookmark' : 'bx-bookmark'} p-2 scale-125 rounded-full border border-black`}
-                                            onClick={() => SaveCards(index)}>
+                                        <Link to="/Booking" className="w-[85%] text-center py-2 rounded-full text-lg duration-300 bg-black text-white hover:bg-green-800"
+                                            onClick={() => SendIndex(index)}>Book Now</Link>
+                                        <i class={`bx bx-bookmark ${SaveHotel.includes(index) ? 'bxs-bookmark' : 'bx-bookmark'} p-2 scale-125 rounded-full border border-black`}
+                                            onClick={() => SaveCards(item.id)}>
                                         </i>
                                     </div>
                                 </div>

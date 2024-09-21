@@ -278,8 +278,3 @@ header li:first-child:after {
 #team-3 {
     background-image: url(../Assets/team-3.png);
 }
-
-/*Register-Page*/
-.border-radius{
-    border-radius: 12px 0px 0px 12px;
-}
