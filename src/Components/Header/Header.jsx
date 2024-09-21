@@ -10,14 +10,17 @@ export default function Header(Props) {
             case '/':
                 setlinks('HomePage')
                 break;
+            case '/About':
+                setlinks('About')
+                break;
             case '/Search':
                 setlinks('Search')
                 break;
             case '/Booking':
                 setlinks('Search')
                 break;
-            case '/About':
-                setlinks('About')
+            case '/Register':
+                setlinks('Register')
                 break;
             default:
                 setlinks('')
@@ -53,9 +56,7 @@ export default function Header(Props) {
                     <Link to="/" className={`links ${Links == 'HomePage' ? 'link-line' : ''}`}>Home</Link>
                     <Link to="/About" className={`links ${Links == 'About' ? 'link-line' : ''}`}>About</Link>
                     <Link to="/Search" className={`links ${Links == 'Search' ? 'link-line' : ''}`}>Search</Link>
-                    <button className={`text-black lg:text-${Props.color} ${Links == 'Search' ? 'border-black' : 'border-white'}`}>
-                        Register
-                    </button>
+                    <Link to="/Register" className={`links ${Links == 'Register' ? 'link-line' : ''}`}>Register</Link>
                 </ul>
             </div>
         </header>
