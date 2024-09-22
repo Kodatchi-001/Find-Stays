@@ -30,7 +30,7 @@ export default function Header(Props) {
     const Navbar = () => Size ? setSize(false) : setSize(true)
     return <>
         <header className={`w-full ${Size ? 'h-[15vh]' : 'h-[8.5vh]'} lg:h-[15vh] flex justify-center flex-wrap lg:pr-6 fixed lg:relative shadow-lg lg:shadow-none z-50 bg-white lg:bg-transparent overflow-hidden`}>
-            <div className={`w-full lg:h-full ${Size ? 'h-1/2' : 'h-full'} flex px-2 lg:px-0 pr-5 lg:pr-0`}>
+            <div className={`w-full lg:h-full ${Size ? 'h-1/2' : 'h-full'} flex px-3 lg:px-0`}>
                 <Link to="/" className={`w-[40%] lg:w-2/6 xl:w-[40%] h-full flex items-center to-black lg:text-${Props.color}`}>
                     <div className="w-[30%] sm:w-[15%] xl:w-[10%]">
                         <img src={Logo} alt="Logo-Web" className="w-full h-full scale-125" />
@@ -48,7 +48,7 @@ export default function Header(Props) {
                 </div>
                 <div className="w-[60%] h-full lg:hidden flex justify-end items-center"
                     onClick={Navbar}>
-                    <i class='bx bx-menu-alt-right text-black text-3xl' ></i>
+                    <Link to="/Sign-In" className="px-5 py-2 rounded-lg bg-black text-white">Sign In</Link>
                 </div>
             </div>
             <div className={`w-full ${Size ? 'h-1/2' : 'h-full'} px-8 lg:hidden`}>

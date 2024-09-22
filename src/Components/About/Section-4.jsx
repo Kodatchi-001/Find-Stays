@@ -3,7 +3,6 @@ import { useState } from "react"
 export default function Section_4() {
     const [ChangeSize, setChangeSize] = useState(null);
     const Change = currentindex => setChangeSize(items => items == currentindex ? null : currentindex);
-    console.log(ChangeSize)
     return <>
         <section className="w-full lg:h-screen flex flex-wrap lg:px-24 lg:p-16 gap-5 lg:gap-0">
             <div className="w-full lg:w-[45%] h-full flex flex-col justify-end items-center lg:items-start pt-8 lg:pt-0 pb-5 gap-3 lg:gap-5 px-1 lg:px-0">

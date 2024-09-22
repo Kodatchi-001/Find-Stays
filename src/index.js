@@ -12,6 +12,7 @@ import About from './Pages/About';
 /*-----------*/
 import { ListeProvider } from './utils/Liste-info';
 import Register from './Pages/Register';
+import { Sign_in } from './Pages/Sign in';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,6 +25,7 @@ root.render(
           <Route path='/Booking' element={<Booking/>}/>
           <Route path='/About' element={<About/>}/>
           <Route path='/Register' element={<Register/>}/>
+          <Route path='/Sign-in' element={<Sign_in/>}/>
         </Routes>
       </BrowserRouter>
     </ListeProvider>

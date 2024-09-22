@@ -1,8 +1,8 @@
 * {
     margin: 0;
     padding: 0;
-    /* -webkit-user-select: none;
-    user-select: none; */
+    -webkit-user-select: none;
+    user-select: none;
     scroll-behavior: smooth;
     font-family: 'Clash Grotesk', sans-serif;
 }
@@ -277,4 +277,11 @@ header li:first-child:after {
 
 #team-3 {
     background-image: url(../Assets/team-3.png);
+}
+
+/*Login-Page*/
+.bg-login{
+    background-image: url(../Assets/login-bg.jpg);
+    background-size: cover;
+    background-position: bottom;
 }
