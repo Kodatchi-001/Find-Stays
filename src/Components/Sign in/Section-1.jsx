@@ -92,7 +92,7 @@ export default function AuthSection() {
         }
     }, [userPassword]);
     return (
-        <section className="w-full h-screen flex p-2 items-center flex-col bg-gray relative">
+        <section className="w-full h-screen flex p-2 items-center flex-col lg:flex-row bg-gray relative">
             <div className="w-[55%] h-full bg-login rounded-2xl lg:flex hidden"></div>
             <div className="w-full h-[8.5vh] flex items-center gap-5 px-4 lg:hidden absolute mt-4">
                 <Link to="/">
