@@ -15,11 +15,10 @@ const hotelCards = [
 export default function Section_3() {
     const [Search, setSearch] = useState('');
     const [NoteFound, setNoteFound] = useState(false);
-    const { listeindex, setlisteindex, SaveHotel, setSaveHotel } = useContext(Listeinfo)
+    const { listeindex, setlisteindex} = useContext(Listeinfo)
     /*-------------------------------------------------*/
     const Handelchange = e => setSearch(e.target.value.toLowerCase());
     const FilteredHotels = hotelCards.filter(item => item.location.toLowerCase().includes(Search));
-    const SaveCards = index => setSaveHotel(prevSave => prevSave.includes(index) ? prevSave.filter(i => i !== index) : [...prevSave, index]);
     const SendIndex = index => setlisteindex([...listeindex, index])
     /*-------------------------------------------------*/
     useEffect(() => { setNoteFound(FilteredHotels.length > 0) }, [FilteredHotels]);
@@ -55,7 +54,7 @@ export default function Section_3() {
                                             <h1>{item.location}</h1>
                                         </div>
                                         <div className="w-full h-1/3 flex items-center gap-2">
-                                            <div className="flex gap-1  text-yellow-500">
+                                            <div className="flex gap-1 text-yellow-500">
                                                 <i className='bx bxs-star'></i>
                                                 <i className='bx bxs-star'></i>
                                                 <i className='bx bxs-star'></i>
@@ -68,8 +67,7 @@ export default function Section_3() {
                                     <div className="w-full h-[40%] flex justify-between items-center cards-homepage-buttons pr-2 lg:gap-5 xl:gap-0">
                                         <Link to="/Booking" className="w-[85%] text-center py-2 rounded-full text-lg duration-300 bg-black text-white hover:bg-green-800"
                                             onClick={() => SendIndex(index)}>Book Now</Link>
-                                        <i class={`bx bx-bookmark ${SaveHotel.includes(index) ? 'bxs-bookmark' : 'bx-bookmark'} p-2 scale-125 rounded-full border border-black`}
-                                            onClick={() => SaveCards(item.id)}>
+                                        <i class={`bx bx-bookmark p-2 scale-125 rounded-full border border-black`}>
                                         </i>
                                     </div>
                                 </div>

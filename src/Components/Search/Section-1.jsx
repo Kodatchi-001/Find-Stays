@@ -21,20 +21,20 @@ export default function Section_1() {
     const [Search, setSearch] = useState('');
     const [NoteFound, setNoteFound] = useState(false);
     const { liste } = useContext(Listeinfo);
-    const { listeindex, setlisteindex, SaveHotel, setSaveHotel, LikeHotel, setLikeHotel } = useContext(Listeinfo);
+    const { listeindex, setlisteindex } = useContext(Listeinfo);
     const [Valide, setValide] = useState(false);
     /*-------------------------------------------------*/
     const HandleChange = e => setInputvalue(e.target.value.toLowerCase());
     const Savevalue = () => setSearch(Inputvalue)
-    const SaveLike = index => setLikeHotel(itemsLikes => itemsLikes.includes(index) ? itemsLikes.filter(i => i !== index) : [...itemsLikes, index]);
-    const SaveCards = index => setSaveHotel(prevSave => prevSave.includes(index) ? prevSave.filter(i => i !== index) : [...prevSave, index]);
     const FilterCards = () => {
         const LastLocation = liste[liste.length - 1]?.Location.toLowerCase() || '';
         const FilteredBySearch = HotelCards.filter(item => item.location.toLowerCase().includes(Search));
         const FilteredByLocation = LastLocation ? FilteredBySearch.filter(item => item.location.toLowerCase().includes(LastLocation)) : FilteredBySearch;
         return FilteredByLocation;
     };
-    const SendIndex = index => setlisteindex([...listeindex, index])
+    const SendIndex = index => setlisteindex([...listeindex, index]);
+    /*----------------- Local Storage ----------------*/
+    const users = JSON.parse(localStorage.getItem('users')) || [];
     /*-------------------------------------------------*/
     useEffect(() => {
         const Filtered = FilterCards();
@@ -48,7 +48,7 @@ export default function Section_1() {
                 <div key={index} className="w-full sm:w-[50%] lg:w-[32%] xl:w-[24%] h-[40vh] sm:h-[41vh] lg:mt-1 lg:mb-1 flex flex-col justify-between cursor-pointer Cards-section-2 p-3 lg:p-0">
                     <div className="w-full h-[68%] rounded-2xl cards-homepage-section-2 Background-cards" style={{ backgroundImage: `url(${require(`../../Assets/${item.img}`)})` }}>
                         <div className="w-full h-full p-4">
-                            <i className={`bx bx-heart p-2 scale-110 bg-white rounded-full ${LikeHotel.includes(item.id) ? 'bxs-heart text-red-500' : 'bx-heart text-black'}`} onClick={() => SaveLike(item.id)}></i>
+                            <i className={`bx bx-heart p-2 scale-110 bg-white rounded-full`}></i>
                         </div>
                     </div>
                     <div className="w-full h-[28%] flex flex-wrap cards-homepage-info overflow-hidden gap-5">
@@ -70,7 +70,7 @@ export default function Section_1() {
                         </div>
                         <div className="w-full h-[40%] flex justify-between items-center cards-homepage-buttons pr-2 lg:gap-5 xl:gap-0">
                             <Link to="/Booking" onClick={() => SendIndex(item.id)} className="w-[85%] flex justify-center py-2 rounded-full text-lg bg-black text-white hover:bg-green-800 button-link">Book Now</Link>
-                            <i className={`bx bx-bookmark ${SaveHotel.includes(index) ? 'bxs-bookmark' : 'bx-bookmark'} p-2 scale-125 rounded-full border border-black`} onClick={() => SaveCards(index)}></i>
+                            <i className={`bx bx-bookmark'} p-2 scale-125 rounded-full border border-black`}></i>
                         </div>
                     </div>
                 </div>

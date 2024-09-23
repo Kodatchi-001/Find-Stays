@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 
 export default function Header(Props) {
     const [Links, setlinks] = useState(false);
-    const [Size, setSize] = useState(false)
+    const [Size, setSize] = useState(false);
+    const [changeName, setchangeName] = useState(true)
+    /*--------------------------------------*/
     useEffect(() => {
         switch (window.location.pathname) {
             case '/':
@@ -27,7 +29,13 @@ export default function Header(Props) {
                 break;
         }
     }, [Links]);
+    /*--------------------------------------*/
     const Navbar = () => Size ? setSize(false) : setSize(true)
+    /*----------------Local Storage------------------*/
+    useEffect(() => {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        users.length > 0 ? setchangeName(false) : setchangeName(true)
+    }, []);
     return <>
         <header className={`w-full ${Size ? 'h-[15vh]' : 'h-[8.5vh]'} lg:h-[15vh] flex justify-center flex-wrap lg:pr-6 fixed lg:relative shadow-lg lg:shadow-none z-50 bg-white lg:bg-transparent overflow-hidden`}>
             <div className={`w-full lg:h-full ${Size ? 'h-1/2' : 'h-full'} flex px-3 lg:px-0`}>
@@ -43,12 +51,14 @@ export default function Header(Props) {
                         <Link to="/About" className={`links ${Links == 'About' ? 'link-line' : ''}`}>About</Link>
                         <Link to="/Search" className={`links ${Links == 'Search' ? 'link-line' : ''}`}>Search</Link>
                         <Link to="/Register" className={`links ${Links == 'Register' ? 'link-line' : ''}`}>Register</Link>
-                        <Link to="/Sign-In" className={`px-6 py-2 border border-${Props.color} text-${Props.color} rounded-full link hover:bg-black hover:text-white`}>Sign In</Link>
+                        <Link to="/Sign-in" className={`px-6 py-2 border border-${Props.color} text-${Props.color} rounded-full link hover:bg-black hover:text-white ${changeName ? 'hidden' : 'flex'}`}>Sign In</Link>
+                        <Link to="/Sign-up" className={`px-6 py-2 border border-${Props.color} text-${Props.color} rounded-full link hover:bg-black hover:text-white ${changeName ? 'flex' : 'hidden'}`}>Sign Up</Link>
                     </ul>
                 </div>
                 <div className="w-[60%] h-full lg:hidden flex justify-end items-center"
                     onClick={Navbar}>
-                    <Link to="/Sign-In" className="px-5 py-2 rounded-lg bg-black text-white">Sign In</Link>
+                    <Link to="/Sign-up" className={`px-5 py-2 rounded-lg bg-black text-white ${changeName ? 'hidden' : 'flex'}`}>Sign up</Link>
+                    <Link to="/Sign-Iin" className={`px-5 py-2 rounded-lg bg-black text-white ${changeName ? 'flex' : 'hidden'}`}>Sign In</Link>
                 </div>
             </div>
             <div className={`w-full ${Size ? 'h-1/2' : 'h-full'} px-8 lg:hidden`}>

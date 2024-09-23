@@ -28,7 +28,7 @@ export default function Section_1() {
     const ChangeNumber = e => setinputnumber(e.target.value)
     const ChangeCheckin = e => setinputCheckin(e.target.value);
     const ChangeCheckout = e => setinputCheckout(e.target.value);
-    /*-------------------------------------------------*/
+    /*----------------Change Pictures Hotel------------------------*/
     const ChangePicture = src => setPictures(src);
     /*-------------------------------------------------*/
     useEffect(() => {
@@ -46,7 +46,9 @@ export default function Section_1() {
 
     /*-------------------------------------------------*/
     const RegisterCards = (name, location, id_hotel) => {
-        if (inputnumber > 0) {
+        const currentUserEmail = localStorage.getItem('currentUserEmail');
+        const userIndex = users.findIndex(user => user.userEmail == currentUserEmail);
+        if (userIndex !== -1) {
             const CardInfo = {
                 id: id_hotel,
                 Hotel: name,
@@ -56,18 +58,16 @@ export default function Section_1() {
                 Check_In: inputCheckin,
                 Check_Out: inputCheckout,
             }
-            const currentUserEmail = localStorage.getItem('currentUserEmail');
-            const userIndex = users.findIndex(user => user.userEmail == currentUserEmail);
-            if (userIndex !== -1) {
-                users[userIndex].reservations.push(CardInfo);
-                localStorage.setItem('users', JSON.stringify(users));
-                alert('Reservation added successfully!');
+            if (!inputnumber > 0) {
+                return
             }
+            users[userIndex].reservations.push(CardInfo);
+            localStorage.setItem('users', JSON.stringify(users));
+            alert('Reservation added successfully!');
+        } else {
+            alert('You don\'t have an account');
         }
-        else {
-            alert('Please enter a valid number of persons.');
-            return
-        }
+
     }
     return <>
         <section className="w-full lg:h-screen lg:px-24">

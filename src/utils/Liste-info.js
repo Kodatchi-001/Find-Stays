@@ -6,17 +6,11 @@ export function ListeProvider({ children }) {
     const [liste, setliste] = useState([]);
     const [listeindex, setlisteindex] = useState([]);
     const [Cardsindex, setCardsindex] = useState([]);
-    const [Register, setRegister] = useState([]);
-    const [SaveHotel, setSaveHotel] = useState([]);
-    const [LikeHotel, setLikeHotel] = useState([]);
     /*-------------------------------------------------*/
     const contextValues = {
         liste, setliste,
         listeindex, setlisteindex,
         Cardsindex, setCardsindex,
-        Register, setRegister,
-        SaveHotel, setSaveHotel,
-        LikeHotel, setLikeHotel,
     };
     /*-------------------------------------------------*/
     return (

@@ -13,6 +13,7 @@ import About from './Pages/About';
 import { ListeProvider } from './utils/Liste-info';
 import Register from './Pages/Register';
 import { Sign_in } from './Pages/Sign in';
+import Sign_Up from './Components/Sign up/Section-1';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +26,7 @@ root.render(
           <Route path='/Booking' element={<Booking/>}/>
           <Route path='/About' element={<About/>}/>
           <Route path='/Register' element={<Register/>}/>
+          <Route path='/Sign-Up' element={<Sign_Up/>}/>
           <Route path='/Sign-in' element={<Sign_in/>}/>
         </Routes>
       </BrowserRouter>
