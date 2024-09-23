@@ -25,21 +25,23 @@ export default function Section_1() {
     const [Valide, setValide] = useState(false);
     /*-------------------------------------------------*/
     const HandleChange = e => setInputvalue(e.target.value.toLowerCase());
+    /*-----------*/
     const Savevalue = () => setSearch(Inputvalue)
+    /*-----------*/
     const FilterCards = () => {
         const LastLocation = liste[liste.length - 1]?.Location.toLowerCase() || '';
         const FilteredBySearch = HotelCards.filter(item => item.location.toLowerCase().includes(Search));
         const FilteredByLocation = LastLocation ? FilteredBySearch.filter(item => item.location.toLowerCase().includes(LastLocation)) : FilteredBySearch;
         return FilteredByLocation;
     };
+    /*-----------*/
     const SendIndex = index => setlisteindex([...listeindex, index]);
-    /*----------------- Local Storage ----------------*/
-    const users = JSON.parse(localStorage.getItem('users')) || [];
     /*-------------------------------------------------*/
     useEffect(() => {
         const Filtered = FilterCards();
         setNoteFound(Filtered.length > 0);
     }, [Search, liste]);
+    /*-----------*/
     useEffect(() => { liste.length > 0 ? setValide(true) : setValide(false) }, [liste]);
     const renderCards = () => {
         const FilteredCards = FilterCards();

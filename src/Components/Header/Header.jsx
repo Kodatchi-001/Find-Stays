@@ -57,8 +57,8 @@ export default function Header(Props) {
                 </div>
                 <div className="w-[60%] h-full lg:hidden flex justify-end items-center"
                     onClick={Navbar}>
-                    <Link to="/Sign-up" className={`px-5 py-2 rounded-lg bg-black text-white ${changeName ? 'hidden' : 'flex'}`}>Sign up</Link>
-                    <Link to="/Sign-Iin" className={`px-5 py-2 rounded-lg bg-black text-white ${changeName ? 'flex' : 'hidden'}`}>Sign In</Link>
+                    <Link to="/Sign-in" className={`px-5 py-2 rounded-lg bg-black text-white ${changeName ? 'hidden' : 'flex'}`}>Sign In</Link>
+                    <Link to="/Sign-up" className={`px-5 py-2 rounded-lg bg-black text-white ${changeName ? 'flex' : 'hidden'}`}>Sign up</Link>
                 </div>
             </div>
             <div className={`w-full ${Size ? 'h-1/2' : 'h-full'} px-8 lg:hidden`}>
