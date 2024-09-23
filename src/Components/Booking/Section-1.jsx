@@ -23,11 +23,13 @@ export default function Section_1() {
     const [inputCheckout, setinputCheckout] = useState(null);
     const [Price, setPrice] = useState(0);
     const [Pictures, setPictures] = useState(null)
-    const { liste, listeindex, setlisteindex, Cardsindex, setCardsindex, Register, setRegister } = useContext(Listeinfo);
+    const { liste, listeindex, setlisteindex, Cardsindex, setCardsindex } = useContext(Listeinfo);
     /*-------------------------------------------------*/
     const ChangeNumber = e => setinputnumber(e.target.value)
     const ChangeCheckin = e => setinputCheckin(e.target.value);
     const ChangeCheckout = e => setinputCheckout(e.target.value);
+    /*-------------------------------------------------*/
+    const ChangePicture = src => setPictures(src);
     /*-------------------------------------------------*/
     useEffect(() => {
         setinputnumber(parseInt(liste[liste.length - 1]?.Person || inputnumber));
@@ -37,22 +39,30 @@ export default function Section_1() {
         setCardsindex(Cardsindex.slice(-1))
     }, []);
     useEffect(() => { setPrice(inputnumber * 40) }, [inputnumber]);
-    useEffect(() => { return (() => setlisteindex([])) }, [])
+    useEffect(() => { return (() => setlisteindex([])) }, []);
+
+    /*----------------- Local Storage ----------------*/
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
     /*-------------------------------------------------*/
-    const ChangePicture = src => setPictures(src);
-    const RegisterCards = (name, location, img, id_hotel) => {
+    const RegisterCards = (name, location, id_hotel) => {
         if (inputnumber > 0) {
             const CardInfo = {
-                id : id_hotel,
+                id: id_hotel,
                 Hotel: name,
                 Location: location,
                 Person: inputnumber,
                 Price: Price,
                 Check_In: inputCheckin,
                 Check_Out: inputCheckout,
-                Picture: img
             }
-            Register.some(object => object.Hotel == CardInfo.Hotel) ? alert('This hotel is already registered.') : setRegister([...Register, CardInfo]);
+            const currentUserEmail = localStorage.getItem('currentUserEmail');
+            const userIndex = users.findIndex(user => user.userEmail == currentUserEmail);
+            if (userIndex !== -1) {
+                users[userIndex].reservations.push(CardInfo);
+                localStorage.setItem('users', JSON.stringify(users));
+                alert('Reservation added successfully!');
+            }
         }
         else {
             alert('Please enter a valid number of persons.');
@@ -140,7 +150,7 @@ export default function Section_1() {
                                             <h1 className="text-lg">${Price}/Night</h1>
                                         </div>
                                         <button className="w-full py-4 rounded-xl text-lg hover:bg-green-500 bg-black text-white"
-                                            onClick={() => RegisterCards(items.name, items.location, items.img, items.id)}>Reserve</button>
+                                            onClick={() => RegisterCards(items.name, items.location, items.id)}>Reserve</button>
                                     </div>
                                 </div>
                             </div>

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const Listeinfo = createContext();
 
@@ -16,9 +16,9 @@ export function ListeProvider({ children }) {
         Cardsindex, setCardsindex,
         Register, setRegister,
         SaveHotel, setSaveHotel,
-        LikeHotel, setLikeHotel
+        LikeHotel, setLikeHotel,
     };
-
+    /*-------------------------------------------------*/
     return (
         <Listeinfo.Provider value={contextValues}>
             {children}

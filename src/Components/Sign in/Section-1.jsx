@@ -1,21 +1,19 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 export default function AuthSection() {
     const [fullName, setFullName] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [userPassword, setUserPassword] = useState('');
     const [formValidation, setFormValidation] = useState({ name: true, email: true, password: true });
-    const [registeredUsers, setRegisteredUsers] = useState([]);
-
-    /*------------------- Handlers -------------------*/
+    /*-------------------------*/
     const [passwordStrengthLevel, setPasswordStrengthLevel] = useState(true);
-    const [isCardchange, setisCardchange] = useState(true)
-
-    /*------------------- Handlers -------------------*/
+    const [isCardchange, setisCardchange] = useState(true);
+    /*-------------------------*/
     const [loginEmail, setLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
     const [loginFormValidation, setLoginFormValidation] = useState({ email: true, password: true });
     const [credentialsMatch, setCredentialsMatch] = useState({ emailMatch: true, passwordMatch: true });
+    const navigat = useNavigate()
 
     /*------------------- Handlers -------------------*/
     const handleFullNameChange = e => setFullName(e.target.value);
@@ -24,60 +22,57 @@ export default function AuthSection() {
     const handleLoginEmailChange = e => setLoginEmail(e.target.value);
     const handleLoginPasswordChange = e => setLoginPassword(e.target.value);
 
+    /*----------------- Toggle ----------------*/
+    const ChangeCrads = _ => isCardchange ? setisCardchange(false) : setisCardchange(true);
+
+    /*----------------- Local Storage ----------------*/
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    // console.log(JSON.parse(localStorage.getItem('users')));
+
     /*----------------- Account Creation ----------------*/
     const createAccount = () => {
-        const isNameValid = fullName.trim() !== "";
-        const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail.trim());
-        const isPasswordValid = userPassword.length > 0;
+        setFormValidation({ name: fullName.trim() !== "", email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userEmail.trim()), password: userPassword.length > 0 });
 
-        setFormValidation({
-            name: isNameValid,
-            email: isEmailValid,
-            password: isPasswordValid,
-        });
-
-        if (isNameValid && isEmailValid && isPasswordValid) {
-            const newUser = {
-                name: fullName,
-                email: userEmail,
-                password: userPassword
-            };
-            setRegisteredUsers([...registeredUsers, newUser]);
-            setFullName('');
-            setUserEmail('');
-            setUserPassword('');
-            setPasswordStrengthLevel(true);
+        if (!formValidation.name && !formValidation.email && !formValidation.password) {
+            return;
         }
+
+        if (users.some(info => info.userEmail == userEmail || info.userPassword == userPassword)) {
+            alert('Cet compt est déjà utilisé !');
+            return;
+        }
+
+        users.push({ fullName, userEmail, userPassword, reservations: [] });
+        localStorage.setItem('users', JSON.stringify(users));
+        localStorage.setItem('currentUserEmail', userEmail);
+        alert('Compte créé avec succès !');
+
+        setFullName('');
+        setUserEmail('');
+        setUserPassword('');
+        setPasswordStrengthLevel(true);
     };
 
     /*------------------- Login Validation -------------------*/
     const validateLogin = () => {
-        const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(loginEmail.trim());
-        const isPasswordValid = loginPassword.length > 0;
+        setLoginFormValidation({ email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(loginEmail.trim()), password: loginPassword.length > 0, });
 
-        setLoginFormValidation({
-            email: isEmailValid,
-            password: isPasswordValid,
-        });
-        const isEmailMatched = registeredUsers.some(user => user.email === loginEmail);
-        const isPasswordMatched = registeredUsers.some(user => user.password === loginPassword);
-        setCredentialsMatch({
-            emailMatch: isEmailMatched,
-            passwordMatch: isPasswordMatched
-        });
-
-        if (isEmailMatched && isPasswordMatched) {
-            console.log('User found');
-            setLoginEmail('')
-            setLoginPassword('')
+        if (!loginFormValidation.email || !loginFormValidation.password) {
+            return;
+        }
+        if (users.some(info => info.userEmail == loginEmail && info.userPassword == loginPassword)) {
+            setCredentialsMatch({ emailMatch: true, passwordMatch: true });
+            localStorage.setItem('currentUserEmail', loginEmail);
+            navigat('/Register')
+            return;
         } else {
-            console.log('User not found');
+            setCredentialsMatch({ emailMatch: false, passwordMatch: false });
         }
     };
-    const ChangeCrads = _ => isCardchange ? setisCardchange(false) : setisCardchange(true)
+
     /*------------------- Password Strength Check -------------------*/
     useEffect(() => {
-        switch (userPassword.length || loginPassword) {
+        switch (userPassword.length) {
             case 3:
                 setPasswordStrengthLevel('Weak');
                 break;
