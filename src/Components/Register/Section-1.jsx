@@ -11,8 +11,8 @@ export default function Section_1() {
         const userIndex = users.findIndex(user => user.userEmail == currentUserEmail);
         if (userIndex !== -1) {
             setUserReservations(users[userIndex].reservations);
+            setuserName(users[userIndex].fullName)
         }
-        setuserName(users[userIndex].fullName)
     }, []);
     return <>
         <section className="w-full lh-screen lg:px-2 xl:px-20">
@@ -21,7 +21,8 @@ export default function Section_1() {
             <div className="w-full h-full flex flex-col pt-4 lg:pt-8 px-2 lg:px-4 gap-5">
                 <div className="w-full lg:h-[10%] flex justify-between items-center">
                     <div>
-                        <h1 className="text-2xl">Hello, {userName} !</h1>
+                        <h1 className={`text-2xl ${userName.trim() == '' ? 'flex' : 'hidden'}`}>Go! Create an Account to Register</h1>
+                        <h1 className={`text-2xl ${userName.trim() == '' ? 'hidden' : 'flex'}`}>Hello, {userName}!</h1>
                     </div>
                     {/* <h1>{userReservations.length} Items</h1> */}
                     <select className="rounded-lg px-2 text-xl py-2 border">
