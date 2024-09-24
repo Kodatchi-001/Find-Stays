@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+
 export default function Sign_In() {
     const [loginEmail, setLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
@@ -33,7 +36,7 @@ export default function Sign_In() {
     };
     return (
         <section className="w-full h-screen flex p-2 items-center flex-col lg:flex-row bg-gray relative">
-            <div className="w-[55%] h-full bg-login rounded-2xl lg:flex hidden"></div>
+            <div className="w-[55%] h-full bg-login-2 rounded-2xl lg:flex hidden"></div>
             <div className="w-full h-[8.5vh] flex items-center gap-5 px-4 lg:hidden absolute mt-4">
                 <Link to="/">
                     <i class='bx bx-chevron-left p-2 text-[1.3rem] font-bold cursor-pointer hover:bg-black hover:text-white border border-[#a5a5a5] rounded-full'></i>
@@ -47,14 +50,16 @@ export default function Sign_In() {
             <div className="w-full lg:w-[45%] h-full lg:h-full flex justify-center items-center">
                 {/* <!-- Login --> */}
                 <div className={`w-full sm:w-4/6 lg:w-5/6 h-4/6 lg:h-5/6 lg:py-28 px-4 xl:px-20`}>
-                    <div className="w-full h-full flex flex-col items-center justify-center lg:justify-start gap-8 lg:gap-5">
+                    <div className="w-full h-full flex flex-col items-center justify-center lg:justify-start gap-8 lg:gap-3">
                         <div className="flex flex-col items-center gap-2">
                             <h1 className="text-4xl font-bold">Sign In</h1>
                             <p className="text-gray">Sign In to explore our hotel offers.</p>
                         </div>
                         <div className="w-full flex flex-col items-center gap-1">
                             {/* <!-- Email Login --> */}
-                            <input type="email" className="w-full rounded-lg px-5 py-3 mt-1" placeholder="Email" value={loginEmail} onChange={handleLoginEmailChange} />
+                            <Box className="w-full mt-2">
+                                <TextField fullWidth label="Email" type="email" className="w-full" value={loginEmail} onChange={handleLoginEmailChange} />
+                            </Box>
                             <div className="w-full flex gap-3">
                                 {!loginFormValidation.email && (
                                     <div className="flex items-center gap-1 text-red-500">
@@ -70,7 +75,9 @@ export default function Sign_In() {
                                 ) : null}
                             </div>
                             {/* <!-- Password Login --> */}
-                            <input type="password" className="w-full rounded-lg px-5 py-3 mt-1" placeholder="Password" value={loginPassword} onChange={handleLoginPasswordChange} />
+                            <Box className="w-full mt-2">
+                                <TextField fullWidth label="Password" type="password" className="w-full" value={loginPassword} onChange={handleLoginPasswordChange} />
+                            </Box>
                             <div className="w-full flex gap-3">
                                 {!loginFormValidation.password && (
                                     <div className="flex items-center gap-1 text-red-500">

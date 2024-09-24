@@ -5,10 +5,10 @@ export default function Section_1() {
     const [userReservations, setUserReservations] = useState([]);
     const [userName, setuserName] = useState('');
 
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const currentUserEmail = localStorage.getItem('currentUserEmail');
+    const userIndex = users.findIndex(user => user.userEmail == currentUserEmail);
     useEffect(() => {
-        const users = JSON.parse(localStorage.getItem('users')) || [];
-        const currentUserEmail = localStorage.getItem('currentUserEmail');
-        const userIndex = users.findIndex(user => user.userEmail == currentUserEmail);
         if (userIndex !== -1) {
             setUserReservations(users[userIndex].reservations);
             setuserName(users[userIndex].fullName)

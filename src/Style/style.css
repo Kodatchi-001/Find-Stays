@@ -286,6 +286,12 @@ header li:first-child:after {
     background-position: bottom;
 }
 
+.bg-login-2{
+    background-image: url(../Assets/login2-bg.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+
 /*Register-Page*/
 
 .Shadow{

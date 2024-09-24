@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+
 export default function Sign_Up() {
     const [fullName, setFullName] = useState('');
     const [userEmail, setUserEmail] = useState('');
@@ -26,7 +29,7 @@ export default function Sign_Up() {
             alert('Cet compte est déjà utilisé !');
             return;
         }
-        users.push({ fullName, userEmail, userPassword, reservations: [] , Save : [] , Like : []});
+        users.push({ fullName, userEmail, userPassword, reservations: [], Save: [], Like: [] });
         localStorage.setItem('users', JSON.stringify(users));
         localStorage.setItem('currentUserEmail', userEmail);
         navigat('/Register')
@@ -67,14 +70,16 @@ export default function Sign_Up() {
             <div className="w-full lg:w-[45%] h-full lg:h-full flex justify-center items-center">
                 {/* <!-- Sign In --> */}
                 <div className={`w-full sm:w-4/6 lg:w-5/6 h-4/6 lg:h-5/6 lg:py-28 px-4 xl:px-20`}>
-                    <div className="w-full h-full flex flex-col items-center justify-center lg:justify-start gap-8 lg:gap-5">
+                    <div className="w-full h-full flex flex-col items-center justify-center lg:justify-start gap-8 lg:gap-3">
                         <div className="flex flex-col items-center gap-2">
                             <h1 className="text-4xl font-bold">Sign Up</h1>
                             <p className="text-gray">Sign Up to explore our hotel offers.</p>
                         </div>
                         <div className="w-full flex flex-col items-center gap-1">
                             {/* <!-- Full Name Sign In --> */}
-                            <input type="text" className={`w-full rounded-lg px-5 py-3 border border-transparent`} placeholder="Full Name" value={fullName} onChange={handleFullNameChange} />
+                            <Box className="w-full mt-2">
+                                <TextField fullWidth label="Full Name" className="w-full" value={fullName} onChange={handleFullNameChange} />
+                            </Box>
                             {!formValidation.name && (
                                 <div className="w-1/2 lg:w-full flex items-center gap-1 text-red-500">
 
@@ -83,7 +88,9 @@ export default function Sign_Up() {
                                 </div>
                             )}
                             {/* <!-- Email Sign In --> */}
-                            <input type="email" className="w-full rounded-lg px-5 py-3 mt-1" placeholder="Email" value={userEmail} onChange={handleUserEmailChange} />
+                            <Box className="w-full mt-2">
+                                <TextField fullWidth label="Email" type="email" className="w-full" value={userEmail} onChange={handleUserEmailChange} />
+                            </Box>
                             {!formValidation.email && (
                                 <div className="w-1/2 lg:w-full flex items-center gap-1 text-red-500">
                                     <i className='bx bx-error-circle'></i>
@@ -91,7 +98,9 @@ export default function Sign_Up() {
                                 </div>
                             )}
                             {/* <!-- Password Sign In --> */}
-                            <input type="password" className="w-full rounded-lg px-5 py-3 mt-1" placeholder="Password" value={userPassword} onChange={handleUserPasswordChange} />
+                            <Box className="w-full mt-2">
+                                <TextField fullWidth label="Password" type="password" className="w-full" value={userPassword} onChange={handleUserPasswordChange} />
+                            </Box>
                             <div className="w-full flex justify-between gap-2">
                                 {!formValidation.password && (
                                     <div className="w-1/2 lg:w-full flex items-center gap-1 text-red-500">
