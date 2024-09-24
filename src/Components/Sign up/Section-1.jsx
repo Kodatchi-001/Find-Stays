@@ -14,7 +14,6 @@ export default function Sign_Up() {
     const handleUserPasswordChange = e => setUserPassword(e.target.value);
     /*----------------- Local Storage ----------------*/
     const users = JSON.parse(localStorage.getItem('users')) || [];
-
     /*----------------- Account Creation ----------------*/
     const createAccount = () => {
         setFormValidation({
@@ -27,7 +26,7 @@ export default function Sign_Up() {
             alert('Cet compte est déjà utilisé !');
             return;
         }
-        users.push({ fullName, userEmail, userPassword, reservations: [] });
+        users.push({ fullName, userEmail, userPassword, reservations: [] , Save : [] , Like : []});
         localStorage.setItem('users', JSON.stringify(users));
         localStorage.setItem('currentUserEmail', userEmail);
         navigat('/Register')

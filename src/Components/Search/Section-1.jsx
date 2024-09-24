@@ -36,13 +36,47 @@ export default function Section_1() {
     };
     /*-----------*/
     const SendIndex = index => setlisteindex([...listeindex, index]);
+    /*----------------- Local Storage ----------------*/
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const currentUserEmail = localStorage.getItem('currentUserEmail');
+    const userIndex = users.findIndex(user => user.userEmail == currentUserEmail);
+    /*-----------*/
+    const SaveHotel = index => {
+        if (userIndex !== -1) {
+            if (users[userIndex].Save.includes(index)) {
+                users[userIndex].Save = users[userIndex].Save.filter(item => item !== index)
+                localStorage.setItem('users', JSON.stringify(users));
+                return
+            } else {
+                users[userIndex].Save.push(index)
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+        }
+    }
+    /*-----------*/
+    const LikeHotel = index => {
+        if (userIndex !== -1) {
+            if (users[userIndex].Like.includes(index)) {
+                users[userIndex].Like = users[userIndex].Like.filter(item => item !== index)
+                localStorage.setItem('users', JSON.stringify(users));
+                return
+            } else {
+                users[userIndex].Like.push(index)
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+        }
+    }
+    console.log(users)
     /*-------------------------------------------------*/
     useEffect(() => {
         const Filtered = FilterCards();
         setNoteFound(Filtered.length > 0);
     }, [Search, liste]);
     /*-----------*/
-    useEffect(() => { liste.length > 0 ? setValide(true) : setValide(false) }, [liste]);
+    useEffect(() => {
+        liste.length > 0 ? setValide(true) : setValide(false)
+    }, [liste]);
+    /*-------------------------------------------------*/
     const renderCards = () => {
         const FilteredCards = FilterCards();
         return NoteFound ? (
@@ -50,7 +84,8 @@ export default function Section_1() {
                 <div key={index} className="w-full sm:w-[50%] lg:w-[32%] xl:w-[24%] h-[40vh] sm:h-[41vh] lg:mt-1 lg:mb-1 flex flex-col justify-between cursor-pointer Cards-section-2 p-3 lg:p-0">
                     <div className="w-full h-[68%] rounded-2xl cards-homepage-section-2 Background-cards" style={{ backgroundImage: `url(${require(`../../Assets/${item.img}`)})` }}>
                         <div className="w-full h-full p-4">
-                            <i className={`bx bx-heart p-2 scale-110 bg-white rounded-full`}></i>
+                            <i className="bx bx-heart p-2 scale-110 bg-white rounded-full"
+                                onClick={() => LikeHotel(item.id)}></i>
                         </div>
                     </div>
                     <div className="w-full h-[28%] flex flex-wrap cards-homepage-info overflow-hidden gap-5">
@@ -72,7 +107,8 @@ export default function Section_1() {
                         </div>
                         <div className="w-full h-[40%] flex justify-between items-center cards-homepage-buttons pr-2 lg:gap-5 xl:gap-0">
                             <Link to="/Booking" onClick={() => SendIndex(item.id)} className="w-[85%] flex justify-center py-2 rounded-full text-lg bg-black text-white hover:bg-green-800 button-link">Book Now</Link>
-                            <i className={`bx bx-bookmark'} p-2 scale-125 rounded-full border border-black`}></i>
+                            <i className="bx bx-bookmark p-2 scale-125 rounded-full border border-black"
+                                onClick={() => SaveHotel(item.id)}></i>
                         </div>
                     </div>
                 </div>

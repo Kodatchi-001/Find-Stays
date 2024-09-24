@@ -26,8 +26,7 @@ export default function Section_1() {
                     </div>
                     {/* <h1>{userReservations.length} Items</h1> */}
                     <select className="rounded-lg px-2 text-xl py-2 border">
-                        <option>Filter</option>
-                        <option value="Register">Register</option>
+                        <option value="Register" defaultChecked>Register</option>
                         <option value="Like">Like</option>
                         <option value="Save">Save</option>
                     </select>
@@ -57,7 +56,7 @@ export default function Section_1() {
                             <div className="w-full lg:w-1/2 h-full flex flex-wrap-reverse lg:flex-col justify-between items-end gap-2 lg:gap-0">
                                 <div className="w-full flex justify-end">
                                     <i className={`bx bx-heart px-3 py-2 scale-90 border border-black rounded-full text-xl cursor-pointer duration-200 hover:bg-red-500 hover:text-white hover:border-transparent`}></i>
-                                    <i className={`bx bx-bookmark px-3 py-2 scale-90 border border-black rounded-full text-xl cursor-pointer duration-200 hover:bg-green-500 hover:text-white hover:border-transparent bxs-bookmark`}></i>
+                                    <i className={`bx bx-bookmark px-3 py-2 scale-90 border border-black rounded-full text-xl cursor-pointer duration-200 hover:bg-green-500 hover:text-white hover:border-transparent`}></i>
                                     <i class='bx bx-trash px-3 py-2 scale-90 border border-black rounded-full text-xl cursor-pointer duration-200 hover:bg-black hover:text-white hover:border-transparent'></i>
                                 </div>
                                 <div className="w-full flex justify-between lg:justify-end gap-2">

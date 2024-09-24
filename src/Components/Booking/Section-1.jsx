@@ -61,9 +61,18 @@ export default function Section_1() {
             if (!inputnumber > 0) {
                 return
             }
-            users[userIndex].reservations.push(CardInfo);
-            localStorage.setItem('users', JSON.stringify(users));
-            alert('Reservation added successfully!');
+            const reservationExists = users[userIndex].reservations.some(reservation =>
+                reservation.id === CardInfo.id &&
+                reservation.Hotel === CardInfo.Hotel
+            );
+            if (reservationExists) {
+                alert('Reservation already exists.');
+                return;
+            } else {
+                users[userIndex].reservations.push(CardInfo);
+                localStorage.setItem('users', JSON.stringify(users));
+                alert('Reservation added successfully!');
+            }
         } else {
             alert('You don\'t have an account');
         }
