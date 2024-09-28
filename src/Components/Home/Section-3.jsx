@@ -17,6 +17,7 @@ export default function Section_3() {
     const [NoteFound, setNoteFound] = useState(false);
     const { listeindex, setlisteindex } = useContext(Listeinfo)
     const [SavedHotels, setSavedHotels] = useState([]);
+    const [CardsSize, setCardsSize] = useState(null)
     /*-------------------------------------------------*/
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const currentUserEmail = localStorage.getItem('currentUserEmail');
@@ -36,6 +37,8 @@ export default function Section_3() {
             setSavedHotels(users[userIndex].Save);
         }
     }
+    /*-----------*/
+    const CardsToogle = index => setCardsSize(item => item == index ? null : index)
     /*-------------------------------------------------*/
     useEffect(() => { setNoteFound(FilteredHotels.length > 0) }, [FilteredHotels]);
     return <>
@@ -57,14 +60,15 @@ export default function Section_3() {
                     </div>
                 </div>
             </div>
-            <div className="w-full lg:h-screen flex items-center flex-wrap">
-                <div className={`w-full h-full lg:h-[90%] flex flex-wrap ${Search ? 'justify-start gap-4' : 'justify-between gap-0'}`}>
+            <div className="w-full xl:h-screen flex items-center flex-wrap">
+                <div className={`w-full h-full lg:h-[90%] flex flex-wrap ${Search ? 'justify-start gap-4' : 'xl:justify-between lg:gap-4 xl:gap-0'}`}>
                     {NoteFound ? (
                         FilteredHotels.map((item, index) => (
-                            <div key={item.id} className="w-full sm:w-[50%] lg:w-[24%] h-[45vh] sm:h-[41vh] flex flex-col justify-between cursor-pointer Cards-section-2 p-3 lg:p-0">
-                                <div className="w-full h-[68%] rounded-2xl cards-homepage-section-2" id={`Card-${index}-Section-2-HomePage`}></div>
-                                <div className="w-full h-[28%] flex flex-wrap cards-homepage-info overflow-hidden gap-5">
-                                    <div className="w-full h-full flex flex-col justify-between">
+                            <div key={index} className="w-full sm:w-[50%] lg:w-[32%] xl:w-[24%] h-[40vh] sm:h-[41vh] lg:mt-1 lg:mb-1 flex flex-col justify-between cursor-pointer p-3 lg:p-0 Cards-section-2"
+                                onClick={() => CardsToogle(index)}>
+                                <div className={`w-full rounded-2xl duration-700 ${CardsSize == index ? 'h-[45%]' : 'h-[68%]'} Background-cards cards-homepage-section-2`} id={`Card-${index}-Section-2-HomePage`}></div>
+                                <div className={`w-full duration-700 ${CardsSize == index ? 'h-[55%] pt-[1vh] gap-0' : 'h-[28%]  gap-5'} flex flex-wrap overflow-hidden cards-homepage-info`}>
+                                    <div className={`w-full ${CardsSize == index ? 'h-[60%]' : 'h-full'} flex flex-col justify-between gap-1 lg:gap-0`}>
                                         <div className="w-full h-2/3 flex flex-col">
                                             <h1 className="text-2xl lg:text-xl xl:text-2xl">{item.name}</h1>
                                             <h1>{item.location}</h1>
@@ -80,7 +84,7 @@ export default function Section_3() {
                                             <h1 className="text-sm mt-[0.5vh]">({item.visitors})</h1>
                                         </div>
                                     </div>
-                                    <div className="w-full h-[40%] flex justify-between items-center cards-homepage-buttons pr-2 lg:gap-5 xl:gap-0">
+                                    <div className="w-full h-[40%] flex justify-between items-center pr-2 lg:gap-5 xl:gap-0">
                                         <Link to="/Booking" className="w-[85%] text-center py-2 rounded-full text-lg duration-300 bg-black text-white hover:bg-green-800"
                                             onClick={() => SendIndex(index)}>Book Now</Link>
                                         <i class={`bx ${SavedHotels.includes(index) ? 'bxs-bookmark text-green-500' : 'bx-bookmark'} p-2 scale-125 rounded-full border border-black`}

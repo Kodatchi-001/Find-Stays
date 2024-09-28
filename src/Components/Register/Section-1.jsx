@@ -33,8 +33,11 @@ export default function Section_1() {
         }
     }
     const SuprimmeHotel = index => {
-        const reservations = users[userIndex].reservations.filter(items => items.id !== index)
-        setUserReservations(reservations);
+        if (userIndex !== -1) {
+            users[userIndex].reservations = users[userIndex].reservations.filter(items => items.id !== index);
+            localStorage.setItem('users', JSON.stringify(users));
+            setUserReservations(users[userIndex].reservations);
+        }
     }
     /*-------------------------------------------------*/
     useEffect(() => {
@@ -42,7 +45,7 @@ export default function Section_1() {
             setuserName(users[userIndex].fullName)
             setLikeHotels(users[userIndex].Like || []);
             setSavedHotels(users[userIndex].Save || []);
-            setUserReservations(users[userIndex].reservations);
+            setUserReservations(users[userIndex].reservations || []);
         }
     }, [userIndex]);
     return <>
@@ -52,14 +55,14 @@ export default function Section_1() {
             <div className="w-full h-full flex flex-col pt-4 lg:pt-8 lg:px-4 gap-5">
                 <div className="w-full lg:h-[10%] flex flex-col lg:flex-row justify-between items-center gap-5 lg:gap-0">
                     <div>
-                        <h1 className={`text-2xl ${userName.trim() == '' ? 'flex' : 'hidden'}`}>Go! Create an Account to Register</h1>
+                        <h1 className={`text-2xl ${userName.trim() == '' ? 'flex' : 'hidden'}`}>Go! Create an Account.</h1>
                         <h1 className={`text-2xl ${userName.trim() == '' ? 'hidden' : 'flex'}`}>Hello, {userName} !</h1>
                     </div>
-                    <h1 className="text-2xl">{users[userIndex].reservations.length} Items</h1>
+                    <h1 className="text-2xl">{userReservations.length} Items</h1>
                 </div>
                 <div className="w-full h-full lg:h-[90%] flex flex-wrap lg:flex-nowrap lg:flex-col gap-5">
-                    {userReservations.map((items) => (
-                        <div key={items.id} className="sm:w-full h-full lg:h-[28vh] flex rounded-lg flex-wrap p-5 px-4 gap-2 lg:gap-0 Shadow">
+                    {userReservations.length > 0 ? userReservations.map(items => (
+                        <div key={items.id} className="sm:w-full h-full lg:h-[28vh] flex rounded-lg flex-wrap p-5 px-4 gap-2 lg:gap-0 bg-gray-100 shadow-lg">
                             <div className="w-full lg:w-1/2 lg:h-full flex flex-col justify-between gap-5 lg:gap-0">
                                 <div>
                                     <h1 className="text-3xl lg:text-4xl">{items.Hotel}</h1>
@@ -83,9 +86,11 @@ export default function Section_1() {
                                 <div className="w-full flex justify-end">
                                     <i className={`bx ${LikeHotels.includes(items.id) ? 'bxs-heart text-red-500' : 'bx-heart'} px-3 py-2 scale-90 border border-black rounded-full text-xl cursor-pointer`}
                                         onClick={() => LikeHotel(items.id)}></i>
+
                                     <i className={`bx ${SavedHotels.includes(items.id) ? 'bxs-bookmark text-green-500' : 'bx-bookmark'} px-3 py-2 scale-90 border border-black rounded-full text-xl cursor-pointer`}
-                                    onClick={() => SaveHotel(items.id)}></i>
-                                    <i class='bx bx-trash px-3 py-2 scale-90 border border-black rounded-full text-xl cursor-pointer duration-200 hover:bg-black hover:text-white hover:border-transparent'
+                                        onClick={() => SaveHotel(items.id)}></i>
+
+                                    <i class='bx bx-trash px-3 py-2 scale-90 border border-black rounded-full text-xl cursor-pointer'
                                         onClick={() => SuprimmeHotel(items.id)}></i>
                                 </div>
                                 <div className="w-full flex justify-between lg:justify-end gap-2">
@@ -114,7 +119,12 @@ export default function Section_1() {
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    )) : (
+                        <div className="w-full h-[50vh] flex flex-col justify-center items-center gap-5">
+                            <i class='bx bx-map text-8xl'></i>
+                            <h1 className="w-1/2 lg:w-1/4 text-center text-3xl">No bookings available now</h1>
+                        </div>
+                    )}
                 </div>
             </div>
         </section >

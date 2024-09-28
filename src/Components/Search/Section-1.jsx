@@ -25,6 +25,7 @@ export default function Section_1() {
     const [Valide, setValide] = useState(false);
     const [SavedHotels, setSavedHotels] = useState([]);
     const [LikeHotels, setLikeHotels] = useState([]);
+    const [CardsSize, setCardsSize] = useState(null)
     /*-------------------------------------------------*/
     const HandleChange = e => setInputvalue(e.target.value.toLowerCase());
     /*-----------*/
@@ -38,6 +39,8 @@ export default function Section_1() {
     };
     /*-----------*/
     const SendIndex = index => setlisteindex([...listeindex, index]);
+    /*-----------*/
+    const CardsToogle = index => setCardsSize(item => item == index ? null : index)
     /*----------------- Local Storage ----------------*/
     const users = JSON.parse(localStorage.getItem('users')) || [];
     const currentUserEmail = localStorage.getItem('currentUserEmail');
@@ -87,15 +90,16 @@ export default function Section_1() {
         const FilteredCards = FilterCards();
         return NoteFound ? (
             FilteredCards.map((item, index) => (
-                <div key={index} className="w-full sm:w-[50%] lg:w-[32%] xl:w-[24%] h-[40vh] sm:h-[41vh] lg:mt-1 lg:mb-1 flex flex-col justify-between cursor-pointer Cards-section-2 p-3 lg:p-0">
-                    <div className="w-full h-[68%] rounded-2xl cards-homepage-section-2 Background-cards" style={{ backgroundImage: `url(${require(`../../Assets/${item.img}`)})` }}>
+                <div key={index} className="w-full sm:w-[50%] lg:w-[32%] xl:w-[24%] h-[40vh] sm:h-[41vh] lg:mt-1 lg:mb-1 flex flex-col justify-between cursor-pointer p-3 lg:p-0 Cards-section-2"
+                    onClick={() => CardsToogle(index)}>
+                    <div className={`w-full rounded-2xl duration-700 ${CardsSize == index ? 'h-[45%]' : 'h-[68%]'} Background-cards cards-homepage-section-2`} style={{ backgroundImage: `url(${require(`../../Assets/${item.img}`)})` }}>
                         <div className="w-full h-full p-4">
                             <i className={`bx ${LikeHotels.includes(item.id) ? 'bxs-heart text-red-500' : 'bx-heart'} p-2 scale-110 bg-white rounded-full`}
                                 onClick={() => LikeHotel(item.id)}></i>
                         </div>
                     </div>
-                    <div className="w-full h-[28%] flex flex-wrap cards-homepage-info overflow-hidden gap-5">
-                        <div className="w-full h-full flex flex-col justify-between gap-1 lg:gap-0">
+                    <div className={`w-full duration-700 ${CardsSize == index ? 'h-[55%] pt-[1vh] gap-0' : 'h-[28%]'} flex flex-wrap overflow-hidden cards-homepage-info gap-5`}>
+                        <div className={`w-full ${CardsSize == index ? 'h-[60%]' : 'h-full'} flex flex-col justify-between gap-1 lg:gap-0`}>
                             <div className="w-full h-2/3 flex flex-col">
                                 <h1 className="text-2xl lg:text-xl xl:text-2xl">{item.name}</h1>
                                 <h1>{item.location}</h1>
@@ -111,7 +115,7 @@ export default function Section_1() {
                                 <h1 className="text-sm mt-[0.5vh]">({item.visitors})</h1>
                             </div>
                         </div>
-                        <div className="w-full h-[40%] flex justify-between items-center cards-homepage-buttons pr-2 lg:gap-5 xl:gap-0">
+                        <div className="w-full h-[40%] flex justify-between items-center pr-2 lg:gap-5 xl:gap-0">
                             <Link to="/Booking" onClick={() => SendIndex(item.id)} className="w-[85%] flex justify-center py-2 rounded-full text-lg bg-black text-white hover:bg-green-800 button-link">Book Now</Link>
                             <i className={`bx ${SavedHotels.includes(item.id) ? 'bxs-bookmark text-green-500' : 'bx-bookmark'} p-2 scale-125 rounded-full border border-black`}
                                 onClick={() => SaveHotel(item.id)}></i>
