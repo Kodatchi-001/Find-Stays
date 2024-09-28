@@ -52,8 +52,8 @@ export default function Section_1() {
         <section className="w-full lh-screen lg:px-2 xl:px-20">
             <Header />
             <div className="w-full h-[10vh] lg:hidden"></div>
-            <div className="w-full h-full flex flex-col pt-4 lg:pt-8 lg:px-4 gap-5">
-                <div className="w-full lg:h-[10%] flex flex-col lg:flex-row justify-between items-center gap-5 lg:gap-0">
+            <div className="w-full h-full flex flex-col pt-4 lg:pt-8 px-3 lg:px-4 gap-5">
+                <div className="w-full lg:h-[10%] flex justify-between items-center">
                     <div>
                         <h1 className={`text-2xl ${userName.trim() == '' ? 'flex' : 'hidden'}`}>Go! Create an Account.</h1>
                         <h1 className={`text-2xl ${userName.trim() == '' ? 'hidden' : 'flex'}`}>Hello, {userName} !</h1>
