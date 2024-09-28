@@ -82,7 +82,7 @@ export default function Section_1() {
                                         <i class='bx bx-user text-xl'></i>
                                         <h1 className="h-full flex items-end text-lg lg:text-[1rem]">Person</h1>
                                     </div>
-                                    <div className="w-full h-[60%] lg:h-[65%] flex justify-end relative">
+                                    <div className="w-full h-[60%] lg:h-[65%] flex justify-end">
                                         <div className="w-full h-full bg-gray pr-2 lg:pr-5 rounded-xl">
                                             <select className="w-full h-full px-5 py-4 lg:py-0 bg-transparent text-lg lg:text-xl focus:outline-none text-black"
                                                 value={person} onChange={Handelchangepreson}>
@@ -98,9 +98,6 @@ export default function Section_1() {
                                                 <option value="9">9</option>
                                                 <option value="10">10</option>
                                             </select>
-                                        </div>
-                                        <div className="w-1/5 h-full mr-0 lg:flex justify-center items-center absolute hidden">
-                                            <i class='bx bx-chevron-down text-3xl mr-[0.6rem] mb-[0.1rem]'></i>
                                         </div>
                                     </div>
                                 </div>
